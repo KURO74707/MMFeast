@@ -1,0 +1,721 @@
+/* UI layer — mid-fidelity gray boxes.
+   #ui sits on top of the Phaser canvas. Its font-size scales with the stage, so
+   1em = 16px at the 1280×720 design size (the stage is 80em × 45em). */
+
+:root {
+  --bg: #efefef;
+  --box: #d9d9d9;
+  --box-2: #c8c8c8;
+  --line: #a6a6a6;
+  --text: #2b2b2b;
+  --muted: #777;
+  --dark: #4a4a4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #cfcfcf;
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stage {
+  position: relative;
+  width: min(100vw, calc(100vh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+#stage canvas {
+  display: block;
+}
+
+#ui {
+  position: absolute;
+  inset: 0;
+  font-size: 1.25cqw;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---- basics ------------------------------------------------------------ */
+
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1.5em 2em;
+  background: var(--bg);
+}
+
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0.8em 0 0.4em;
+}
+
+p {
+  margin: 0.4em 0;
+}
+
+.muted {
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.box {
+  background: var(--box);
+  border: 1px solid var(--line);
+  border-radius: 0.4em;
+}
+
+.panel {
+  padding: 1em 1.2em;
+  background: #fafafa;
+}
+
+.btn {
+  font: inherit;
+  font-size: 1em;
+  padding: 0.55em 1.2em;
+  border: 1px solid var(--dark);
+  border-radius: 0.4em;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus-visible {
+  background: #e4e4e4;
+  outline: none;
+}
+
+.btn.primary {
+  background: var(--dark);
+  color: #fff;
+}
+
+.btn.primary:hover:not(:disabled),
+.btn.primary:focus-visible {
+  background: #2b2b2b;
+}
+
+.btn.big {
+  font-size: 1.2em;
+  padding: 0.8em;
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.input {
+  font: inherit;
+  padding: 0.55em 0.8em;
+  border: 1px solid var(--line);
+  border-radius: 0.4em;
+  background: #fff;
+  flex: 1;
+  min-width: 0;
+}
+
+.row {
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.row.end {
+  justify-content: flex-end;
+}
+
+.pill {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.pill.ready {
+  background: var(--dark);
+  color: #fff;
+  border-color: var(--dark);
+}
+
+.pill.locked {
+  background: var(--box);
+}
+
+.art {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.8em;
+  aspect-ratio: 1;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex: none;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+
+.tab {
+  font: inherit;
+  padding: 0.5em 1.2em;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 0.4em 0.4em 0 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
+.tab.active {
+  background: var(--bg);
+  border-color: var(--line);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.tabs-meta {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+/* ---- modal ------------------------------------------------------------- */
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: rgb(0 0 0 / 0.35);
+}
+
+.modal {
+  width: 28em;
+  padding: 1.5em;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.6em;
+}
+
+.code-input {
+  width: 100%;
+  margin-top: 0.6em;
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.error {
+  color: #a33;
+  font-size: 0.85em;
+}
+
+.invite-code {
+  margin-top: 0.8em;
+  padding: 0.5em;
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+/* ---- home -------------------------------------------------------------- */
+
+.home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  position: relative;
+}
+
+.logo {
+  width: 30em;
+  height: 11em;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.logo small {
+  display: block;
+  font-size: 0.45em;
+  font-weight: normal;
+  color: var(--muted);
+  margin-top: 0.4em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  width: 16em;
+}
+
+.version {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 0.8em;
+  color: var(--muted);
+}
+
+/* ---- settings ---------------------------------------------------------- */
+
+.settings-panel {
+  width: 36em;
+}
+
+.setting {
+  display: grid;
+  grid-template-columns: 12em 1fr 3em;
+  align-items: center;
+  gap: 1em;
+  padding: 0.6em 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.setting output {
+  text-align: right;
+  color: var(--muted);
+}
+
+.setting input[type='checkbox'],
+.setting input[type='radio'] {
+  justify-self: start;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.bindings {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bindings th,
+.bindings td {
+  text-align: left;
+  padding: 0.5em;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.bindings th {
+  color: var(--muted);
+  font-weight: normal;
+  font-size: 0.85em;
+}
+
+/* ---- collection -------------------------------------------------------- */
+
+.collection {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 14em 1fr 24em;
+  gap: 1.2em;
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  overflow-y: auto;
+}
+
+.list-item {
+  font: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.4em 0.6em;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.4em;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+}
+
+.list-item.active {
+  border: 2px solid var(--dark);
+  padding: calc(0.4em - 1px) calc(0.6em - 1px);
+}
+
+.list-item.locked {
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.thumb {
+  width: 2.4em;
+  height: 2.4em;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 0.9em;
+}
+
+.spotlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* soft "spotlight" falling on the model */
+  background: radial-gradient(ellipse 45% 60% at 50% 45%, #fafafa 0%, transparent 100%);
+}
+
+.spotlight-model {
+  width: 15em;
+  height: 21em;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 7em 7em 1.5em 1.5em;
+  background: var(--box);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9em;
+  position: relative;
+  z-index: 1;
+}
+
+.spotlight.locked .spotlight-model {
+  background: #9a9a9a;
+  color: #eee;
+}
+
+.spotlight-floor {
+  width: 20em;
+  height: 2.6em;
+  margin-top: -1.3em;
+  border-radius: 50%;
+  background: var(--box-2);
+}
+
+.spotlight-name {
+  margin-top: 0.8em;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.detail h3 {
+  margin-bottom: 0.3em;
+}
+
+.placeholder {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+.perk {
+  padding: 0.6em 0.8em;
+}
+
+.perk p {
+  margin: 0.3em 0 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4em;
+}
+
+.list li {
+  padding: 0.5em 0.8em;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4em;
+  font-size: 0.85em;
+}
+
+.stats .box {
+  padding: 0.5em;
+  text-align: center;
+}
+
+/* ---- lobby ------------------------------------------------------------- */
+
+.session-code {
+  padding: 0.3em 0.8em;
+  border: 1px dashed var(--line);
+  border-radius: 0.4em;
+}
+
+.session-code b {
+  letter-spacing: 0.15em;
+  margin-left: 0.4em;
+}
+
+/* The lobby is see-through so the van scene in the canvas shows behind it */
+#screen-lobby {
+  background: transparent;
+  gap: 0.6em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.scene-window {
+  flex: 1;
+  pointer-events: none;
+}
+
+.lobby-strip {
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr 20em;
+  gap: 1em;
+}
+
+.loadout {
+  padding: 0.8em 1em;
+}
+
+.picker-row {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  align-items: center;
+  margin-bottom: 0.4em;
+}
+
+.picker-row h4,
+.start-panel h4:first-child {
+  margin: 0;
+}
+
+.start-panel h4:first-child {
+  margin-bottom: 0.4em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.option {
+  font: inherit;
+  font-size: 0.75em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  width: 6em;
+  padding: 0.3em;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+
+.option .art {
+  width: 2.6em;
+}
+
+.option.active {
+  border: 2px solid var(--dark);
+  padding: calc(0.3em - 1px);
+}
+
+.option:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.summary {
+  margin-top: 0.4em;
+  padding-top: 0.5em;
+  border-top: 1px solid #e3e3e3;
+  font-size: 0.85em;
+  display: grid;
+  gap: 0.3em;
+}
+
+.start-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.segmented {
+  display: flex;
+  border: 1px solid var(--dark);
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+
+.seg {
+  font: inherit;
+  flex: 1;
+  padding: 0.5em;
+  border: none;
+  border-right: 1px solid var(--dark);
+  background: #fff;
+  cursor: pointer;
+}
+
+.seg:last-child {
+  border-right: none;
+}
+
+.seg.active {
+  background: var(--dark);
+  color: #fff;
+}
+
+.seg:disabled {
+  cursor: default;
+}
+
+.seg:disabled:not(.active) {
+  color: var(--muted);
+}
+
+.status {
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+/* ---- run placeholder --------------------------------------------------- */
+
+.run-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  color: var(--muted);
+  font-size: 1.2em;
+}
+
+.team {
+  font-size: 0.75em;
+  line-height: 1.6;
+}
+
+/* ---- debug panel (outside the stage) ----------------------------------- */
+
+#debug {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 230px;
+  padding: 10px;
+  background: #fffbe6;
+  border: 1px dashed #b39b2e;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.debug-title {
+  font-weight: 700;
+  color: #7a6a1f;
+  letter-spacing: 0.04em;
+}
+
+.debug-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.debug-row span {
+  flex: 1;
+}
+
+#debug button {
+  font: inherit;
+  padding: 3px 8px;
+  cursor: pointer;
+}
