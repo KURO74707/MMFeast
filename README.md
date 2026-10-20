@@ -20,3 +20,7 @@ Commit `Assets` together with all `.meta` files, `Packages`, and `ProjectSetting
 - `NPC_PERFORMANCE_REPORT.txt`: latest NPC optimization measurements and limitations.
 
 Large raw Profiler captures and `Validation/NpcPerformanceResults.zip` remain local and are excluded from source control. Summary results and validation source are included.
+
+## Existing web prototype
+
+The repository also retains its original TypeScript / Phaser web prototype in `src/`, with `index.html`, `package.json`, and `package-lock.json` at the root. These files are separate from the Unity project. Its original development commands remain `npm install`, `npm run dev`, and `npm run build`.

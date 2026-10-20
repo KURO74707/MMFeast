@@ -50,3 +50,8 @@ Desktop.ini
 *.p12
 *.pem
 *.key
+
+# Existing web prototype
+node_modules/
+dist/
+.vercel/
