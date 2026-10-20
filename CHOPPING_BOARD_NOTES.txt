@@ -1,0 +1,25 @@
+切菜板 — 免费餐车升级
+
+R 打开餐车升级，进入餐车并空手后，在列表中选择 Chopping Board 的 Add & place。
+默认占 1×1 格，可免费添加多个；选址时不占格子，不能覆盖现有设施。
+沿用厨房工具摆放方式：移动并调整朝向，短按 E 确认落在空格；长按 E 或 R 取消。
+安装后长按 E 进入整理模式，靠近切菜板短按 E 搬起，再按 E 放下或交换。
+切菜板可与另一块切菜板、Cooking Station、大炮交换，前提是交换后双方占地都能放下。
+有食材的 Cooking Station 仍需先清空才能被交换。
+取消搬动恢复原位；未确认的新增预览会在取消、玩家停用、离车等退出路径清理。
+本次切菜板是可摆放设施，不包含食材加工交互。
+
+Designer 配置
+Global Data > Truck Upgrades / 餐车升级 > ChoppingBoardProduct。
+可配置名称、说明、图标、可用状态、预制体与每局添加上限；0 表示不限次数，仍受空间限制。
+Assets/Prototype/Prefabs/ChoppingBoard.prefab 的 PlaceableKitchenTool > Footprint 配置占地，默认 (1,1)。
+木色板面与刀具条形标识由预制体 SpriteRenderer 管理。
+共用已有免费升级、网格预览和搬动交换系统，不新增独立输入或资源逻辑。
+首次迁移追加升级项目；后续不覆盖 Designer 的修改，也不会恢复主动移除的项目。
+两个现有场景通过共享目录提供该升级，开局不额外生成切菜板。
+
+CHOPPING_BOARD_VALIDATION.txt：功能及回归验证记录。
+CHOPPING_BOARD_MENU_PREVIEW.png：实际升级界面。
+CHOPPING_BOARD_GRID_PREVIEW.png：切菜板与烹饪台、大炮交换后的实际整理模式。
+
+校验修复：纯摆放升级只要求有效且启用的 PlaceableKitchenTool，不再强制识别额外的 ChoppingBoard 标记组件。丢失引用与禁用组件各自提供明确提示。最新回归见 CHOPPING_BOARD_FIX_VALIDATION.txt（135 项通过）。

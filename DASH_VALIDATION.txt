@@ -1,0 +1,66 @@
+Dash validation (Unity 6000.6.4f1, isolated project)
+Both existing scenes verified to reference the same Global Data settings with Space binding.
+PASS: 20 checks
+PASS Space queues dash through real InputAction
+PASS Physics step starts dash and deducts cost once
+PASS Default dash travels exactly 3 units including fractional last step
+PASS Dash stops and returns to normal movement
+PASS Original collision detection restored
+PASS Held Space does not repeatedly dash
+PASS Insufficient stamina rejects dash without spending
+PASS Exact stamina cost is accepted
+PASS Active dash cannot restart or spend twice
+PASS Disable/reset cancels dash and velocity
+PASS Edited shared cost applies to next dash
+PASS Edited duration/distance apply; in-progress dash keeps its snapshot
+PASS Diagonal direction normalized
+PASS Continuous physics stops dash at a thin solid wall
+PASS Zero cost allows dash at zero stamina
+PASS Zero distance disables dash without spending
+PASS Runtime rebinding cancels dash and clears queued input
+PASS Runtime rebound key starts dash
+PASS Regular movement still uses shared speed
+PASS Dash values are clamped to valid ranges
+Existing crowd / combat feedback regression:
+Regression fixture used separation radius 1.2 only in isolated copy; main project radius 2 preserved.
+PASS: 37 checks
+CHECK 1: Separation defaults
+CHECK 2: Attack feedback defaults
+CHECK 3: Assets/Prototype/CombatCollection.unity reuses existing camera shake
+CHECK 4: Assets/Prototype/CombatCollection.unity no second shake component
+CHECK 5: Assets/Prototype/CookingCollection.unity reuses existing camera shake
+CHECK 6: Assets/Prototype/CookingCollection.unity no second shake component
+CHECK 7: Zombie collider setup unchanged
+CHECK 8: One shake call outside the damage loop
+CHECK 9: Exact stacks receive stable opposite pair corrections
+CHECK 10: Separation does not consume gameplay Random
+CHECK 11: Nearby Zombie steers away with distance weighting
+CHECK 12: Multi-collider neighbors count once
+CHECK 13: Chase stays primary while steering and speed stays bounded
+CHECK 14: Maximum separation weight still advances toward target
+CHECK 15: Zero strength disables steering
+CHECK 16: Center-distance radius excludes distant neighbor
+CHECK 17: Disabled Zombie ignored
+CHECK 18: Customers do not participate in Zombie separation
+CHECK 19: Dead Zombie immediately excluded
+CHECK 20: Five initially stacked Zombies spread with real Rigidbody2D simulation
+CHECK 21: Crowd continues approaching Player
+CHECK 22: Multiple crowded Zombies reach attack positions and damage Player
+CHECK 23: Wind-up stops steering to preserve telegraph and hit validation
+CHECK 24: Truck crowd maintains readable separation
+CHECK 25: Multiple nearby Zombies still attack Food Truck
+CHECK 26: Truck barrier still blocks Zombie entry
+CHECK 27: One swing damages three valid entities
+CHECK 28: Multi-hit uses single configured attack shake envelope
+CHECK 29: Successful melee hit visibly offsets camera
+CHECK 30: Cooldown-blocked swing neither damages nor retriggers shake
+CHECK 31: Attack shake restores camera without drift
+CHECK 32: Missed attack has no shake
+CHECK 33: Damage rejected by disabled health produces no hit shake
+CHECK 34: Zero actual damage produces no hit shake
+CHECK 35: Live config edits affect next successful attack feedback
+CHECK 36: Zero attack shake strength disables confirmation cleanly
+CHECK 37: Player damage feedback still uses original same shake component
+Behavior: dash distance/duration/cost captured on start; movement direction or idle facing; one stamina payment; no automatic stamina regeneration added.
+Global Data: Dash Distance 3, Dash Duration 0.15, Dash Stamina Cost 20, Max Stamina 100, Initial Stamina 100, Input/Dash Space.
+Current stamina remains per player and editable in Global Data runtime state.

@@ -1,0 +1,230 @@
+PASS: 227 checks
+PASS Normal gameplay logs default off
+PASS SetTarget caches the target PlayerController
+PASS Clearing target clears cached PlayerController
+PASS Growable query collects more than 128 colliders without clipping
+PASS Dense separation matches full-neighbor reference calculation
+PASS Warmed separation calls allocate no managed bytes
+PASS Query preserves global trigger filtering
+PASS Disabled logging produces no damage log
+PASS Designer can enable ordinary damage logging live
+PASS World HP bar updates immediately through health event
+PASS Reconfiguring a live world HP bar transfers its event subscription
+PASS Death event immediately hides world HP bar
+PASS Waiting area installs using existing side-placement path
+PASS Waiting-area query handles 200 NPC colliders without clipping
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Displaced NPC remains outside waiting area
+PASS Warmed waiting-area protection allocates no managed bytes
+PASS Unchanged HUD refresh allocates no formatted strings
+PASS HUD still follows runtime HP edits
+PASS HUD still reflects live maximum edits without refilling HP
+PASS HUD polls live coin edits
+PASS Warmed unchanged kitchen status allocates zero bytes, including binding labels
+PASS Kitchen notification appears immediately
+PASS Kitchen notification expiry invalidates cached text
+PASS Cached labels track all three live key edits
+PASS Cached label matches the Input System display string
+PASS Injected local wallet receives exactly one reward
+PASS Cached wallet never pays across a scene change
+PASS FPS counter continues updating while paused
+1000 warmed calls: Separation=0 bytes; empty waiting barrier=0 bytes; unchanged HUD=0 bytes; kitchen status=0 bytes.
+100 uncached InputAction.GetBindingDisplayString calls=0 bytes.

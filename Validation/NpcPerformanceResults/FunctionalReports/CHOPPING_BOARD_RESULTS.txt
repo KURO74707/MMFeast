@@ -1,0 +1,33 @@
+PASS: 32 checks
+PASS Placement-only upgrade remains valid without a ChoppingBoard marker component
+PASS Disabled placement component has explicit failure reason
+PASS Inactive prefab root is still rejected
+PASS Missing tool reference has distinct failure reason
+PASS Assets/Prototype/CombatCollection.unity valid 1x1 Chopping Board upgrade
+PASS Assets/Prototype/CombatCollection.unity one board entry after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no board before adding
+PASS Assets/Prototype/CookingCollection.unity valid 1x1 Chopping Board upgrade
+PASS Assets/Prototype/CookingCollection.unity one board entry after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no board before adding
+PASS Board has a free Add & place button with no price at zero coins
+PASS Scrolled board button receives real UI raycast
+PASS Real click creates unregistered 1x1 board preview for free
+PASS Board is an independent placement-only tool
+PASS New board cannot overwrite occupied station
+PASS Board cannot be installed outside grid
+PASS E release confirms board once without resources
+PASS Duplicate board confirmation rejected
+PASS Can freely add a second board
+PASS Two separate board instances occupy separate cells
+PASS Organization short E lifts installed board
+PASS Board moves to a free grid cell
+PASS 1x1 board exchanges with 2x1 Cooking Station when both fit
+PASS 1x1 board exchanges with 2x2 cannon when both fit
+PASS Boards exchange with each other without duplicate occupancy
+PASS Cancel relocation restores board original cell
+PASS Designer board add limit enforced
+PASS Full grid prevents another board
+PASS Unlisted board upgrade cannot be added
+PASS Board addition can restart after rejection
+PASS Cancel addition removes preview and keeps installed boards and coins
+PASS Disabling player cleans up uninstalled board

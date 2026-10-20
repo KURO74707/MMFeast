@@ -1,0 +1,69 @@
+PASS: 68 checks
+PASS Existing initial coins migrated from legacy catalog
+PASS Migration preserves custom legacy initial coins
+PASS Repeated migration never overwrites configured initial coins
+PASS Legacy price and initial balance remain serialized but hidden
+PASS Assets/Prototype/CombatCollection.unity one shop and modal UI
+PASS Assets/Prototype/CombatCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CombatCollection.unity shared configurable cannon, waiting-area and cooking-station catalog
+PASS Assets/Prototype/CombatCollection.unity R and valid cannon product
+PASS Assets/Prototype/CombatCollection.unity shop initially closed
+PASS Assets/Prototype/CombatCollection.unity upgrade title, hidden balance and hidden prices saved in scene
+PASS Assets/Prototype/CookingCollection.unity one shop and modal UI
+PASS Assets/Prototype/CookingCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CookingCollection.unity shared configurable cannon, waiting-area and cooking-station catalog
+PASS Assets/Prototype/CookingCollection.unity R and valid cannon product
+PASS Assets/Prototype/CookingCollection.unity shop initially closed
+PASS Assets/Prototype/CookingCollection.unity upgrade title, hidden balance and hidden prices saved in scene
+PASS Default initial balance and product price
+PASS Real R action opens shop and pauses game
+PASS Held R does not repeatedly toggle shop
+PASS Outside truck purchase rejected without spending
+PASS R closes shop and restores game speed
+PASS Player enters truck through real physics
+PASS In-truck empty-handed player can buy
+PASS Shop blocks movement, dash, interaction and attacks
+PASS Upgrade list hides legacy prices and coin balance
+PASS Zero coins allow actual upgrade UI button
+PASS Buy button receives actual canvas raycast
+PASS Actual UI pointer click starts grid placement and resumes game
+PASS Pending preview reserves no cells and spends no credits
+PASS Pending cannon cannot be used as installed cannon
+PASS Repeated purchase request during placement cannot duplicate preview
+PASS Purchase cannot swap into occupied cells and spends nothing
+PASS Invalid placement remains pending without spending
+PASS Valid placement installs and registers exactly one additional cannon
+PASS Successful free placement records one addition without spending coins
+PASS Runtime cannon retains shared config and receives local scene references
+PASS Repeated confirmation cannot charge twice
+PASS Legacy price never gates upgrade availability
+PASS Designer purchase limit enforced
+PASS Full grid rejects purchase without charge
+PASS Unlisted product disappears and cannot be bought
+PASS Designer can add another listed cannon product without code
+PASS Duplicate product IDs reject ambiguous purchases
+PASS Can begin a second purchase
+PASS Long Interact cancels preview with no charge or occupied cells
+PASS Purchase can restart after cancellation
+PASS Tab cancels placement and reopens shop without spending
+PASS Closing shop restores prior game speed rather than forcing normal speed
+PASS Disabling player while shop open cannot leave game paused
+PASS Purchase restart after enable cycle
+PASS Player disable cancels uncommitted purchase without refund bookkeeping
+PASS Begin purchase for leaving-truck validation
+PASS Leaving truck cancels pending purchase without spending
+PASS Begin purchase for input-rebuild validation
+PASS Rebinding input cancels uncommitted purchase and clears preview
+PASS Begin purchase for balance-edit validation
+PASS Changing coins during placement preserves valid upgrade preview
+PASS Zero-coin confirmation installs the second cannon
+PASS Editing initial coins does not reset current coins
+PASS Existing PlayerCarry loads nearest purchased cannon independently
+PASS Second cannon loads without replacing first cannon ammunition
+PASS Aim selects nearest purchased cannon instead of first object in scene
+PASS Releasing aim fires only selected cannon and retains other load
+PASS Purchased cannon projectile impacts exact selected target
+PASS Can independently select second purchased cannon
+PASS Opening shop while aiming cancels without firing or consuming load
+PASS Runtime shop-key rebinding closes modal and restores game
+PASS Rebound shop key works after release

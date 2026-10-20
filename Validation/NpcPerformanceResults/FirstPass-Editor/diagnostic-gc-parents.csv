@@ -1,0 +1,32 @@
+parent,bytes,bytes_per_frame
+"Assembly-CSharp.dll!::PlayerKitchenLayout.Update() [Invoke]",244025362,188001.0
+"GetComponentNullErrorWrapper",287500,221.5
+"NPC Separation",240760,185.5
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnEnable() [Invoke]",228400,176.0
+"UnityEngine.CoreModule.dll!UnityEngine.Serialization::SerializationBackendManagedCommands.SerializationBufferToObject() [Invoke]",186104,143.4
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnDisable() [Invoke]",180440,139.0
+"Assembly-CSharp.dll!::CustomerWaitingArea.LateUpdate() [Invoke]",166016,127.9
+"Assembly-CSharp.dll!::FoodTruckStatusUI.LateUpdate() [Invoke]",163422,125.9
+"Instantiate.Produce",144800,111.6
+"UnityEngine.UI.dll!UnityEngine.UI::Image..ctor() [Invoke]",78400,60.4
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnEnable() [Invoke]",53200,41.0
+"NPC AI",39312,30.3
+"UnityEngine.UI.dll!UnityEngine.UI::Slider..ctor() [Invoke]",37600,29.0
+"Assembly-CSharp.dll!::WorldHealthBar.OnEnable() [Invoke]",21600,16.6
+"NPC benchmark diagnostic burst",15200,11.7
+"Assembly-CSharp.dll!::NpcPerformanceRunner.Start() [Coroutine: MoveNext] [Invoke]",13536,10.4
+"UnityEngine.CoreModule.dll!UnityEngine.Serialization::SerializationBackendManagedCommands.ObjectToSerializationBuffer() [Invoke]",12000,9.2
+"Assembly-CSharp.dll!::WorldHealthBar.OnDisable() [Invoke]",11520,8.9
+"Assembly-CSharp.dll!::EnemySimpleAI..ctor() [Invoke]",10400,8.0
+"CanvasUpdate.PreRender",9600,7.4
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnCanvasHierarchyChanged() [Invoke]",8000,6.2
+"Assembly-CSharp.dll!::EnemySimpleAI.OnEnable() [Invoke]",6400,4.9
+"Assembly-CSharp.dll!::Customer.Awake() [Invoke]",6400,4.9
+"Assembly-CSharp.dll!::EnemySimpleAI.OnDisable() [Invoke]",6400,4.9
+"Assembly-CSharp.dll!::EnemyHealth.Awake() [Invoke]",4400,3.4
+"Main Thread",3264,2.5
+"Assembly-CSharp.dll!::EnemySimpleAI.Awake() [Invoke]",2000,1.5
+"Assembly-CSharp.dll!::PlayerStatusUI.LateUpdate() [Invoke]",1280,1.0
+"MonoCompiler.Tick",800,0.6
+"UnityEditor.CoreModule.dll!UnityEditor.Scripting.ScriptCompilation::EditorCompilationInterface.TickCompilationPipeline() [Invoke]",500,0.4
+"NPC HUD",390,0.3

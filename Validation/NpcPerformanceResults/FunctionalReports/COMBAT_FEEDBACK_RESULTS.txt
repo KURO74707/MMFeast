@@ -1,0 +1,64 @@
+PASS: 63 checks
+CHECK 1: Wind-up and sector defaults
+CHECK 2: Player feedback defaults
+CHECK 3: Assets/Prototype/CombatCollection.unity local feedback wiring
+CHECK 4: Assets/Prototype/CombatCollection.unity original HUD retained
+CHECK 5: Assets/Prototype/CookingCollection.unity local feedback wiring
+CHECK 6: Assets/Prototype/CookingCollection.unity original HUD retained
+CHECK 7: Assets/Prototype/Prefabs/Enemy.prefab single shared health bar
+CHECK 8: Assets/Prototype/Prefabs/Enemy.prefab local anchor
+CHECK 9: Assets/Prototype/Prefabs/Enemy.prefab world-space Canvas
+CHECK 10: Assets/Prototype/Prefabs/Enemy.prefab no visual colliders added
+CHECK 11: Zombie has runtime sector visual
+CHECK 12: Assets/Prototype/Prefabs/Customer.prefab single shared health bar
+CHECK 13: Assets/Prototype/Prefabs/Customer.prefab local anchor
+CHECK 14: Assets/Prototype/Prefabs/Customer.prefab world-space Canvas
+CHECK 15: Assets/Prototype/Prefabs/Customer.prefab no visual colliders added
+CHECK 16: Customers do not get Zombie attacks
+CHECK 17: Repeated setup does not duplicate feedback
+CHECK 18: Telegraph appears before any damage
+CHECK 19: Zombie stops during wind-up
+CHECK 20: Sector mesh exists during gameplay
+CHECK 21: World-space radius matches damage range despite scaled prefab
+CHECK 22: Mesh boundaries match half the configured attack angle
+CHECK 23: Directional hit test excludes rear and side
+CHECK 24: No damage before captured wind-up completes
+CHECK 25: Successful wind-up applies damage and updates HUD
+CHECK 26: Telegraph disappears at hit moment
+CHECK 27: Successful damage flashes Player renderer
+CHECK 28: Successful damage shakes camera
+CHECK 29: Flash and camera shake recover without drift
+CHECK 30: Cooldown starts after completed attack
+CHECK 31: Zombie world HP bar starts full
+CHECK 32: Zombie HP bar updates synchronously
+CHECK 33: Existing bar uses instance max HP after config edit
+CHECK 34: HealthBarAnchor follows entity movement
+CHECK 35: Shared bar faces active camera without LookAt flipping
+CHECK 36: Leaving range during wind-up misses and gives no hit feedback
+CHECK 37: Moving behind locked sector misses without homing
+CHECK 38: Live range and angle edits redraw the same sector
+CHECK 39: Live angle also changes hit area
+CHECK 40: Shrinking visible range before impact causes a miss
+CHECK 41: Changing wind-up config does not restart an existing warning
+CHECK 42: Disabling AI cancels pending hit and hides telegraph
+CHECK 43: Disabled pending attack cannot damage later
+CHECK 44: Next wind-up uses edited duration
+CHECK 45: Zombie death immediately cancels attack and hides HP bar
+CHECK 46: Zombie Meat drop remains intact
+CHECK 47: Zombie removal leaves no orphan HP bar
+CHECK 48: Customer shares full world HP bar
+CHECK 49: Customer HP bar updates synchronously
+CHECK 50: Purification hides bar without death
+CHECK 51: Purification still has no SAN loss or meat
+CHECK 52: Purified bar stays hidden on repeated resolution
+CHECK 53: Combat death immediately hides Customer bar
+CHECK 54: Customer death still applies one SAN penalty and one meat drop
+CHECK 55: Customer death leaves no orphan bar
+CHECK 56: No hit feedback for zero/negative damage, SAN or debug setters
+CHECK 57: Repeated actual damage still flashes
+CHECK 58: Disabling feedback restores original color
+CHECK 59: Feedback reenable resubscribes without losing normal color
+CHECK 60: Disabling shake removes its offset
+CHECK 61: Player color returns after repeated hits
+CHECK 62: No feedback when zero-HP Player takes no actual damage
+CHECK 63: Zero config values disable optional feedback cleanly

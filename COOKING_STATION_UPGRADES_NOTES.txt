@@ -1,0 +1,20 @@
+额外 Cooking Station — 餐车升级
+
+R 打开餐车升级，进入餐车并空手后，选择 Extra Cooking Station 的 Add & place。
+不需要金币或任何资源。默认占地 2×1 格，选址时不占用格子，也不能提前使用。
+沿用大炮摆放操作：移动/朝向调整目标，短按 E 确认放到空格；长按 E 或 R 取消。
+新建摆放不能覆盖或交换已有设施。安装完成后，长按 E 进入整理模式，靠近新烹饪台短按 E 搬起。
+再次短按 E 放下；朝向已有可移动工具时，双方都能放得下则交换位置。
+有食材的烹饪台需先取出食材，才能搬动或被交换。
+可添加多台，各自独立存放、烹饪和取出食材；原有 E 交互及烹饪按键继续生效。
+
+Designer 配置
+Global Data > Truck Upgrades / 餐车升级 > ExtraCookingStationProduct。
+可修改名称、描述、图标、预制体、可用状态及每局添加上限；0 表示不限次数，仍受厨房空间限制。
+Tool Prefab 复用原有 CookingStation.prefab；占地在该预制体的 PlaceableKitchenTool > Footprint 中配置。
+每个运行时实例使用共享 GlobalGameSettings，并绑定本场景餐车内部区域。
+原型生成工具只在首次迁移时补入升级项目；后续不会恢复 Designer 主动移除的项目。
+
+验证
+COOKING_STATION_UPGRADES_VALIDATION.txt：新增功能与既有系统合计 361 项检查通过。
+COOKING_UPGRADE_MENU_PREVIEW.png：实际升级界面；COOKING_UPGRADE_GRID_PREVIEW.png：多台烹饪台摆放后的整理模式。

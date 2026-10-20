@@ -1,0 +1,630 @@
+marker,self_ms,self_mean_ms_per_frame
+"Assembly-CSharp.dll!::PlayerKitchenLayout.Update() [Invoke]",729.668499,0.364834
+"UGUI.Rendering.UpdateBatches",434.141800,0.217071
+"Physics2D.FindMinimumContinuousContact",324.795798,0.162398
+"Physics2D.SolveContinuousIslandPositionConstraints",258.632898,0.129316
+"WaitForJobGroupID",227.779099,0.113890
+"NPC Separation",204.770599,0.102385
+"UGUI.Rendering.EmitWorldScreenspaceCameraGeometry",187.887399,0.093944
+"Physics2D.OverlapCircleAll",184.841299,0.092421
+"GC.Collect",166.074100,0.083037
+"NPC World Health Bar",132.276797,0.066138
+"LateBehaviourUpdate",122.365004,0.061183
+"TransformChangeSystem",114.054199,0.057027
+"Profiler.FlushMemoryCounters",99.268800,0.049634
+"Physics2D.SolveContinuousIslandVelocityConstraints",75.332700,0.037666
+"BehaviourUpdate",65.003301,0.032502
+"Physics2D.SolveContinuousTraversal",63.807802,0.031904
+"Assembly-CSharp.dll!::WorldHealthBar.LateUpdate() [Invoke]",63.527600,0.031764
+"GC.Alloc",60.567899,0.030284
+"Physics2D.ContactsCollide",59.503100,0.029752
+"GfxDeviceD3D11.RefreshSafeFrame",49.975700,0.024988
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.Update() [Invoke]",40.731499,0.020366
+"PlayerLoop",37.133605,0.018567
+"Physics2D.PreSolveContact",35.666699,0.017833
+"Assembly-CSharp.dll!::ZombieAttackTelegraph.LateUpdate() [Invoke]",34.506299,0.017253
+"Physics2D.InterpolatePoseWriting",32.538200,0.016269
+"Physics2D.TriggerContactsFinalUpdate",28.686400,0.014343
+"Physics2D.SolveContinuousSynchronizeFixtures",27.999600,0.014000
+"PostLateUpdate.BatchModeUpdate",26.395700,0.013198
+"Physics2D.SendTriggerContactCallbacks",23.816299,0.011908
+"Physics2D.FindNewContacts",22.580100,0.011290
+"NPC AI",21.143400,0.010572
+"Physics2D.SolveDiscreteIslandVelocityConstraints",20.897900,0.010449
+"Physics2D.WriteTransforms",20.421100,0.010211
+"Main Thread",19.506802,0.009753
+"PlayerConnection.Poll",19.405000,0.009702
+"Assembly-CSharp.dll!::Customer.LateUpdate() [Invoke]",17.425400,0.008713
+"Physics2D.PostSolveContact",17.216900,0.008608
+"Physics2D.SendCollisionContactCallbacks",17.027500,0.008514
+"Physics2D.CompileContactCallbacks",16.819500,0.008410
+"Physics2D.InterpolatePoseSorting",14.914600,0.007457
+"NPC Spawner",12.681700,0.006341
+"PostLateUpdate.MemoryFrameMaintenance",11.687000,0.005843
+"Profiler.FlushCountersWithFlushOnEndOfFrame",11.529200,0.005765
+"Physics2D.CollectProfileInfo",11.199400,0.005600
+"Assembly-CSharp.dll!::FoodTruckStatusUI.LateUpdate() [Invoke]",11.021500,0.005511
+"Physics2D.SolveDiscreteIslandPositionConstraints",10.600400,0.005300
+"PreUpdate.Physics2DUpdate",10.322000,0.005161
+"Physics2D.InterpolationPosesSetup",9.914600,0.004957
+"Assembly-CSharp.dll!::EnemySimpleAI.FixedUpdate() [Invoke]",9.907400,0.004954
+"Physics2D.SolveContinuousIsland",9.704801,0.004852
+"EarlyUpdate.UpdateCanvasRectTransform",8.657200,0.004329
+"Profiler.ScreenshotUpdate",8.445900,0.004223
+"UIEvents.UpdateCanvasRectTransform",8.349000,0.004174
+"Physics2D.SolveContinuousIslandPostSolve",8.321600,0.004161
+"Physics2D.BeginContact",8.186300,0.004093
+"FixedBehaviourUpdate",7.679601,0.003840
+"Idle",7.001800,0.003501
+"Physics2D.ColliderDistance",6.858800,0.003429
+"Physics2D.SolveDiscreteTraversal",6.818600,0.003409
+"NPC Waiting Barrier",6.685200,0.003343
+"Profiler.RequestScreenshot",6.389000,0.003195
+"CustomRenderTextures.Update",6.319100,0.003160
+"Profiler.FlushRenderCounters",6.015200,0.003008
+"Assembly-CSharp.dll!::CustomerWaitingArea.LateUpdate() [Invoke]",5.853800,0.002927
+"Graphics.Blit",5.469600,0.002735
+"WaitForRenderJobs",5.210900,0.002605
+"UnityEngine.UI.dll!UnityEngine.EventSystems::EventSystem.Update() [Invoke]",5.091500,0.002546
+"CoroutinesDelayedCalls",5.067900,0.002534
+"Audio.FMODSystemUpdate",4.884800,0.002442
+"Assembly-CSharp.dll!::PlayerController.Update() [Invoke]",4.813400,0.002407
+"UnityEngine.UIModule.dll!UnityEngine::Canvas.SendPreWillRenderCanvases() [Invoke]",4.711500,0.002356
+"ParticleSystem.Update",4.687400,0.002344
+"GarbageCollector.CollectIncremental",4.620100,0.002310
+"Physics2D.ClearIslandFlags",4.466600,0.002233
+"PostLateUpdate.RenderAs2DUpdate",4.463400,0.002232
+"Physics2D.Collider2D.RecalculateContacts",4.427500,0.002214
+"UpdateRendererBoundingVolumes",4.251100,0.002126
+"UnityEngine.InputModule.dll!UnityEngineInternal.Input::NativeInputSystem.NotifyBeforeUpdate() [Invoke]",3.961000,0.001980
+"Physics2D.SolveContinuousIslandIntegratePoses",3.809000,0.001904
+"PlayerEndOfFrame",3.739900,0.001870
+"AudioManager.Update",3.579400,0.001790
+"Profiler.CollectLegacyStats",3.566800,0.001783
+"PostLateUpdate.UpdateAllRenderers",3.454600,0.001727
+"Physics2D.SendContactCallbacks",3.358501,0.001679
+"EngineJob",3.331800,0.001666
+"TimeUpdate.WaitForLastPresentationAndUpdateTime",3.232400,0.001616
+"Profiler.CollectUIToolkitStats",3.229000,0.001614
+"PrepareUpdateRendererBoundingVolumes",3.211600,0.001606
+"Assembly-CSharp.dll!::NpcPerformanceRunner.Start() [Coroutine: MoveNext] [Invoke]",3.168700,0.001584
+"PostLateUpdate.EnlightenRuntimeUpdate",2.878000,0.001439
+"Profiler2D.CaptureFrame",2.863800,0.001432
+"UnityEngine.UIElementsModule.dll!UnityEngine.UIElements::UIElementsRuntimeUtilityNative.UpdatePanels() [Invoke]",2.790800,0.001395
+"PostLateUpdate.ProfilerSynchronizeStats",2.744600,0.001372
+"Physics2D.ClosestPoint",2.677100,0.001339
+"Assembly-CSharp.dll!::EnemySpawner.Update() [Invoke]",2.623500,0.001312
+"Layout",2.596300,0.001298
+"Physics2D.EndContact",2.578500,0.001289
+"Physics2D.SolveDiscreteIslandPostSolve",2.544400,0.001272
+"UnityEngine.CoreModule.dll!UnityEngine::UnitySynchronizationContext.ExecuteTasks() [Invoke]",2.539600,0.001270
+"Assembly-CSharp.dll!::PlayerStatusUI.LateUpdate() [Invoke]",2.472900,0.001236
+"Profiler.CollectAudioStats",2.443600,0.001222
+"Audibility computation",2.443100,0.001222
+"Profiler.FrameMetadata",2.413800,0.001207
+"Profiler.SerializeStats",2.368900,0.001184
+"Physics2D.SolveDiscreteIsland",2.355300,0.001178
+"EarlyUpdate.AnalyticsCoreStatsUpdate",2.339900,0.001170
+"EarlyUpdate.UpdateContentLoading",2.287600,0.001144
+"CanvasUpdate.PreRender",2.235000,0.001118
+"InputUpdate",2.215500,0.001108
+"EarlyUpdate.RendererNotifyInvisible",2.175000,0.001087
+"Instantiate.Produce",2.026000,0.001013
+"PreUpdate.NewInputUpdate",1.920700,0.000960
+"Physics2D.SynchronizeFixtures",1.905400,0.000953
+"UnityEngine.AccessibilityModule.dll!UnityEngine.Accessibility::AccessibilityManager.Internal_LateUpdate() [Invoke]",1.900300,0.000950
+"Find dependency chain",1.899300,0.000950
+"Assembly-CSharp.dll!::SimpleCameraShake.Update() [Invoke]",1.884100,0.000942
+"UnityEngine.ContentLoadModule.dll!Unity.Loading::ContentLoadingSystem.ProcessResults() [Invoke]",1.859500,0.000930
+"UnityEngine.CoreModule.dll!UnityEngine.Rendering::SupportedRenderingFeatures.IsLightmapBakeTypeSupportedByRef() [Invoke]",1.783600,0.000892
+"PreUpdate.PhysicsUpdate",1.758400,0.000879
+"EndDynamicVBOFrame",1.705900,0.000853
+"UnityEngine.CoreModule.dll!UnityEngine.Rendering::OnDemandRendering.GetRenderFrameInterval() [Invoke]",1.670700,0.000835
+"PostLateUpdate.UpdateAudio",1.646300,0.000823
+"NPC HUD",1.528700,0.000764
+"PreUpdate.PhysicsCore2DUpdate",1.488100,0.000744
+"PostLateUpdate.UpdateAllSkinnedMeshes",1.446900,0.000723
+"PreUpdate.AIUpdate",1.433000,0.000716
+"Director.SampleTime",1.432300,0.000716
+"UnityEngine.InputModule.dll!UnityEngineInternal.Input::NativeInputSystem.ProcessInputUpdate() [Invoke]",1.415600,0.000708
+"TimeManager.Update",1.411100,0.000706
+"PostLateUpdate.AccessibilityLateUpdate",1.408800,0.000704
+"Instantiate.Copy",1.386000,0.000693
+"Destroy",1.372300,0.000686
+"FrameEvents.XRBeginFrame",1.365100,0.000683
+"FinalizeUpdateRendererBoundingVolumes",1.313300,0.000657
+"Physics2D.SolveContinuousIslandReadBodyState",1.311000,0.000655
+"PreUpdate.UpdateVideo",1.305300,0.000653
+"ClothManager.LateUpdate",1.266100,0.000633
+"Physics2D.SyncRigidbodyTransformChanges",1.243700,0.000622
+"UnityEngine.UIModule.dll!UnityEngine::Canvas.SendWillRenderCanvases() [Invoke]",1.213800,0.000607
+"FrameEvents.NewInputBeforeRenderUpdate",1.209200,0.000605
+"Assembly-CSharp.dll!::ItemShop.Update() [Invoke]",1.206800,0.000603
+"Canvas.BuildBatch",1.205800,0.000603
+"PostLateUpdate.PlayerUpdateCanvases",1.204700,0.000602
+"UnityEngine.InputForUIModule.dll!UnityEngine.InputForUI::EventProvider.NotifyUpdate() [Invoke]",1.167800,0.000584
+"PreLateUpdate.PhysicsCore2DLateUpdate",1.165800,0.000583
+"PostLateUpdate.UpdateCustomRenderTextures",1.163800,0.000582
+"Assembly-CSharp.dll!::SimpleCameraShake.LateUpdate() [Invoke]",1.133300,0.000567
+"Physics2D.SyncColliderTransformChanges",1.127800,0.000564
+"Assembly-CSharp.dll!::FoodTruckInteriorTrigger.OnTriggerEnter2D() [Invoke]",1.095000,0.000547
+"Physics2D.OverlapBoxAll",1.078200,0.000539
+"MeshRendererFinalizeUpdate",1.071000,0.000536
+"Initialization.AsyncUploadTimeSlicedUpdate",1.070800,0.000535
+"Renderers.OncePerFrameUpdate",1.057100,0.000529
+"Physics2D.ClearContinuousIslandFlags",1.027000,0.000513
+"NPC benchmark diagnostic burst",1.022600,0.000511
+"AudioProfiler.CaptureFrame",1.012800,0.000506
+"AsyncUploadManager.AsyncResourceUploadAll",1.011800,0.000506
+"EndGraphicsJobs",0.999500,0.000500
+"PreLateUpdate.UIElementsUpdatePanels",0.990200,0.000495
+"UnityEngine.CoreModule.dll!UnityEngine::Application.InvokeOnBeforeRender() [Invoke]",0.976600,0.000488
+"Assembly-CSharp.dll!::ItemShopUI.Update() [Invoke]",0.971100,0.000486
+"SpeedTreeWindManager.UpdateGlobalAndLocalWinds",0.963700,0.000482
+"PostLateUpdate.ProfilerEndFrame",0.924000,0.000462
+"UnityEngine.AccessibilityModule.dll!UnityEngine.Accessibility::AccessibilityManager.Internal_Update() [Invoke]",0.913100,0.000457
+"Assembly-CSharp.dll!::PlayerCarry.LateUpdate() [Invoke]",0.904600,0.000452
+"EarlyUpdate.PhysicsCore2DEarlyUpdate",0.894400,0.000447
+"Assembly-CSharp.dll!::NpcPerformanceRunner.Start() [Coroutine: System.Collections.IEnumerator.get_Current] [Invoke]",0.891300,0.000446
+"PostLateUpdate.PlayerSendFrameStarted",0.886600,0.000443
+"Profiler.Collect2DStats",0.883400,0.000442
+"PostLateUpdate.UpdateResolution",0.876600,0.000438
+"PhysicsCore2D.PhysicsWorld.ProcessTransformWriteTweens",0.850700,0.000425
+"EarlyUpdate.ExecuteMainThreadJobs",0.850700,0.000425
+"SpeedTreeWindManager.Update",0.846400,0.000423
+"PostLateUpdate.UpdateVideoTextures",0.842400,0.000421
+"Assembly-CSharp.dll!::TruckShop.Update() [Invoke]",0.826700,0.000413
+"PlayerCleanupCachedData",0.813700,0.000407
+"PostLateUpdate.VFXUpdate",0.809500,0.000405
+"Profiler.FlushCounters",0.807400,0.000404
+"Update.ScriptRunBehaviourUpdate",0.807199,0.000404
+"Profiler.CollectPhysicsStats",0.798600,0.000399
+"PostLateUpdate.PresentAfterDraw",0.790000,0.000395
+"UnityEngine.AIModule.dll!UnityEngine.AI::NavMesh.Internal_CallPreUpdateListeners() [Invoke]",0.774900,0.000387
+"PreLateUpdate.AccessibilityUpdate",0.756900,0.000378
+"UIEvents.AlignCanvasRectTransformWithCamera",0.754100,0.000377
+"Director.PrepareFrame",0.749200,0.000375
+"UIElements.PreUpdatePanelRenderers",0.746200,0.000373
+"PreUpdate.IMGUISendQueuedEvents",0.745600,0.000373
+"RenderTarget.GrabPixels",0.724000,0.000362
+"Instantiate.Awake",0.723100,0.000362
+"PreLateUpdate.ConstraintManagerUpdate",0.712300,0.000356
+"PostLateUpdate.InputEndFrame",0.709100,0.000355
+"PostLateUpdate.DirectorRenderImage",0.704000,0.000352
+"Physics.Interpolation",0.687700,0.000344
+"Initialization.UpdateCameraMotionVectors",0.687600,0.000344
+"PreUpdate.InputForUIUpdate",0.683000,0.000341
+"PostLateUpdate.UpdateRectTransform",0.672200,0.000336
+"Update.ScriptRunDelayedDynamicFrameRate",0.665300,0.000333
+"PostLateUpdate.ShaderHandleErrors",0.662200,0.000331
+"Physics2D.InterpolatePoses",0.659400,0.000330
+"GlobalEventQueue",0.656400,0.000328
+"Update.DirectorUpdate",0.650200,0.000325
+"GeneralConnection.Poll",0.638200,0.000319
+"SoundManager.Update",0.637400,0.000319
+"CanvasUpdate.Prelayout",0.627700,0.000314
+"Physics.SyncTransforms",0.616100,0.000308
+"PostLateUpdate.TriggerEndOfFrameCallbacks",0.609500,0.000305
+"RenderTexture.GarbageCollectTemporary",0.609200,0.000305
+"Render",0.606500,0.000303
+"Profiler.CollectVideoStats",0.605200,0.000303
+"PhysicsCore2D.PhysicsWorld.SimulateBatch",0.604300,0.000302
+"PostLateUpdate.UpdateVideo",0.603400,0.000302
+"ClothScene.Update",0.600800,0.000300
+"PreLateUpdate.Physics2DLateUpdate",0.595000,0.000297
+"Physics2D.ClearBodyForces",0.590900,0.000295
+"Physics2D.Rigidbody2D.RecalculateContacts",0.586500,0.000293
+"Assembly-CSharp.dll!::PlayerHitFeedback.Update() [Invoke]",0.583600,0.000292
+"Application.Integrate Assets in Background",0.568700,0.000284
+"PreLateUpdate.ScriptRunBehaviourLateUpdate",0.557200,0.000279
+"ParticleSystem.EndUpdateAll",0.556700,0.000278
+"Assembly-CSharp.dll!::TruckShopUI.Update() [Invoke]",0.552900,0.000276
+"Assembly-CSharp.dll!::FoodTruckInteriorTrigger.OnTriggerExit2D() [Invoke]",0.545900,0.000273
+"PostLateUpdate.ClearImmediateRenderers",0.545600,0.000273
+"Profiler.FlushFileIOCounters",0.542400,0.000271
+"ContentLoadFrontend.IntegrateUpdate",0.520500,0.000260
+"EarlyUpdate.XRUpdate",0.514300,0.000257
+"AsyncUploadManager.ScheduleAsyncCommands",0.509600,0.000255
+"ScheduleUpdateRendererBoundingVolumes",0.508900,0.000254
+"EarlyUpdate.UnityWebRequestUpdate",0.506800,0.000253
+"Flush DSP connections",0.505900,0.000253
+"MeshRendererPrepareDispatchUpdate",0.505700,0.000253
+"PutAllGeometryJobFence",0.505000,0.000252
+"Update.ScriptRunDelayedTasks",0.498100,0.000249
+"PreUpdate.SendMouseEvents",0.496200,0.000248
+"Assembly-CSharp.dll!::FoodTruckHealth.Update() [Invoke]",0.494100,0.000247
+"UIEvents.WillRenderCanvases",0.493700,0.000247
+"Loading.UpdatePreloading",0.492700,0.000246
+"Profiler.CollectGIStats",0.489000,0.000244
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnCanvasHierarchyChanged() [Invoke]",0.484200,0.000242
+"PreLateUpdate.LegacyAnimationUpdate",0.482800,0.000241
+"PostLateUpdate.PlayerEmitCanvasGeometry",0.482600,0.000241
+"EarlyUpdate.UpdateStreamingManager",0.477400,0.000239
+"FrameEvents.OnBeforeRenderCallback",0.471400,0.000236
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnEnable() [Invoke]",0.459600,0.000230
+"EarlyUpdate.UpdateAsyncInstantiate",0.453100,0.000227
+"PostLateUpdate.SortingGroupsUpdate",0.451900,0.000226
+"UIR.Free",0.448100,0.000224
+"Assembly-CSharp.dll!::PlayerCombat.LateUpdate() [Invoke]",0.438500,0.000219
+"UpdatePreloading",0.431400,0.000216
+"FixedUpdate.PhysicsClothFixedUpdate",0.430900,0.000215
+"EarlyUpdate.UpdateTextureStreamingManager",0.429100,0.000215
+"ConstraintManager::Update",0.422600,0.000211
+"Update Lights",0.412400,0.000206
+"Preload Single Step",0.407700,0.000204
+"CleanUp.TextRenderingGarbageCollect",0.401800,0.000201
+"Physics2D.Simulate",0.398001,0.000199
+"PostLateUpdate.DirectorLateUpdate",0.397500,0.000199
+"PreLateUpdate.ParticleSystemBeginUpdateAll",0.395200,0.000198
+"UIEvents.CanvasManagerEmitOffScreenGeometry",0.387900,0.000194
+"PreUpdate.WindUpdate",0.379900,0.000190
+"PostLateUpdate.GUIClearEvents",0.377200,0.000189
+"ClothManager.UploadSimulatedSkinData",0.376500,0.000188
+"Gfx.EndAsyncJobFrame",0.371500,0.000186
+"Assembly-CSharp.dll!::PlayerController.FixedUpdate() [Invoke]",0.370700,0.000185
+"FixedUpdate.Physics2DFixedUpdate",0.354395,0.000177
+"Director.ProcessFrame",0.348100,0.000174
+"EarlyUpdate.TilemapRendererEarlyUpdate",0.345800,0.000173
+"GameObject.ActivateAwakeRecursively",0.342800,0.000171
+"EarlyUpdate.UpdateInputManager",0.339100,0.000170
+"PostLateUpdate.PhysicsSkinnedClothFinishUpdate",0.337800,0.000169
+"PhysicsCore2D.PhysicsWorld.WriteTransformTweens",0.332400,0.000166
+"EarlyUpdate.Physics2DEarlyUpdate",0.330800,0.000165
+"SkinnedMeshOncePerFrameUpdate",0.330500,0.000165
+"EarlyUpdate.PollPlayerConnection",0.328000,0.000164
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnDisable() [Invoke]",0.322700,0.000161
+"EarlyUpdate.ScriptRunDelayedStartupFrame",0.320000,0.000160
+"PostLateUpdate.ScriptRunDelayedDynamicFrameRate",0.317600,0.000159
+"EarlyUpdate.UpdateAsyncReadbackManager",0.316500,0.000158
+"Physics2D.SyncTransformChanges",0.316100,0.000158
+"suspendPointHook.Invoke",0.313100,0.000157
+"PxScene.simulate",0.311600,0.000156
+"PostLateUpdate.ParticleSystemEndUpdateAll",0.310000,0.000155
+"Initialization.DirectorSampleTime",0.307200,0.000154
+"PostLateUpdate.PlayerSendFrameComplete",0.297500,0.000149
+"EarlyUpdate.SpriteAtlasManagerUpdate",0.293300,0.000147
+"EarlyUpdate.ResetFrameStatsAfterPresent",0.292500,0.000146
+"Initialization.XREarlyUpdate",0.290000,0.000145
+"NavMeshManager",0.284000,0.000142
+"FrameEvents.XREndFrame",0.281400,0.000141
+"EarlyUpdate.PerformanceAnalyticsUpdate",0.280900,0.000140
+"Physics2D.SolveDiscreteIslandWritePoses",0.271300,0.000136
+"Physics2D.StoreBodyMoveStates",0.271000,0.000135
+"Physics2D.Step",0.265101,0.000133
+"PostLateUpdate.XRPostLateUpdate",0.262600,0.000131
+"ClipperRegistry.Cull",0.258300,0.000129
+"PreLateUpdate.EndGraphicsJobsAfterScriptUpdate",0.256000,0.000128
+"Physics2D.SolveDiscreteIslandVelocities",0.243200,0.000122
+"Assembly-CSharp.dll!::CustomerWaitingArea.FixedUpdate() [Invoke]",0.239300,0.000120
+"ParticleSystem.WaitForPreviousRenderingToFinish",0.237700,0.000119
+"SpriteRenderer.AwakeFromLoad",0.237400,0.000119
+"PostLateUpdate.PhysicsSkinnedClothBeginUpdate",0.237300,0.000119
+"PreLateUpdate.DirectorDeferredEvaluate",0.227100,0.000114
+"PhysicsCore2D.PhysicsWorld.PreSimulate",0.225100,0.000113
+"SortingGroupManager.Update",0.223900,0.000112
+"PreLateUpdate.AIUpdatePostScript",0.222900,0.000111
+"PreLateUpdate.DirectorUpdateAnimationBegin",0.217800,0.000109
+"PostLateUpdate.XRPreEndFrame",0.217700,0.000109
+"PostLateUpdate.EndGraphicsJobsAfterScriptLateUpdate",0.210700,0.000105
+"UIEvents.CanvasmanagerEmitOnScreenGeometry",0.210500,0.000105
+"FixedUpdate.PhysicsFixedUpdate",0.204400,0.000102
+"EarlyUpdate.UpdatePreloading",0.202900,0.000101
+"ConstraintManager::Update::JobSetup",0.193800,0.000097
+"FixedUpdate.PhysicsCore2DFixedUpdate",0.191600,0.000096
+"EarlyUpdate.PresentBeforeUpdate",0.189300,0.000095
+"PostLateUpdate.PlayerSendFramePostPresent",0.184400,0.000092
+"PreLateUpdate.DirectorUpdateAnimationEnd",0.183600,0.000092
+"FixedUpdate.ScriptRunDelayedFixedFrameRate",0.182700,0.000091
+"UnityEngine.PhysicsCore2DModule.dll!Unity.U2D.Physics::PhysicsEvents.InvokePreSimulate() [Invoke]",0.182000,0.000091
+"PostLateUpdate.FinishFrameRendering",0.179200,0.000090
+"Physics2D.RestoreBodyMoveStates",0.177000,0.000088
+"PostLateUpdate.UpdateCaptureScreenshot",0.177000,0.000088
+"Assembly-CSharp.dll!::WorldHealthBar.OnDisable() [Invoke]",0.173100,0.000087
+"Profiler.CollectUICanvasStats",0.172900,0.000086
+"Physics2D.SolveDiscreteIslandIntegratePoses",0.171200,0.000086
+"PreLateUpdate.PhysicsLateUpdate",0.171200,0.000086
+"Physics2D.SolveDiscreteIslandBodySleep",0.169900,0.000085
+"EarlyUpdate.GpuTimestamp",0.169400,0.000085
+"Monobehaviour.OnMouse_",0.167300,0.000084
+"UnityEngine.UI.dll!UnityEngine.UI::Image..ctor() [Invoke]",0.165200,0.000083
+"EarlyUpdate.PlayerCleanupCachedData",0.165100,0.000083
+"EarlyUpdate.DispatchEventQueueEvents",0.163900,0.000082
+"Connections.Process",0.163700,0.000082
+"PhysicsCore2D.PhysicsWorld.WriteTransforms",0.160700,0.000080
+"FixedUpdate.DirectorFixedUpdatePostPhysics",0.159900,0.000080
+"ScheduleGeometryJobs",0.159400,0.000080
+"FrameEvents.XRPostPresent",0.156500,0.000078
+"UnityEngine.CoreModule.dll!UnityEngine::RectTransform.SendReapplyDrivenProperties() [Invoke]",0.155600,0.000078
+"EarlyUpdate.PhysicsResetInterpolatedTransformPosition",0.155400,0.000078
+"TextureStreamingManager.Update",0.143900,0.000072
+"Physics.Simulate",0.143800,0.000072
+"PreUpdate.CheckTexFieldInput",0.143300,0.000072
+"Cleanup Unused Cached Data",0.142700,0.000071
+"PhysicsCore2D.PhysicsWorld.SyncInterpolation",0.142600,0.000071
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnEnable() [Invoke]",0.139000,0.000069
+"GameObject.Deactivate",0.129400,0.000065
+"CanvasUpdate.Layout",0.121900,0.000061
+"Physics2D.SolveDiscrete",0.119100,0.000060
+"Profiler.CollectUsedTextureStats",0.118300,0.000059
+"Physics2D.Collider2D.DestroyShapes",0.117000,0.000058
+"FixedUpdate.ScriptRunBehaviourFixedUpdate",0.115600,0.000058
+"Physics2D.Collider2D.CreateShapes",0.111600,0.000056
+"FillQuadIndexBuffer",0.110900,0.000055
+"FixedUpdate.NewInputFixedUpdate",0.110600,0.000055
+"Physics.PrepareSimulationStage",0.109800,0.000055
+"UnityEngine.UI.dll!UnityEngine.UI::Slider..ctor() [Invoke]",0.107500,0.000054
+"Font.CacheFontForText",0.100000,0.000050
+"SortingGroup.UpdateRenderer",0.097400,0.000049
+"Instantiate",0.096700,0.000048
+"CanvasUpdate.LatePreRender",0.095200,0.000048
+"FixedUpdate.DirectorFixedUpdate",0.089900,0.000045
+"Physics2D.SolveContinuous",0.085500,0.000043
+"CanvasUpdate.PostLayout",0.084000,0.000042
+"PostLateUpdate.ResetInputAxis",0.083800,0.000042
+"EarlyUpdate.ClearLines",0.071800,0.000036
+"AudioManager.FixedUpdate",0.071800,0.000036
+"UnityEngine.UI.dll!UnityEngine.UI::Graphic.OnDestroy() [Invoke]",0.069200,0.000035
+"UnityEngine.PhysicsCore2DModule.dll!Unity.U2D.Physics::PhysicsEvents.InvokePostSimulate() [Invoke]",0.069200,0.000035
+"Connections.Poll",0.069100,0.000035
+"PhysicsCore2D.PhysicsWorld.PostSimulate",0.064600,0.000032
+"FixedUpdate.LegacyFixedAnimationUpdate",0.064400,0.000032
+"Assembly-CSharp.dll!::WorldHealthBar.OnEnable() [Invoke]",0.063100,0.000032
+"Physics2D.BoxColliderPrepareShapes",0.061500,0.000031
+"FindObjectsOfType",0.058800,0.000029
+"Mesh.CreateMesh",0.055600,0.000028
+"UnityEngine.CoreModule.dll!UnityEngine.Events::UnityEventBase.UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize() [Invoke]",0.054100,0.000027
+"UnityEngine.CoreModule.dll!UnityEngine.Events::UnityEventBase.UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize() [Invoke]",0.049500,0.000025
+"FixedUpdate.XRFixedUpdate",0.049400,0.000025
+"Assembly-CSharp.dll!::EnemySimpleAI.Awake() [Invoke]",0.046300,0.000023
+"FixedUpdate.AudioFixedUpdate",0.045300,0.000023
+"PhysicsCore2D.PhysicsWorld.Simulate.StepWorlds",0.044900,0.000022
+"Assembly-CSharp.dll!::Customer.Awake() [Invoke]",0.044700,0.000022
+"TextureStreamingManager.RemoveRenderer",0.039900,0.000020
+"PutGeometryJobFence",0.039100,0.000020
+"Assembly-CSharp.dll!::EnemySimpleAI.OnDisable() [Invoke]",0.037100,0.000019
+"Assembly-CSharp.dll!::EnemyHealth.Awake() [Invoke]",0.036700,0.000018
+"Physics.RunSimulationStage",0.034200,0.000017
+"Assembly-CSharp.dll!::EnemySimpleAI..ctor() [Invoke]",0.033900,0.000017
+"Mesh.AwakeFromLoad",0.033400,0.000017
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnDisable() [Invoke]",0.027100,0.000014
+"Physics.CalculateChangedColliderTransforms",0.027000,0.000013
+"FixedUpdate.DirectorFixedSampleTime",0.019600,0.000010
+"UnityEngine.UI.dll!UnityEngine.EventSystems::UIBehaviour.OnCanvasHierarchyChanged() [Invoke]",0.018000,0.000009
+"Assembly-CSharp.dll!::EnemySimpleAI.OnEnable() [Invoke]",0.015400,0.000008
+"CanvasRenderer.SyncWorldRect",0.015300,0.000008
+"CanvasRenderer.SyncTransform",0.015200,0.000008
+"Physics.WriteColliderPoses",0.015100,0.000008
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnBeforeSerialize() [Invoke]",0.014500,0.000007
+"UnityEngine.UI.dll!UnityEngine.UI::Graphic.OnRectTransformDimensionsChange() [Invoke]",0.014400,0.000007
+"PhysicsCore2D.TransformChanged",0.013500,0.000007
+"UnityEngine.UI.dll!UnityEngine.EventSystems::UIBehaviour.Start() [Invoke]",0.013100,0.000007
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnAfterDeserialize() [Invoke]",0.012600,0.000006
+"Physics.WriteRigidbodyPoses",0.012400,0.000006
+"Physics.CalculateChangedBodyTransforms",0.012300,0.000006
+"UnityEngine.UI.dll!UnityEngine.EventSystems::UIBehaviour.Awake() [Invoke]",0.011900,0.000006
+"Assembly-CSharp.dll!::ZombieAttackTelegraph.OnDestroy() [Invoke]",0.011400,0.000006
+"Physics2D.EffectorFixedUpdate",0.009700,0.000005
+"Assembly-CSharp.dll!::ZombieAttackTelegraph.Awake() [Invoke]",0.008800,0.000004
+"Physics2D.JointBreakLimits",0.008600,0.000004
+"UnityEngine.UI.dll!UnityEngine.UI::Selectable.Awake() [Invoke]",0.008600,0.000004
+"Assembly-CSharp.dll!::IngredientPickup.Awake() [Invoke]",0.007900,0.000004
+"Assembly-CSharp.dll!::WorldHealthBar..ctor() [Invoke]",0.007900,0.000004
+"Assembly-CSharp.dll!::Customer..ctor() [Invoke]",0.007400,0.000004
+"Assembly-CSharp.dll!::IngredientPickup..ctor() [Invoke]",0.007000,0.000003
+"FixedUpdate.ClearLines",0.006700,0.000003
+"UnityEngine.UI.dll!UnityEngine.EventSystems::UIBehaviour.OnDestroy() [Invoke]",0.006600,0.000003
+"Assembly-CSharp.dll!::Customer.OnDisable() [Invoke]",0.006400,0.000003
+"Assembly-CSharp.dll!::EnemyHealth..ctor() [Invoke]",0.005600,0.000003
+"Assembly-CSharp.dll!::ZombieAttackTelegraph.OnDisable() [Invoke]",0.005500,0.000003
+"CopyChannels",0.005500,0.000003
+"gameObjectChangedScene.Invoke",0.005400,0.000003
+"Assembly-CSharp.dll!::ZombieAttackTelegraph..ctor() [Invoke]",0.005400,0.000003
+"CanvasRenderer.SyncClipRect",0.005300,0.000003
+"FindMainCamera",0.004900,0.000002
+"Assembly-CSharp.dll!::Customer.OnDestroy() [Invoke]",0.004700,0.000002
+"RenderTarget.SetActive",0.003900,0.000002
+"webRequestStop.Invoke",0.000300,0.000000
+"Audio Used Memory",0.000000,0.000000
+"Audio Reads",0.000000,0.000000
+"Mesh Reads",0.000000,0.000000
+"Virtual Texture Reads",0.000000,0.000000
+"Other Reads",0.000000,0.000000
+"File Reads Finished",0.000000,0.000000
+"File Reads Started",0.000000,0.000000
+"File Bytes Read",0.000000,0.000000
+"File Bytes Written",0.000000,0.000000
+"Files Closed",0.000000,0.000000
+"Files Opened",0.000000,0.000000
+"File Seeks",0.000000,0.000000
+"Global Illumination Support",0.000000,0.000000
+"SpriteAtlases rendered",0.000000,0.000000
+"Sprites rendered",0.000000,0.000000
+"Tilemap Meshes rendered",0.000000,0.000000
+"Tilemap Chunks rendered",0.000000,0.000000
+"Tilemaps rendered",0.000000,0.000000
+"Used Textures Bytes",0.000000,0.000000
+"Used Textures Count",0.000000,0.000000
+"Instanced Batched Vertices Count",0.000000,0.000000
+"Instanced Batched Triangles Count",0.000000,0.000000
+"Scripting Reads",0.000000,0.000000
+"Entities Reads",0.000000,0.000000
+"Batches Count",0.000000,0.000000
+"Draw Calls Count",0.000000,0.000000
+"Total Bodies",0.000000,0.000000
+"Missing Streaming Tiles",0.000000,0.000000
+"Max Cache Demand",0.000000,0.000000
+"Max Cache Mip Bias",0.000000,0.000000
+"Read From Disk",0.000000,0.000000
+"Missing Disk Data",0.000000,0.000000
+"Total GPU Cache Size",0.000000,0.000000
+"Total CPU Cache Size",0.000000,0.000000
+"Atlases",0.000000,0.000000
+"Required Tiles",0.000000,0.000000
+"Instanced Batched Draw Calls Count",0.000000,0.000000
+"Render Panels",0.000000,0.000000
+"Update Animation",0.000000,0.000000
+"Update Layout",0.000000,0.000000
+"Update Style",0.000000,0.000000
+"Runtime Bindings",0.000000,0.000000
+"Pick All",0.000000,0.000000
+"Event Count",0.000000,0.000000
+"VisualElement Count",0.000000,0.000000
+"Repaint Version Changes",0.000000,0.000000
+"Hierarchy Version Changes",0.000000,0.000000
+"Indices Count",0.000000,0.000000
+"Prepare Render",0.000000,0.000000
+"Awake Bodies",0.000000,0.000000
+"Object.Unregister",0.000000,0.000000
+"Instanced Batches Count",0.000000,0.000000
+"Null Geometry Indirect Draw Calls Count",0.000000,0.000000
+"Null Geometry Instances Count",0.000000,0.000000
+"Null Geometry Draw Calls Count",0.000000,0.000000
+"BRG Indirect Instances Count",0.000000,0.000000
+"BRG Indirect Draw Calls Count",0.000000,0.000000
+"BRG Instances Count",0.000000,0.000000
+"BRG Draw Calls Count",0.000000,0.000000
+"SRP Batcher Instances Count",0.000000,0.000000
+"SRP Batcher Draw Calls Count",0.000000,0.000000
+"Standard Instanced Instances Count",0.000000,0.000000
+"Standard Instanced Draw Calls Count",0.000000,0.000000
+"Standard Indirect Instances Count",0.000000,0.000000
+"Standard Indirect Draw Calls Count",0.000000,0.000000
+"Standard Instances Count",0.000000,0.000000
+"Standard Draw Calls Count",0.000000,0.000000
+"EndJob",0.000000,0.000000
+"BeginJob",0.000000,0.000000
+"GfxResource.Register",0.000000,0.000000
+"ScheduleJob",0.000000,0.000000
+"KickJobs",0.000000,0.000000
+"WaitForCompleted",0.000000,0.000000
+"Null Geometry Indirect Instances Count",0.000000,0.000000
+"Triangles Count",0.000000,0.000000
+"Vertices Count",0.000000,0.000000
+"SetPass Calls Count",0.000000,0.000000
+"Static Batched Vertices Count",0.000000,0.000000
+"Object.Register",0.000000,0.000000
+"Component.SetGameObject",0.000000,0.000000
+"Static Batched Triangles Count",0.000000,0.000000
+"Static Batched Draw Calls Count",0.000000,0.000000
+"Static Batches Count",0.000000,0.000000
+"Object.SetName",0.000000,0.000000
+"Dynamic Batched Vertices Count",0.000000,0.000000
+"Dynamic Batched Triangles Count",0.000000,0.000000
+"Dynamic Batched Draw Calls Count",0.000000,0.000000
+"GfxResource.Unregister",0.000000,0.000000
+"Dynamic Batches Count",0.000000,0.000000
+"Video Memory Bytes",0.000000,0.000000
+"Index Buffer Upload In Frame Bytes",0.000000,0.000000
+"Index Buffer Upload In Frame Count",0.000000,0.000000
+"Vertex Buffer Upload In Frame Bytes",0.000000,0.000000
+"Vertex Buffer Upload In Frame Count",0.000000,0.000000
+"Used Buffers Bytes",0.000000,0.000000
+"Used Buffers Count",0.000000,0.000000
+"Render Textures Changes Count",0.000000,0.000000
+"Visible Skinned Meshes Count",0.000000,0.000000
+"Shadow Casters Count",0.000000,0.000000
+"Dynamic Batching Time",0.000000,0.000000
+"Asleep Bodies",0.000000,0.000000
+"Dynamic Bodies",0.000000,0.000000
+"Kinematic Bodies",0.000000,0.000000
+"GC Reserved Memory",0.000000,0.000000
+"GC Used Memory",0.000000,0.000000
+"Total Reserved Memory",0.000000,0.000000
+"Total Used Memory",0.000000,0.000000
+"App Committed Memory",0.000000,0.000000
+"App Resident Memory",0.000000,0.000000
+"System Total Used Memory",0.000000,0.000000
+"System Used Memory",0.000000,0.000000
+"File Handles Open",0.000000,0.000000
+"Reads in Flight",0.000000,0.000000
+"GPU Frame Time",0.000000,0.000000
+"CPU Render Thread Frame Time",0.000000,0.000000
+"CPU Main Thread Frame Time",0.000000,0.000000
+"CPU Total Frame Time",0.000000,0.000000
+"Narrowphase Lost Touches",0.000000,0.000000
+"Narrowphase New Touches",0.000000,0.000000
+"Narrowphase Touches",0.000000,0.000000
+"Broadphase Removes",0.000000,0.000000
+"Broadphase Adds",0.000000,0.000000
+"Broadphase Adds/Removes",0.000000,0.000000
+"Physics Queries",0.000000,0.000000
+"Profiler Used Memory",0.000000,0.000000
+"SpriteAtlas Count",0.000000,0.000000
+"Sprite Count",0.000000,0.000000
+"Object Count",0.000000,0.000000
+"Audio Reserved Memory",0.000000,0.000000
+"Video Used Memory",0.000000,0.000000
+"Video Reserved Memory",0.000000,0.000000
+"Render Textures Count",0.000000,0.000000
+"Render Textures Bytes",0.000000,0.000000
+"Asset Count",0.000000,0.000000
+"Scene Object Count",0.000000,0.000000
+"Game Object Count",0.000000,0.000000
+"GC Allocation In Frame Count",0.000000,0.000000
+"GC Allocated In Frame",0.000000,0.000000
+"Rigidbodies Synced",0.000000,0.000000
+"Gfx Used Memory",0.000000,0.000000
+"Texture Memory",0.000000,0.000000
+"Texture Count",0.000000,0.000000
+"Mesh Memory",0.000000,0.000000
+"Mesh Count",0.000000,0.000000
+"Material Memory",0.000000,0.000000
+"Material Count",0.000000,0.000000
+"AnimationClip Memory",0.000000,0.000000
+"AnimationClip Count",0.000000,0.000000
+"AudioClip Memory",0.000000,0.000000
+"AudioClip Count",0.000000,0.000000
+"Gfx Reserved Memory",0.000000,0.000000
+"Colliders Synced",0.000000,0.000000
+"Trigger Overlaps",0.000000,0.000000
+"Modified Overlaps",0.000000,0.000000
+"Total Queries",0.000000,0.000000
+"Trigger Exit",0.000000,0.000000
+"Trigger Stay",0.000000,0.000000
+"Trigger Enter",0.000000,0.000000
+"Collision Exit",0.000000,0.000000
+"Collision Stay",0.000000,0.000000
+"Collision Enter",0.000000,0.000000
+"Total Callbacks",0.000000,0.000000
+"Broadphase Pairs",0.000000,0.000000
+"Broadphase Updates",0.000000,0.000000
+"Raycast Queries",0.000000,0.000000
+"Removed Contacts",0.000000,0.000000
+"Total Contacts",0.000000,0.000000
+"Static Shapes",0.000000,0.000000
+"Kinematic Shapes",0.000000,0.000000
+"Dynamic Shapes",0.000000,0.000000
+"Asleep Shapes",0.000000,0.000000
+"Awake Shapes",0.000000,0.000000
+"Total Shapes",0.000000,0.000000
+"Continuous Bodies",0.000000,0.000000
+"Discrete Bodies",0.000000,0.000000
+"Static Bodies",0.000000,0.000000
+"Added Contacts",0.000000,0.000000
+"Profiler Reserved Memory",0.000000,0.000000
+"Shapecast Queries",0.000000,0.000000
+"IsTouching Queries",0.000000,0.000000
+"Continuous Overlaps",0.000000,0.000000
+"Discreet Overlaps",0.000000,0.000000
+"Overlaps",0.000000,0.000000
+"Active Constraints",0.000000,0.000000
+"Articulation Bodies",0.000000,0.000000
+"Static Colliders",0.000000,0.000000
+"Active Kinematic Bodies",0.000000,0.000000
+"Active Dynamic Bodies",0.000000,0.000000
+"Physics Used Memory",0.000000,0.000000
+"Physics Used Memory (2D)",0.000000,0.000000
+"Overlap Queries",0.000000,0.000000
+"Total Joints",0.000000,0.000000
+"Solver Discrete Islands",0.000000,0.000000
+"Solver Simulation Count",0.000000,0.000000
+"Solver World Count",0.000000,0.000000
+"Transform Parent Sync Colliders",0.000000,0.000000
+"Transform Parent Sync Bodies",0.000000,0.000000
+"Transform Sync Colliders",0.000000,0.000000
+"Transform Sync Bodies",0.000000,0.000000
+"Total Transform Sync Calls",0.000000,0.000000
+"Particle Queries",0.000000,0.000000
+"GetContacts Queries",0.000000,0.000000
+"Solver Continuous Islands",0.000000,0.000000
+"Texture Reads",0.000000,0.000000

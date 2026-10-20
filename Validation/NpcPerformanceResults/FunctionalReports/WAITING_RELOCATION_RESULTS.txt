@@ -1,0 +1,41 @@
+PASS: 40 checks
+PASS Waiting-area prefab has solid enemy-only barrier
+PASS Assets/Prototype/CombatCollection.unity repeated setup retains single local mount and no preinstalled area
+PASS Assets/Prototype/CookingCollection.unity repeated setup retains single local mount and no preinstalled area
+PASS Waiting area starts purchase preview
+PASS Purchased bottom waiting area installed once
+PASS Two customers seated before moving
+PASS Actual long E opens normal organization mode
+PASS Short E lifts the installed area with occupants and no payment
+PASS Relocation retains enemy barrier but suspends customer seating
+PASS Changing direction moves the same occupied area preview
+PASS Cancel restores original side and occupants without charging
+PASS Lift installed area for direction 0
+PASS Confirm relocation retains installed instance and organization mode 0
+PASS Seated customers stay within relocated area 0
+PASS Relocation never charges or changes purchase count / grid occupancy 0
+PASS Lift installed area for direction 1
+PASS Confirm relocation retains installed instance and organization mode 1
+PASS Seated customers stay within relocated area 1
+PASS Relocation never charges or changes purchase count / grid occupancy 1
+PASS Lift installed area for direction 2
+PASS Confirm relocation retains installed instance and organization mode 2
+PASS Seated customers stay within relocated area 2
+PASS Relocation never charges or changes purchase count / grid occupancy 2
+PASS Lift installed area for direction 3
+PASS Confirm relocation retains installed instance and organization mode 3
+PASS Seated customers stay within relocated area 3
+PASS Relocation never charges or changes purchase count / grid occupancy 3
+PASS Tab cancels relocation before opening shop
+PASS Disabling layout restores occupied area
+PASS Leaving truck restores occupied area
+PASS Real physics blocks walking zombies and free customers at the waiting-area boundary
+PASS Walking customers cannot self-seat
+PASS Unseated NPCs already inside the footprint are moved out
+PASS Expulsion does not place NPCs inside the truck
+PASS Player walks through enemy barrier into waiting area
+PASS Player can grab a free customer outside waiting area
+PASS Carried customer bypasses barrier while held by player
+PASS Manual E admission works through enemy-only barrier
+PASS Barrier does not block food AoE, seat cleanup or coin rewards
+PASS Relocation cleanup retains exactly one installed waiting area

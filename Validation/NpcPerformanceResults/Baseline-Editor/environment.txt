@@ -1,0 +1,12 @@
+Unity=6000.6.4f1
+Editor=True
+GPU=NVIDIA GeForce RTX 4090
+API=Direct3D11
+CPU=Intel(R) Core(TM) i9-14900KF
+Cores=32
+Resolution=1280x720
+VSync=0
+TargetFrameRate=-1
+Warmup=3 seconds per group
+Sampling=30 seconds per population/composition group, four equal phases
+Binary profiler capture is separate from the measured matrix.

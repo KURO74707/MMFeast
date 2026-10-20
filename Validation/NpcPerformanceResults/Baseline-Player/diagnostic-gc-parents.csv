@@ -1,0 +1,32 @@
+parent,bytes,bytes_per_frame
+"Assembly-CSharp.dll!::PlayerKitchenLayout.Update() [Invoke]",370083182,188050.4
+"NPC Separation",9798352,4978.8
+"UnityEngine.CoreModule.dll!UnityEngine::StackTraceUtility.ExtractStackTrace() [Invoke]",3173536,1612.6
+"NPC HUD",739592,375.8
+"Assembly-CSharp.dll!::CustomerWaitingArea.LateUpdate() [Invoke]",444542,225.9
+"NPC Waiting Barrier",424828,215.9
+"NPC AI",297308,151.1
+"Assembly-CSharp.dll!::FoodTruckStatusUI.LateUpdate() [Invoke]",247842,125.9
+"Instantiate.Produce",130000,66.1
+"UnityEngine.UI.dll!UnityEngine.UI::Image..ctor() [Invoke]",78400,39.8
+"NPC benchmark diagnostic burst",48100,24.4
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnEnable() [Invoke]",46800,23.8
+"UnityEngine.UI.dll!UnityEngine.UI::Slider..ctor() [Invoke]",37600,19.1
+"Instantiate.Copy",27800,14.1
+"Assembly-CSharp.dll!::WorldHealthBar.OnEnable() [Invoke]",21600,11.0
+"Assembly-CSharp.dll!::NpcPerformanceRunner.Start() [Coroutine: MoveNext] [Invoke]",13056,6.6
+"Assembly-CSharp.dll!::WorldHealthBar.OnDisable() [Invoke]",12800,6.5
+"UnityEngine.CoreModule.dll!UnityEngine.Events::UnityEventBase.UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize() [Invoke]",12000,6.1
+"UnityEngine.CoreModule.dll!UnityEngine.Events::UnityEventBase.UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize() [Invoke]",12000,6.1
+"NPC Spawner",9200,4.7
+"CanvasUpdate.PreRender",6400,3.3
+"Assembly-CSharp.dll!::EnemySimpleAI.OnEnable() [Invoke]",6400,3.3
+"Assembly-CSharp.dll!::EnemySimpleAI..ctor() [Invoke]",6400,3.3
+"Assembly-CSharp.dll!::EnemySimpleAI.OnDisable() [Invoke]",6400,3.3
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnCanvasHierarchyChanged() [Invoke]",4800,2.4
+"Assembly-CSharp.dll!::Customer.Awake() [Invoke]",4000,2.0
+"Main Thread",3264,1.7
+"Assembly-CSharp.dll!::EnemyHealth.Awake() [Invoke]",2800,1.4
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnEnable() [Invoke]",2400,1.2
+"Assembly-CSharp.dll!::PlayerStatusUI.LateUpdate() [Invoke]",1280,0.7
+"Assembly-CSharp.dll!::EnemySimpleAI.Awake() [Invoke]",1200,0.6

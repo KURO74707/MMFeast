@@ -1,0 +1,296 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28bbd42f42e3d5143b7180cbbb91ebcf, type: 3}
+  m_Name: GlobalGameSettings
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalGameSettings
+  playerMaxHP: 100
+  playerMaxSAN: 100
+  playerMoveSpeed: 5
+  dashDistance: 3
+  dashDuration: 0.15
+  dashInvulnerabilityDuration: 0.15
+  maxStamina: 100
+  initialStamina: 100
+  dashStaminaCost: 20
+  staminaRecoveryDelay: 1
+  staminaRecoveryPerSecond: 20
+  kitchenOrganizeHoldDuration: 0.5
+  kitchenToolInteractionRange: 1.5
+  kitchenPlacementDistance: 1
+  shopCatalog: {fileID: 11400000, guid: 2a7585e636b19cc498379c5f98e32142, type: 2}
+  itemShopCatalog: {fileID: 11400000, guid: e49a2959e679042489e44ace6f0b337c, type: 2}
+  itemDropCenterOffset: {x: 0, y: 0}
+  itemDropSize: {x: 16, y: 10}
+  itemDropSpacing: 0.25
+  itemDropAttempts: 30
+  itemShopInputsMigrated: 1
+  initialCoins: 500
+  initialCoinsMigrated: 1
+  customerPurificationCoins: 25
+  playerHitFlashDuration: 0.15
+  playerHitShakeStrength: 0.08
+  playerHitShakeDuration: 0.15
+  playerAttackDamage: 10
+  playerAttackRange: 3
+  playerAttackCooldown: 0.1
+  pickupRange: 1.5
+  playerAttackShakeStrength: 0.035
+  playerAttackShakeDuration: 0.08
+  zombieMaxHP: 50
+  zombieAttackDamage: 10
+  zombieAttackRange: 1.2
+  zombieAttackCooldown: 0.1
+  zombieAttackWindupTime: 0.1
+  zombieAttackAngle: 60
+  monsterEssence: 10
+  monsterMoveSpeed: 2
+  monsterStoppingDistance: 0.75
+  hitFlashDuration: 0.12
+  zombieSeparationRadius: 2
+  zombieSeparationStrength: 0.65
+  waitingAreaCapacity: 3
+  customerGrabRange: 1.5
+  waitingAreaInteractionRange: 1.5
+  customerDropDistance: 1.2
+  customerMaxHP: 50
+  customerMoveSpeed: 2
+  customerStoppingDistance: 0.75
+  customerRemovalDelay: 1
+  sanPenaltyForKillingCustomer: 10
+  spawnInterval: 3
+  maximumAliveEnemies: 5
+  customerEveryNthSpawn: 2
+  cookingInteractionRange: 1.5
+  foodTruckMaxHP: 500
+  foodTruckAttackableRange: 0.8
+  cannonInteractionRange: 1.5
+  cannonMinRange: 3
+  cannonMaxRange: 12
+  flightTime: 1.2
+  trajectoryResolution: 40
+  projectileGravity: 9.81
+  explosionRadius: 2
+  splashDuration: 0.6
+  move:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 8d08892f-ceaf-4f5a-97d2-009d8ad1c78a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 978bfe49-cc26-4a3d-ab7b-7d7a29327403
+      m_Path: <Gamepad>/leftStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Gamepad
+      m_Action: Move
+      m_Flags: 0
+    - m_Name: WASD
+      m_Id: 00ca640b-d935-4593-8157-c05846ea39b3
+      m_Path: Dpad
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: e2062cb9-1b15-46a2-838c-2f8d72a0bdd9
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: up
+      m_Id: 8180e8bd-4097-4f4e-ab88-4523101a6ce9
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 320bffee-a40b-4347-ac70-c210eb8bc73a
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 1c5327b5-f71c-4f60-99c7-4e737386f1d1
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: d2581a9b-1d11-4566-b27d-b92aff5fabbc
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 2e46982e-44cc-431b-9f0b-c11910bf467a
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: fcfe95b8-67b9-4526-84b5-5d0bc98d6400
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 77bff152-3580-4b21-b6de-dcd0c7e41164
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: ;Keyboard&Mouse
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: 
+      m_Id: 1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8
+      m_Path: <XRController>/{Primary2DAxis}
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: XR
+      m_Action: Move
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 3ea4d645-4504-4529-b061-ab81934c3752
+      m_Path: <Joystick>/stick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: Joystick
+      m_Action: Move
+      m_Flags: 0
+    m_Flags: 1
+    m_Priority: 0
+  attack:
+    m_Name: Attack
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: d61529ee-b56c-4792-b0e9-0c59555eaa94
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1a6075e6-38a6-4631-a82d-e972d63725ab
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  interact:
+    m_Name: Interact
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 5cdb7fb3-3a52-4226-aba6-85916b11f7af
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4533424d-482e-4183-b020-88d623266fa3
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  aim:
+    m_Name: Aim
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: b5c42dd6-3ea2-4eff-9529-f3c7f2804b27
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e91dfbfc-90ac-48eb-bf2d-ba808bdce8d4
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Aim
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  dash:
+    m_Name: Dash
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: a0bb05ce-18f4-44a8-931f-8af54d69f19b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 417ac98e-42e2-460a-98df-6eb8221f4564
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Dash
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  shop:
+    m_Name: Shop
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: a6e32c64-0ae6-4f85-a09c-85d9530ba4b2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 83fe846e-5b8c-4ccc-9c59-6759909cd0bd
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shop
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  itemShop:
+    m_Name: ItemShop
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: efbd62e9-8d2e-4647-a708-950abe4c952f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4b3ba2af-e56e-4762-a2b8-3546fc79fc95
+      m_Path: <Keyboard>/tab
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ItemShop
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0

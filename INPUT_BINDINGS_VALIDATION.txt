@@ -1,0 +1,30 @@
+Unity 6000.6.4f1, Input System 1.20.0
+Isolated project: serialized binding persistence and simulated Play Mode input checks.
+PlayerController SHA256: 118C3EE9BEBE9C4AB024D337D203129E2E882787903E3DC38F52ABBD3F1B3529
+Dash input only; movement/stamina consumption is not implemented.
+
+PASS attack is Inspector serialized
+PASS attack default binding
+PASS interact is Inspector serialized
+PASS interact default binding
+PASS aim is Inspector serialized
+PASS aim default binding
+PASS dash is Inspector serialized
+PASS dash default binding
+PASS Inspector rebind persists after scene reload
+PASS Awake preserves Inspector binding
+PASS attack mouse press
+PASS interaction key press
+PASS rebound aim key controls cook and aim hold
+PASS dash key press
+PASS held input does not repeat interaction
+PASS rebound aim key release controls firing
+PASS attack disabled with controller
+PASS interact disabled with controller
+PASS aim disabled with controller
+PASS dash disabled with controller
+PASS attack reenabled with controller
+PASS interact reenabled with controller
+PASS aim reenabled with controller
+PASS dash reenabled with controller
+BINDING_CHECK_SUCCESS 24

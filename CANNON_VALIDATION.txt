@@ -1,0 +1,47 @@
+Unity 6000.6.4f1 Food Cannon Play Mode integration
+PASS: Existing spawner produces mixed Zombie/Customer group
+PASS: Shared spawn cap counts both entity types
+PASS: Centered truck and outside player start are retained
+PASS: WASD still moves player
+PASS: Left mouse melee damages Zombie
+PASS: Customer has no normal combat HP and ignores melee
+PASS: Zombie dies through existing melee health behavior
+PASS: Zombie drops exactly one Raw Meat
+PASS: E picks up Raw Meat outside truck
+PASS: Raw Meat loading is rejected without consuming item
+PASS: E places Raw Meat without automatic cooking
+PASS: Station right click cooks without entering cannon mode
+PASS: Cooked Meat pickup preserves state
+PASS: E loads and consumes exactly one Cooked Meat
+PASS: Existing carry system still handles another Cooked Meat
+PASS: Already-loaded cannon refuses second item without losing it
+PASS: Right mouse hold enters aim mode without firing
+PASS: Mouse screen position selects world landing point
+PASS: Aim mode displays trajectory and landing marker
+PASS: Trajectory endpoint and landing marker match selected point
+PASS: Landing circle shows actual projectile explosion radius
+PASS: Shared ballistic equation reaches selected physical target
+PASS: Melee is blocked while aiming cannon
+PASS: Target clamps to maximum firing range
+PASS: Target clamps to minimum firing range
+PASS: Moving target while holding does not fire or consume ammunition
+PASS: Right release fires exactly one projectile and empties cannon
+PASS: Release clears aim mode and hides previews
+PASS: Real Rigidbody projectile collides with ground and impacts once
+PASS: Actual projectile follows shared predicted trajectory; max error=3.837013E-06
+PASS: Actual impact is close to selected landing marker; error=0.01405478
+PASS: AoE kills first Zombie immediately
+PASS: AoE kills second Zombie immediately
+PASS: AoE purifies Customer with green feedback
+PASS: Mixed AoE resolves each entity once despite multiple colliders
+PASS: Entities outside blast radius remain unaffected
+PASS: Cannon Zombie kills reuse death/drop; Customer purification drops no Meat
+PASS: Purify is idempotent
+PASS: Only purified Customer is removed after short delay
+PASS: Empty cannon cannot fire another projectile
+PASS: Next Cooked Meat provides exactly one new shot
+PASS: Loaded cannon can aim again
+PASS: Leaving truck cancels aim and preserves loaded shot
+PASS: Release after canceled aim does not fire
+PASS: Repeated impact call cannot apply AoE twice
+ALL CHECKS PASSED

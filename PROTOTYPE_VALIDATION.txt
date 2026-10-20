@@ -1,0 +1,19 @@
+Play Mode integration validation
+PASS: Automatic spawn respects maximumAliveEnemies
+PASS: Enemy pursues player
+PASS: Spawn cap remains stable across intervals
+PASS: Existing WASD action drives player movement
+PASS: Movement updates facing direction
+PASS: Left mouse attack subtracts configured damage
+PASS: Attack excludes enemies behind player and outside range
+PASS: Hit feedback flashes enemy white
+PASS: Attack cooldown blocks rapid repeated click
+PASS: Attack works again after cooldown
+PASS: Enemy is destroyed at zero HP
+PASS: Enemy death spawns exactly one Meat
+PASS: E picks up nearby Meat immediately despite template Hold interaction
+PASS: Meat attaches at CarryPoint
+PASS: Carried Meat disables physics and collider
+PASS: Holding one Meat prevents picking up another
+PASS: Repeated lethal damage creates only one drop
+ALL CHECKS PASSED

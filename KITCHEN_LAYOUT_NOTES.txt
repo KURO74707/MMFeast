@@ -1,0 +1,48 @@
+厨房整理模式 — Cooking Station 接入
+
+操作
+1. 玩家空手进入餐车，长按交互键（默认 E）0.5 秒进入厨房整理模式。
+2. 松开进入模式的按键；靠近空的 Cooking Station 或大炮，短按 E 搬起。
+3. 移动并调整朝向，让预览框对准目标格子，再短按 E 放下。
+4. 绿色表示可放置，红色表示越界、预留区域或占位冲突。失败时继续持有工具。
+5. 目标占位只有另一件可移动工具时，尝试交换；双方占地必须都合法才提交。
+6. 再次长按 E 退出。正在搬运的工具回到本次搬起前的位置，已完成的移动保留。
+7. 离开餐车、玩家死亡、组件停用或输入改键时同样取消模式并归还工具。
+
+规则
+普通模式短按 E 在松开时执行，长按不会额外触发短按。
+游戏不暂停。整理时移动和受伤正常，攻击、Dash、瞄准及普通拾取/放置/装填被屏蔽。
+进入整理会取消已有炮台瞄准，保留装填，不会发射。
+工具搬运期间不能使用；Cooking Station 有食材时不能搬动或参与交换。大炮已装填时仍可搬动，保留装填；搬运及交换会取消瞄准，不会意外发射。
+工具原格子在搬运期间保留。移动现有实例，保留 CookingStation、CookingPoint 和已有物体引用。
+搬运时暂时禁用工具碰撞，放下或取消时恢复原碰撞状态。
+
+Designer 配置
+Global Data / Kitchen Layout：Kitchen Organize Hold Duration、Kitchen Tool Interaction Range、Kitchen Placement Distance。
+Global Data / Kitchen Grid 折叠栏，或餐车的 TruckGridLayout：Cell Size、Columns、Rows、Offset、Reserved Areas、Tools。
+当前默认 6 列 × 4 行，每格 0.9；网格相对餐车定位。大炮原固定预留区已移除，改由大炮自身占位；Reserved Areas 仍可为其他固定设施预留格子。
+工具的 PlaceableKitchenTool：Grid、Cell（左下角）、Footprint（宽高格数）、Movable。
+当前 Cooking Station 占 2×1 格，初始格子 (2,0)。大炮占 2×2 格，初始格子 (2,2)，位置按网格对齐。
+修改初始格子后，在网格面板点击 Apply Initial Grid Layout 并保存场景。
+添加其他工具时，给工具根节点添加 PlaceableKitchenTool，设置同一 Grid，并加入该 Grid 的 Tools 列表；设置占地与初始格子后检查并应用。
+本版按现有静态 Cooking Station 实现搬运；需要物理运动的其他工具应先接入对应的运动状态处理。
+运行时调整的布局只在本局有效。工具配置、初始布局由场景/预制体管理，不会因玩家操作改写资产。
+本次没有添加切菜玩法、商店、旋转或跨局保存。正式场景已接入原有 Cooking Station 和大炮，两者可互换位置，前提是双方占地合法且烹饪台为空。
+
+实现位置
+Assets/Scripts/Prototype/TruckGridLayout.cs：网格坐标、占位、预留区、完整交换检查和可视预览。
+Assets/Scripts/Prototype/PlaceableKitchenTool.cs：占地、搬运、归还和碰撞状态。
+Assets/Scripts/Prototype/PlayerKitchenLayout.cs：模式、工具交互和提示。
+PlayerController.cs：短按/长按区分、按键释放保护和模式输入屏蔽。
+PlayerCarry.cs、PlayerCombat.cs、CookingStation.cs、FoodCannon.cs：原有入口的模式检查。
+GlobalGameSettings.cs / GlobalGameSettings.asset：集中参数。
+Assets/Editor/KitchenLayoutPrototypeSetup.cs：两个场景和相关预制体迁移、初始布局应用按钮。
+GlobalDataPrototypeSetup.cs、GlobalDataEditor.cs：原型生成工具与集中 Inspector 入口接入。
+
+验证
+KITCHEN_LAYOUT_VALIDATION.txt 记录 Unity 实际执行结果。
+KITCHEN_LAYOUT_PREVIEW.png 为实际 Unity 场景渲染。
+长按、松键防误触、移动两格、无效放置、同尺寸/不同尺寸交换、食材限制、改键、启停、死亡和离车取消均有检查。
+另执行原有 Dash、无敌/耐力/HUD，以及战斗→掉落→拾取→烹饪→装填→发射→净化回归。
+旧战斗测试在隔离副本使用其僵尸时序预设；主项目的设计师数值保持原样。
+

@@ -1,0 +1,151 @@
+Unity 6000.6.4f1 isolated D3D11 validation.
+PASS: 135 checks (Chopping Board 32, Cooking Station 35, free upgrades 68).
+Removed specific gameplay-component whitelist for pure placement tools; retained active-root/tool checks and disabled cannon/station checks.
+Regression verifies a PlaceableKitchenTool-only prefab is accepted, and disabled tool, inactive root and missing reference remain rejected.
+Default board actual pointer click, zero-coin placement, relocation, swaps, cancellation and upgrade limits passed.
+Primary scripts match compiled validation files.
+
+CHOPPING_BOARD_RESULTS.txt
+PASS: 32 checks
+PASS Placement-only upgrade remains valid without a ChoppingBoard marker component
+PASS Disabled placement component has explicit failure reason
+PASS Inactive prefab root is still rejected
+PASS Missing tool reference has distinct failure reason
+PASS Assets/Prototype/CombatCollection.unity valid 1x1 Chopping Board upgrade
+PASS Assets/Prototype/CombatCollection.unity one board entry after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no board before adding
+PASS Assets/Prototype/CookingCollection.unity valid 1x1 Chopping Board upgrade
+PASS Assets/Prototype/CookingCollection.unity one board entry after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no board before adding
+PASS Board has a free Add & place button with no price at zero coins
+PASS Scrolled board button receives real UI raycast
+PASS Real click creates unregistered 1x1 board preview for free
+PASS Board is an independent placement-only tool
+PASS New board cannot overwrite occupied station
+PASS Board cannot be installed outside grid
+PASS E release confirms board once without resources
+PASS Duplicate board confirmation rejected
+PASS Can freely add a second board
+PASS Two separate board instances occupy separate cells
+PASS Organization short E lifts installed board
+PASS Board moves to a free grid cell
+PASS 1x1 board exchanges with 2x1 Cooking Station when both fit
+PASS 1x1 board exchanges with 2x2 cannon when both fit
+PASS Boards exchange with each other without duplicate occupancy
+PASS Cancel relocation restores board original cell
+PASS Designer board add limit enforced
+PASS Full grid prevents another board
+PASS Unlisted board upgrade cannot be added
+PASS Board addition can restart after rejection
+PASS Cancel addition removes preview and keeps installed boards and coins
+PASS Disabling player cleans up uninstalled board
+
+COOKING_UPGRADE_RESULTS.txt
+PASS: 35 checks
+PASS Assets/Prototype/CombatCollection.unity valid 2x1 Cooking Station upgrade
+PASS Assets/Prototype/CombatCollection.unity one Cooking Station entry after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no extra station exists before adding
+PASS Assets/Prototype/CookingCollection.unity valid 2x1 Cooking Station upgrade
+PASS Assets/Prototype/CookingCollection.unity one Cooking Station entry after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no extra station exists before adding
+PASS Cooking Station has a free Add & place button at zero coins
+PASS Cooking Station upgrade shows no price
+PASS Scrolled Cooking Station button receives actual UI raycast
+PASS Actual UI click begins unregistered station grid preview for free
+PASS Runtime station gets local truck and shared settings
+PASS Unplaced station cannot be used or cooked on
+PASS Adding cannot replace or swap occupied existing Cooking Station
+PASS Out-of-bounds station preview stays uninstalled
+PASS E confirms first 2x1 station exactly once with no resource cost
+PASS Duplicate station confirmation cannot register twice
+PASS Can add another independent Cooking Station
+PASS Multiple extra stations coexist with original
+PASS Each station owns an independent CookingPoint
+PASS Organization E lifts the newly added Cooking Station
+PASS Added station moves to another free grid cell
+PASS Added and original Cooking Stations atomically exchange grid cells
+PASS Installed station is usable inside its local truck
+PASS Separate stations retain separate food states
+PASS Cooking on one added station does not cook another station's food
+PASS Occupied station remains immovable until food is removed
+PASS Existing E carry interaction retrieves cooked food from added station
+PASS Retrieving another station keeps its raw food unchanged
+PASS Canceling movement restores added station and leaves grid valid
+PASS Designer add limit applies to Cooking Stations
+PASS Full kitchen grid rejects another station without a preview
+PASS Unavailable station upgrade cannot be added
+PASS Station upgrade can restart after rejected conditions
+PASS Canceling new station removes only preview without coins or occupied cells
+PASS Disabling player cleans up uninstalled Cooking Station
+
+TRUCK_SHOP_RESULTS.txt
+PASS: 68 checks
+PASS Existing initial coins migrated from legacy catalog
+PASS Migration preserves custom legacy initial coins
+PASS Repeated migration never overwrites configured initial coins
+PASS Legacy price and initial balance remain serialized but hidden
+PASS Assets/Prototype/CombatCollection.unity one shop and modal UI
+PASS Assets/Prototype/CombatCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CombatCollection.unity shared configurable cannon, waiting-area and cooking-station catalog
+PASS Assets/Prototype/CombatCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CombatCollection.unity shop initially closed
+PASS Assets/Prototype/CombatCollection.unity upgrade title, hidden balance and hidden prices saved in scene
+PASS Assets/Prototype/CookingCollection.unity one shop and modal UI
+PASS Assets/Prototype/CookingCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CookingCollection.unity shared configurable cannon, waiting-area and cooking-station catalog
+PASS Assets/Prototype/CookingCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CookingCollection.unity shop initially closed
+PASS Assets/Prototype/CookingCollection.unity upgrade title, hidden balance and hidden prices saved in scene
+PASS Default initial balance and product price
+PASS Real Tab action opens shop and pauses game
+PASS Held Tab does not repeatedly toggle shop
+PASS Outside truck purchase rejected without spending
+PASS Tab closes shop and restores game speed
+PASS Player enters truck through real physics
+PASS In-truck empty-handed player can buy
+PASS Shop blocks movement, dash, interaction and attacks
+PASS Upgrade list hides legacy prices and coin balance
+PASS Zero coins allow actual upgrade UI button
+PASS Buy button receives actual canvas raycast
+PASS Actual UI pointer click starts grid placement and resumes game
+PASS Pending preview reserves no cells and spends no credits
+PASS Pending cannon cannot be used as installed cannon
+PASS Repeated purchase request during placement cannot duplicate preview
+PASS Purchase cannot swap into occupied cells and spends nothing
+PASS Invalid placement remains pending without spending
+PASS Valid placement installs and registers exactly one additional cannon
+PASS Successful free placement records one addition without spending coins
+PASS Runtime cannon retains shared config and receives local scene references
+PASS Repeated confirmation cannot charge twice
+PASS Legacy price never gates upgrade availability
+PASS Designer purchase limit enforced
+PASS Full grid rejects purchase without charge
+PASS Unlisted product disappears and cannot be bought
+PASS Designer can add another listed cannon product without code
+PASS Duplicate product IDs reject ambiguous purchases
+PASS Can begin a second purchase
+PASS Long Interact cancels preview with no charge or occupied cells
+PASS Purchase can restart after cancellation
+PASS Tab cancels placement and reopens shop without spending
+PASS Closing shop restores prior game speed rather than forcing normal speed
+PASS Disabling player while shop open cannot leave game paused
+PASS Purchase restart after enable cycle
+PASS Player disable cancels uncommitted purchase without refund bookkeeping
+PASS Begin purchase for leaving-truck validation
+PASS Leaving truck cancels pending purchase without spending
+PASS Begin purchase for input-rebuild validation
+PASS Rebinding input cancels uncommitted purchase and clears preview
+PASS Begin purchase for balance-edit validation
+PASS Changing coins during placement preserves valid upgrade preview
+PASS Zero-coin confirmation installs the second cannon
+PASS Editing initial coins does not reset current coins
+PASS Existing PlayerCarry loads nearest purchased cannon independently
+PASS Second cannon loads without replacing first cannon ammunition
+PASS Aim selects nearest purchased cannon instead of first object in scene
+PASS Releasing aim fires only selected cannon and retains other load
+PASS Purchased cannon projectile impacts exact selected target
+PASS Can independently select second purchased cannon
+PASS Opening shop while aiming cancels without firing or consuming load
+PASS Runtime shop-key rebinding closes modal and restores game
+PASS Rebound shop key works after release
+

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e47d2e975b4a13b3202eb826773415, type: 3}
+  m_Name: MedkitItem
+  m_EditorClassIdentifier: Assembly-CSharp::ShopItemDefinition
+  displayName: Medkit
+  description: Delivered to a random clear location. Touch to recover HP.
+  icon: {fileID: -1296872883032265781, guid: 7870e87c88e5bb14d9cab4d70e7bde86, type: 3}
+  prefab: {fileID: 3463001532728985736, guid: bbfd5680d7b43114c936d22d45601646, type: 3}
+  price: 25
+  healAmount: 25
+  listed: 1

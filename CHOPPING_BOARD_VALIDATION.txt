@@ -1,0 +1,422 @@
+Unity 6000.6.4f1 isolated D3D11 validation.
+PASS: 389 checks across 9 suites.
+Chopping Board: 28; Cooking Station upgrades: 35; free upgrades: 68; waiting interactions: 46; coins: 30; side placement: 56; relocation/barrier: 40; kitchen: 56; cannon: 30.
+Primary runtime/editor scripts match compiled validation sources. Existing scenes, settings, prefabs, GUIDs and prior catalog entries retained.
+Default 1x1 free board, actual UI pointer click, invalid placement, movement, exchanges with 1x1/2x1/2x2 tools, cancellation and Designer limits verified.
+
+CHOPPING_BOARD_RESULTS.txt
+PASS: 28 checks
+PASS Assets/Prototype/CombatCollection.unity valid 1x1 Chopping Board upgrade
+PASS Assets/Prototype/CombatCollection.unity one board entry after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no board before adding
+PASS Assets/Prototype/CookingCollection.unity valid 1x1 Chopping Board upgrade
+PASS Assets/Prototype/CookingCollection.unity one board entry after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no board before adding
+PASS Board has a free Add & place button with no price at zero coins
+PASS Scrolled board button receives real UI raycast
+PASS Real click creates unregistered 1x1 board preview for free
+PASS Board is an independent placement-only tool
+PASS New board cannot overwrite occupied station
+PASS Board cannot be installed outside grid
+PASS E release confirms board once without resources
+PASS Duplicate board confirmation rejected
+PASS Can freely add a second board
+PASS Two separate board instances occupy separate cells
+PASS Organization short E lifts installed board
+PASS Board moves to a free grid cell
+PASS 1x1 board exchanges with 2x1 Cooking Station when both fit
+PASS 1x1 board exchanges with 2x2 cannon when both fit
+PASS Boards exchange with each other without duplicate occupancy
+PASS Cancel relocation restores board original cell
+PASS Designer board add limit enforced
+PASS Full grid prevents another board
+PASS Unlisted board upgrade cannot be added
+PASS Board addition can restart after rejection
+PASS Cancel addition removes preview and keeps installed boards and coins
+PASS Disabling player cleans up uninstalled board
+
+COOKING_UPGRADE_RESULTS.txt
+PASS: 35 checks
+PASS Assets/Prototype/CombatCollection.unity valid 2x1 Cooking Station upgrade
+PASS Assets/Prototype/CombatCollection.unity one Cooking Station entry after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no extra station exists before adding
+PASS Assets/Prototype/CookingCollection.unity valid 2x1 Cooking Station upgrade
+PASS Assets/Prototype/CookingCollection.unity one Cooking Station entry after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no extra station exists before adding
+PASS Cooking Station has a free Add & place button at zero coins
+PASS Cooking Station upgrade shows no price
+PASS Scrolled Cooking Station button receives actual UI raycast
+PASS Actual UI click begins unregistered station grid preview for free
+PASS Runtime station gets local truck and shared settings
+PASS Unplaced station cannot be used or cooked on
+PASS Adding cannot replace or swap occupied existing Cooking Station
+PASS Out-of-bounds station preview stays uninstalled
+PASS E confirms first 2x1 station exactly once with no resource cost
+PASS Duplicate station confirmation cannot register twice
+PASS Can add another independent Cooking Station
+PASS Multiple extra stations coexist with original
+PASS Each station owns an independent CookingPoint
+PASS Organization E lifts the newly added Cooking Station
+PASS Added station moves to another free grid cell
+PASS Added and original Cooking Stations atomically exchange grid cells
+PASS Installed station is usable inside its local truck
+PASS Separate stations retain separate food states
+PASS Cooking on one added station does not cook another station's food
+PASS Occupied station remains immovable until food is removed
+PASS Existing E carry interaction retrieves cooked food from added station
+PASS Retrieving another station keeps its raw food unchanged
+PASS Canceling movement restores added station and leaves grid valid
+PASS Designer add limit applies to Cooking Stations
+PASS Full kitchen grid rejects another station without a preview
+PASS Unavailable station upgrade cannot be added
+PASS Station upgrade can restart after rejected conditions
+PASS Canceling new station removes only preview without coins or occupied cells
+PASS Disabling player cleans up uninstalled Cooking Station
+
+TRUCK_SHOP_RESULTS.txt
+PASS: 68 checks
+PASS Existing initial coins migrated from legacy catalog
+PASS Migration preserves custom legacy initial coins
+PASS Repeated migration never overwrites configured initial coins
+PASS Legacy price and initial balance remain serialized but hidden
+PASS Assets/Prototype/CombatCollection.unity one shop and modal UI
+PASS Assets/Prototype/CombatCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CombatCollection.unity shared configurable cannon, waiting-area and cooking-station catalog
+PASS Assets/Prototype/CombatCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CombatCollection.unity shop initially closed
+PASS Assets/Prototype/CombatCollection.unity upgrade title, hidden balance and hidden prices saved in scene
+PASS Assets/Prototype/CookingCollection.unity one shop and modal UI
+PASS Assets/Prototype/CookingCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CookingCollection.unity shared configurable cannon, waiting-area and cooking-station catalog
+PASS Assets/Prototype/CookingCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CookingCollection.unity shop initially closed
+PASS Assets/Prototype/CookingCollection.unity upgrade title, hidden balance and hidden prices saved in scene
+PASS Default initial balance and product price
+PASS Real Tab action opens shop and pauses game
+PASS Held Tab does not repeatedly toggle shop
+PASS Outside truck purchase rejected without spending
+PASS Tab closes shop and restores game speed
+PASS Player enters truck through real physics
+PASS In-truck empty-handed player can buy
+PASS Shop blocks movement, dash, interaction and attacks
+PASS Upgrade list hides legacy prices and coin balance
+PASS Zero coins allow actual upgrade UI button
+PASS Buy button receives actual canvas raycast
+PASS Actual UI pointer click starts grid placement and resumes game
+PASS Pending preview reserves no cells and spends no credits
+PASS Pending cannon cannot be used as installed cannon
+PASS Repeated purchase request during placement cannot duplicate preview
+PASS Purchase cannot swap into occupied cells and spends nothing
+PASS Invalid placement remains pending without spending
+PASS Valid placement installs and registers exactly one additional cannon
+PASS Successful free placement records one addition without spending coins
+PASS Runtime cannon retains shared config and receives local scene references
+PASS Repeated confirmation cannot charge twice
+PASS Legacy price never gates upgrade availability
+PASS Designer purchase limit enforced
+PASS Full grid rejects purchase without charge
+PASS Unlisted product disappears and cannot be bought
+PASS Designer can add another listed cannon product without code
+PASS Duplicate product IDs reject ambiguous purchases
+PASS Can begin a second purchase
+PASS Long Interact cancels preview with no charge or occupied cells
+PASS Purchase can restart after cancellation
+PASS Tab cancels placement and reopens shop without spending
+PASS Closing shop restores prior game speed rather than forcing normal speed
+PASS Disabling player while shop open cannot leave game paused
+PASS Purchase restart after enable cycle
+PASS Player disable cancels uncommitted purchase without refund bookkeeping
+PASS Begin purchase for leaving-truck validation
+PASS Leaving truck cancels pending purchase without spending
+PASS Begin purchase for input-rebuild validation
+PASS Rebinding input cancels uncommitted purchase and clears preview
+PASS Begin purchase for balance-edit validation
+PASS Changing coins during placement preserves valid upgrade preview
+PASS Zero-coin confirmation installs the second cannon
+PASS Editing initial coins does not reset current coins
+PASS Existing PlayerCarry loads nearest purchased cannon independently
+PASS Second cannon loads without replacing first cannon ammunition
+PASS Aim selects nearest purchased cannon instead of first object in scene
+PASS Releasing aim fires only selected cannon and retains other load
+PASS Purchased cannon projectile impacts exact selected target
+PASS Can independently select second purchased cannon
+PASS Opening shop while aiming cancels without firing or consuming load
+PASS Runtime shop-key rebinding closes modal and restores game
+PASS Rebound shop key works after release
+
+WAITING_AREA_RESULTS.txt
+PASS: 46 checks
+PASS Assets/Prototype/CombatCollection.unity valid waiting-area product
+PASS Assets/Prototype/CombatCollection.unity one product and one rear mount after repeated setup
+PASS Assets/Prototype/CombatCollection.unity waiting area exists only after purchase
+PASS Assets/Prototype/CombatCollection.unity shop references local rear mount
+PASS Assets/Prototype/CookingCollection.unity valid waiting-area product
+PASS Assets/Prototype/CookingCollection.unity one product and one rear mount after repeated setup
+PASS Assets/Prototype/CookingCollection.unity waiting area exists only after purchase
+PASS Assets/Prototype/CookingCollection.unity shop references local rear mount
+PASS Default capacity 3 and waiting-area price 150
+PASS Zero coins can start waiting-area upgrade
+PASS Rear upgrade can be purchased even when kitchen grid is full
+PASS Waiting-area product has placement purchase button
+PASS Scrolled waiting-area buy button receives actual UI raycast
+PASS Selecting waiting area starts unpaid preview
+PASS Confirm selected bottom side installs waiting area
+PASS Confirmed purchase installs waiting area exactly once
+PASS Waiting area installed behind truck
+PASS Rear installation consumes no kitchen grid cells or pending tool preview
+PASS Installed area uses shared designer capacity configuration
+PASS Repeated rear purchase is rejected without extra charge
+PASS Customer is not grabbed on initial E down
+PASS Short E release grabs live customer
+PASS Carried Customer stops autonomous movement
+PASS Customer carry is mutually exclusive with ingredients
+PASS Holding Customer prevents kitchen organization
+PASS Holding Customer prevents purchase placement
+PASS Second E seats Customer in nearby waiting area
+PASS Waiting Customer remains detectable to food projectiles
+PASS Waiting Customer is confined to a fixed seat even after external displacement
+PASS Waiting Customer cannot independently leave or be grabbed as a free Customer
+PASS Area accepts up to configured capacity
+PASS Full area retains Customer in player's hands
+PASS Lowering capacity does not remove existing Customers
+PASS Lowered capacity refuses additional Customer
+PASS Increasing capacity immediately allows another Customer
+PASS Purification immediately frees seat without SAN penalty
+PASS Freed seat can be reused before purified object removal delay
+PASS Combat death frees seat and preserves existing drop/SAN behavior
+PASS E away from area releases Customer and restores normal physics
+PASS Ground release does not leave a free Customer inside player-only truck
+PASS Disabling player safely releases carried Customer
+PASS Purifying a carried Customer immediately frees player's hands
+PASS Deactivating Customer cleans up carrier ownership
+PASS Actual food AoE purifies waiting Customers and releases every affected seat
+PASS Disabling waiting area releases its Customers instead of trapping them
+PASS Waiting area displays live occupancy and capacity
+
+COINS_RESULTS.txt
+PASS: 30 checks
+PASS Assets/Prototype/CombatCollection.unity coins anchored at top right with 20px margins
+PASS Assets/Prototype/CombatCollection.unity HUD uses local shop wallet without blocking input
+PASS Assets/Prototype/CombatCollection.unity persistent HUD outside shop modal
+PASS Assets/Prototype/CombatCollection.unity repeated setup creates one coins label
+PASS Assets/Prototype/CookingCollection.unity coins anchored at top right with 20px margins
+PASS Assets/Prototype/CookingCollection.unity HUD uses local shop wallet without blocking input
+PASS Assets/Prototype/CookingCollection.unity persistent HUD outside shop modal
+PASS Assets/Prototype/CookingCollection.unity repeated setup creates one coins label
+PASS Default 25 coins per purification; existing starting balance preserved
+PASS HUD shows actual initial wallet balance while shop closed
+PASS First purification immediately rewards wallet
+PASS Repeated purification cannot pay twice
+PASS Live reward edit applies to existing unpurified Customer
+PASS Closed shop HUD updates after reward
+PASS Combat death gives no coins and retains SAN penalty
+PASS Zero reward disables payouts
+PASS Negative reward clamps to zero
+PASS Real food AoE rewards each Customer once, including multiple colliders; Zombie gives no coins
+PASS HUD matches accumulated AoE rewards
+PASS Waiting-area upgrade is available without resource gating
+PASS Coins HUD remains correct with paused shop
+PASS Earned coins reserve waiting-area purchase without spending
+PASS Upgrade installation preserves earned coins
+PASS Free upgrade leaves HUD coins intact
+PASS Customer can still be carried for waiting area
+PASS Customer can still be seated
+PASS Waiting Customer purification frees seat and pays exactly once
+PASS Coin addition cannot overflow into negative balance
+PASS Nonpositive coin grants cannot spend money
+PASS HUD re-enable/debug edits work without changing initial configuration
+
+WAITING_SIDE_RESULTS.txt
+PASS: 56 checks
+PASS Assets/Prototype/CombatCollection.unity one mount with local truck reference after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no waiting area before purchase
+PASS Assets/Prototype/CookingCollection.unity one mount with local truck reference after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no waiting area before purchase
+PASS Begin unpaid side selection (0.00, 1.00)
+PASS Preview owns no installed area and spends nothing 0
+PASS Movement input selects correct truck side 0
+PASS Preview is translucent and cannot receive customers 0
+PASS E down does not confirm or charge 0
+PASS E release installs chosen side for free 0
+PASS Installed side area stays outside kitchen and uses no grid cells 0
+PASS Installed collider/color restored and count label remains upright 0
+PASS Duplicate confirmation cannot charge twice 0
+PASS Only one waiting area allowed across all sides 0
+PASS Begin unpaid side selection (0.00, -1.00)
+PASS Preview owns no installed area and spends nothing 1
+PASS Movement input selects correct truck side 1
+PASS Preview is translucent and cannot receive customers 1
+PASS E down does not confirm or charge 1
+PASS E release installs chosen side for free 1
+PASS Installed side area stays outside kitchen and uses no grid cells 1
+PASS Installed collider/color restored and count label remains upright 1
+PASS Duplicate confirmation cannot charge twice 1
+PASS Only one waiting area allowed across all sides 1
+PASS Begin unpaid side selection (-1.00, 0.00)
+PASS Preview owns no installed area and spends nothing 2
+PASS Movement input selects correct truck side 2
+PASS Preview is translucent and cannot receive customers 2
+PASS E down does not confirm or charge 2
+PASS E release installs chosen side for free 2
+PASS Installed side area stays outside kitchen and uses no grid cells 2
+PASS Installed collider/color restored and count label remains upright 2
+PASS Duplicate confirmation cannot charge twice 2
+PASS Only one waiting area allowed across all sides 2
+PASS Begin unpaid side selection (1.00, 0.00)
+PASS Preview owns no installed area and spends nothing 3
+PASS Movement input selects correct truck side 3
+PASS Preview is translucent and cannot receive customers 3
+PASS E down does not confirm or charge 3
+PASS E release installs chosen side for free 3
+PASS Installed side area stays outside kitchen and uses no grid cells 3
+PASS Installed collider/color restored and count label remains upright 3
+PASS Duplicate confirmation cannot charge twice 3
+PASS Only one waiting area allowed across all sides 3
+PASS Customer can be picked up beside side-mounted area
+PASS E interaction seats customer in side-mounted area
+PASS Customer cannot leave rotated side-mounted seat
+PASS Side-mounted purification frees seat and pays coins
+PASS Tab cancels preview and reopens shop without payment
+PASS Long E cancels without installing or spending
+PASS Leaving truck cancels unpaid preview
+PASS Disabling player cancels unpaid preview
+PASS Rebinding input cancels unpaid side placement
+PASS Legacy waiting-area price changes do not affect free installation
+PASS Zero coins at confirmation allow free waiting-area installation
+PASS No cancelled waiting-area previews leaked
+
+WAITING_RELOCATION_RESULTS.txt
+PASS: 40 checks
+PASS Waiting-area prefab has solid enemy-only barrier
+PASS Assets/Prototype/CombatCollection.unity repeated setup retains single local mount and no preinstalled area
+PASS Assets/Prototype/CookingCollection.unity repeated setup retains single local mount and no preinstalled area
+PASS Waiting area starts purchase preview
+PASS Purchased bottom waiting area installed once
+PASS Two customers seated before moving
+PASS Actual long E opens normal organization mode
+PASS Short E lifts the installed area with occupants and no payment
+PASS Relocation retains enemy barrier but suspends customer seating
+PASS Changing direction moves the same occupied area preview
+PASS Cancel restores original side and occupants without charging
+PASS Lift installed area for direction 0
+PASS Confirm relocation retains installed instance and organization mode 0
+PASS Seated customers stay within relocated area 0
+PASS Relocation never charges or changes purchase count / grid occupancy 0
+PASS Lift installed area for direction 1
+PASS Confirm relocation retains installed instance and organization mode 1
+PASS Seated customers stay within relocated area 1
+PASS Relocation never charges or changes purchase count / grid occupancy 1
+PASS Lift installed area for direction 2
+PASS Confirm relocation retains installed instance and organization mode 2
+PASS Seated customers stay within relocated area 2
+PASS Relocation never charges or changes purchase count / grid occupancy 2
+PASS Lift installed area for direction 3
+PASS Confirm relocation retains installed instance and organization mode 3
+PASS Seated customers stay within relocated area 3
+PASS Relocation never charges or changes purchase count / grid occupancy 3
+PASS Tab cancels relocation before opening shop
+PASS Disabling layout restores occupied area
+PASS Leaving truck restores occupied area
+PASS Real physics blocks walking zombies and free customers at the waiting-area boundary
+PASS Walking customers cannot self-seat
+PASS Unseated NPCs already inside the footprint are moved out
+PASS Expulsion does not place NPCs inside the truck
+PASS Player walks through enemy barrier into waiting area
+PASS Player can grab a free customer outside waiting area
+PASS Carried customer bypasses barrier while held by player
+PASS Manual E admission works through enemy-only barrier
+PASS Barrier does not block food AoE, seat cleanup or coin rewards
+PASS Relocation cleanup retains exactly one installed waiting area
+
+KITCHEN_LAYOUT_RESULTS.txt
+PASS: 56 checks
+PASS Assets/Prototype/CombatCollection.unity one grid and one layout controller
+PASS Assets/Prototype/CombatCollection.unity valid Cooking Station and cannon grid registration
+PASS Assets/Prototype/CombatCollection.unity existing tool parent and 2x1 footprint
+PASS Assets/Prototype/CombatCollection.unity same shared settings
+PASS Assets/Prototype/CombatCollection.unity idempotent status panel migration
+PASS Assets/Prototype/CookingCollection.unity one grid and one layout controller
+PASS Assets/Prototype/CookingCollection.unity valid Cooking Station and cannon grid registration
+PASS Assets/Prototype/CookingCollection.unity existing tool parent and 2x1 footprint
+PASS Assets/Prototype/CookingCollection.unity same shared settings
+PASS Assets/Prototype/CookingCollection.unity idempotent status panel migration
+PASS Real physics detects player entry into truck
+PASS E press alone does not execute short action
+PASS Short E interaction occurs on release
+PASS Short interaction pulse lasts one update
+PASS Long E enters layout without triggering short interaction
+PASS Layout shows grid and game remains running
+PASS Holding entry key does not pick up a tool or toggle repeatedly
+PASS Releasing long press does not act as a tap
+PASS Dash is blocked without stamina spending in layout
+PASS Melee attack blocked in layout
+PASS Cannon input blocked without consuming ammunition or firing
+PASS Regular movement remains available in layout
+PASS Tap E lifts existing Cooking Station and temporarily disables collider
+PASS Original grid reservation stays occupied; carried station cannot be used
+PASS Ordinary ingredient pickup blocked while organizing
+PASS Tap places stove exactly two columns left
+PASS Moving preserves original component, children and collider state
+PASS Out-of-bounds placement rejected without dropping tool
+PASS Designer reserved cells reject placement
+PASS Long E exits and restores carried tool to its original reserved cell
+PASS Exit key hold cannot immediately re-enter or trigger ordinary interaction
+PASS Holding an ingredient prevents entering layout mode
+PASS Existing ingredient placement still works after stove movement
+PASS Cooking Station containing food cannot be lifted
+PASS Original cooking works at relocated station
+PASS Cooked food can still be retrieved after relocation
+PASS Two empty tools can swap atomically
+PASS Swap commits both original cell assignments
+PASS Different-size tools swap when both footprints fit
+PASS Invalid reverse footprint rejects swap with both cells unchanged
+PASS Fixed tool cannot participate in a swap
+PASS Placement overlapping multiple tools is rejected
+PASS Can lift tool again after swaps
+PASS Runtime rebinding exits layout and restores held tool
+PASS Long press uses rebound Interact key
+PASS Lift using same interaction after rebind
+PASS Disabling and re-enabling player safely restores tool
+PASS Layout remains usable after enable cycle
+PASS Leaving truck exits mode and restores carried tool
+PASS Automatic exit during a held short press does not leak ordinary interaction on release
+PASS Cannot enter layout outside truck
+PASS Can resume layout after returning to truck
+PASS Player death cancels layout without losing tool
+PASS Original loaded cannon still enters aiming outside layout
+PASS Entering layout while aiming cancels aim, keeps load and never fires
+PASS Hold threshold is live configurable and a slow-frame release never triggers a short tap
+
+CANNON_LAYOUT_RESULTS.txt
+PASS: 30 checks
+PASS Assets/Prototype/CombatCollection.unity cannon and stove share existing grid
+PASS Assets/Prototype/CombatCollection.unity valid cannon 2x2 footprint
+PASS Assets/Prototype/CombatCollection.unity migration retains single existing cannon
+PASS Assets/Prototype/CombatCollection.unity legacy fixed cannon reservation removed
+PASS Assets/Prototype/CombatCollection.unity repeated setup retains designer reservations
+PASS Assets/Prototype/CookingCollection.unity cannon and stove share existing grid
+PASS Assets/Prototype/CookingCollection.unity valid cannon 2x2 footprint
+PASS Assets/Prototype/CookingCollection.unity migration retains single existing cannon
+PASS Assets/Prototype/CookingCollection.unity legacy fixed cannon reservation removed
+PASS Assets/Prototype/CookingCollection.unity repeated setup retains designer reservations
+PASS Player inside truck can reach original cannon
+PASS Existing cooked ingredient loads cannon before relocation
+PASS Loaded cannon can aim before relocation
+PASS Direct cannon lift cancels aim and retains ammunition
+PASS Carried cannon cannot interact or aim
+PASS Carried cannon cannot fire even if a stale fire request arrives
+PASS Cancel restores original cannon cell and transform
+PASS Fixture puts real ingredient on Cooking Station
+PASS Loaded cannon cannot swap with a Cooking Station containing food
+PASS Kitchen mode selects and lifts nearby cannon using existing interaction
+PASS Cannon places exactly two columns left through normal layout targeting
+PASS Relocation preserves loaded state and actual muzzle child
+PASS Old cannon cells become available to another tool
+PASS Invalid cannon placement retains held tool and ammunition
+PASS Cannon 2x2 and stove 2x1 swap when both fit
+PASS Moved cannon can aim from its new location
+PASS Moved cannon range uses new base position
+PASS Moved cannon fires exactly from new muzzle and consumes retained ammunition once
+PASS Moved cannon projectile retains selected preview target
+PASS Actual ballistic impact from moved cannon matches selected target
+

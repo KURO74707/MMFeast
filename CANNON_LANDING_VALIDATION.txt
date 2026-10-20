@@ -1,0 +1,68 @@
+Unity 6000.6.4f1. Actual Rigidbody and 3D physics simulation in an isolated project.
+Root cause reproduced: ground collision timing differs from the ballistic flight duration; 15 of 24 baseline cases missed by more than 0.05 world units.
+Fix: copy locked target and duration at firing, ignore only the landing surface during flight, resolve landing at the marker, use Rigidbody position for AoE.
+24 time/gravity/range cases plus 96 actual-cannon direction/range/timestep cases passed.
+Actual cannon tests include minimum/maximum range clamps, preview endpoint, later cursor movement, ammo consumption and splash-center accuracy (<0.001 world units).
+Live gravity tuning, AoE Zombie death/ingredient drop, Customer purification and earlier 3D obstacle collisions passed.
+Delivered source matches compiled/tested source. No scene, prefab or global tuning values changed.
+Headless verification does not visually inspect the primary Unity Game View.
+
+Source hashes:
+FoodCannon.cs SHA256: 490C7A4F121DCDBEC9D427D985B15F827A4246043064F1FA24B468E4A17BF235
+FoodProjectile.cs SHA256: 89EA6D2CD576B372F7C069287EFA368BCACBF537034F7617CD64D08D6557925A
+
+Baseline:
+LANDING duration=0.1 gravity=0.1 range=3 steps=5 error=0.001930 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=0.1 range=12 steps=5 error=0.001931 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=9.81 range=3 steps=6 error=0.484535 maxVelocity=1E+16 impact=(3.43, -0.23, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=9.81 range=12 steps=6 error=2.236156 maxVelocity=1E+16 impact=(14.22, -0.24, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=50 range=3 steps=6 error=0.455599 maxVelocity=1E+16 impact=(3.40, -0.22, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=50 range=12 steps=6 error=2.207219 maxVelocity=1E+16 impact=(14.19, -0.24, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=0.1 range=3 steps=9 error=0.250599 maxVelocity=1E+16 impact=(2.78, 0.12, -0.13) target=(3.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=0.1 range=12 steps=9 error=1.126411 maxVelocity=1E+16 impact=(10.88, 0.12, -0.13) target=(12.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=9.81 range=3 steps=11 error=0.232850 maxVelocity=1E+16 impact=(3.20, -0.11, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=9.81 range=12 steps=11 error=1.108660 maxVelocity=1E+16 impact=(13.10, -0.12, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=50 range=3 steps=11 error=0.179800 maxVelocity=1E+16 impact=(3.16, -0.09, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=50 range=12 steps=11 error=1.055610 maxVelocity=1E+16 impact=(13.05, -0.11, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=0.1 range=3 steps=53 error=0.292367 maxVelocity=1E+16 impact=(2.74, 0.14, -0.14) target=(3.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=0.1 range=12 steps=53 error=1.314151 maxVelocity=1E+16 impact=(10.69, 0.14, -0.14) target=(12.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=9.81 range=3 steps=61 error=0.000332 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=9.81 range=12 steps=61 error=0.115120 maxVelocity=1E+16 impact=(12.11, -0.01, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=50 range=3 steps=60 error=0.000003 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=50 range=12 steps=60 error=0.000011 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=3 gravity=0.1 range=3 steps=146 error=0.066831 maxVelocity=1E+16 impact=(2.94, 0.03, -0.13) target=(3.00, 0.00, -0.12)
+LANDING duration=3 gravity=0.1 range=12 steps=146 error=0.300369 maxVelocity=1E+16 impact=(11.70, 0.03, -0.13) target=(12.00, 0.00, -0.12)
+LANDING duration=3 gravity=9.81 range=3 steps=151 error=0.000128 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=3 gravity=9.81 range=12 steps=151 error=0.000609 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=3 gravity=50 range=3 steps=150 error=0.000007 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=3 gravity=50 range=12 steps=150 error=0.000005 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+BASELINE_RESULT cases=24 misses=15
+
+Fixed:
+LANDING duration=0.1 gravity=0.1 range=3 steps=6 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=0.1 range=12 steps=6 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=9.81 range=3 steps=6 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=9.81 range=12 steps=6 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=50 range=3 steps=6 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.1 gravity=50 range=12 steps=6 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=0.1 range=3 steps=11 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=0.1 range=12 steps=11 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=9.81 range=3 steps=11 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=9.81 range=12 steps=11 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=50 range=3 steps=11 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=0.2 gravity=50 range=12 steps=11 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=0.1 range=3 steps=61 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=0.1 range=12 steps=61 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=9.81 range=3 steps=61 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=9.81 range=12 steps=61 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=50 range=3 steps=61 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=1.2 gravity=50 range=12 steps=61 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=3 gravity=0.1 range=3 steps=151 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=3 gravity=0.1 range=12 steps=151 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=3 gravity=9.81 range=3 steps=151 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=3 gravity=9.81 range=12 steps=151 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+LANDING duration=3 gravity=50 range=3 steps=151 error=0.000000 maxVelocity=1E+16 impact=(3.00, 0.00, -0.12) target=(3.00, 0.00, -0.12)
+LANDING duration=3 gravity=50 range=12 steps=151 error=0.000000 maxVelocity=1E+16 impact=(12.00, 0.00, -0.12) target=(12.00, 0.00, -0.12)
+CANNON_INTEGRATION_SUCCESS direction_range_timestep_cases=96 preview_and_splash_error<0.001; live_gravity_and_AoE_passed
+OBSTACLE_COLLISION_SUCCESS
+TARGETED_RESULT cases=24 misses=0

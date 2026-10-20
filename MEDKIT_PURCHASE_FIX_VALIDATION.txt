@@ -1,0 +1,94 @@
+Medkit purchase validation correction
+
+The reported generic prefab error combines several checks. Serialized default prefab references and components were valid; the original failure was not reproduced in the isolated project.
+Prefab validation now checks structure using GetComponent; live simulation readiness is checked on a spawned instance before charging. Rigidbody2D is no longer unnecessarily restricted to Kinematic.
+Failure messages distinguish missing prefab reference, inactive prefab, disabled pickup, disabled/non-trigger collider, missing Rigidbody2D, and unsimulated spawned body.
+No scene, item, price, coins, or Designer tuning changed.
+
+82 checks passed on Unity 6000.6.4f1.
+
+PASS: 13 checks
+PASS Assets/Prototype/CombatCollection.unity default medkit valid directly after loading
+PASS Assets/Prototype/CookingCollection.unity default medkit valid directly after loading
+PASS Default item available on entering Play Mode without migration
+PASS Default medkit purchase succeeds and deducts exact price
+PASS Trigger and Rigidbody2D validate without an unnecessary Kinematic-only restriction
+PASS Valid dynamic zero-gravity medkit can be purchased
+PASS Asset structural validation does not depend on live simulated-body readiness
+PASS Spawned unsimulated pickup is rejected before charging with a precise reason
+PASS Non-trigger collider explains its exact failure
+PASS Disabled collider explains its exact failure
+PASS Disabled pickup explains its exact failure
+PASS Inactive prefab explains its exact failure
+PASS Missing reference directs Designer to the correct item
+
+PASS: 69 checks
+PASS Assets/Prototype/CombatCollection.unity R upgrades / Tab item shop
+PASS Assets/Prototype/CombatCollection.unity reuse one player shop, Canvas and EventSystem
+PASS Assets/Prototype/CombatCollection.unity shared config and local truck reference
+PASS Assets/Prototype/CombatCollection.unity valid default 25 coin / 25 HP medkit
+PASS Assets/Prototype/CombatCollection.unity drop defaults
+PASS Assets/Prototype/CookingCollection.unity R upgrades / Tab item shop
+PASS Assets/Prototype/CookingCollection.unity reuse one player shop, Canvas and EventSystem
+PASS Assets/Prototype/CookingCollection.unity shared config and local truck reference
+PASS Assets/Prototype/CookingCollection.unity valid default 25 coin / 25 HP medkit
+PASS Assets/Prototype/CookingCollection.unity drop defaults
+PASS Repeated migration preserves Designer bindings
+PASS Tab opens paid shop anywhere and pauses
+PASS R switches paid shop to free upgrades without unpausing
+PASS Tab switches back to paid shop
+PASS Tab closes and restores time
+PASS Hands full and full HP do not prevent shopping
+PASS Insufficient coins reject delivery without charging
+PASS Paid UI displays live price and wallet
+PASS Buy button receives actual HUD raycast
+PASS Actual UI purchase delivers one pack and charges once
+PASS Ground pack retains shared item reference
+PASS Repeated random purchase 0
+PASS Repeated random purchase 1
+PASS Repeated random purchase 2
+PASS Repeated random purchase 3
+PASS Repeated random purchase 4
+PASS Entire medkit stays inside configured rectangle
+PASS Random drop avoids truck, characters, obstacles and earlier packs
+PASS Entire medkit stays inside configured rectangle
+PASS Random drop avoids truck, characters, obstacles and earlier packs
+PASS Entire medkit stays inside configured rectangle
+PASS Random drop avoids truck, characters, obstacles and earlier packs
+PASS Entire medkit stays inside configured rectangle
+PASS Random drop avoids truck, characters, obstacles and earlier packs
+PASS Entire medkit stays inside configured rectangle
+PASS Random drop avoids truck, characters, obstacles and earlier packs
+PASS Entire medkit stays inside configured rectangle
+PASS Random drop avoids truck, characters, obstacles and earlier packs
+PASS Truck-blocked delivery area fails without deduction
+PASS Live delivery area edit applies to next purchase
+PASS Missing prefab never charges
+PASS Invalid pickup trigger never charges
+PASS Spawn-time component failure cleans up delivery and never charges
+PASS Drop explicitly avoids waiting-area trigger even when global trigger queries are disabled
+PASS Live price edit used exactly at purchase
+PASS Delisting blocks new purchases
+PASS Wallet rejects negative and unaffordable spends
+PASS Full HP preserves pack through real trigger contact
+PASS Staying on pack after damage heals using live amount, even after delisting
+PASS Heal caps HP and raises existing status event once
+PASS Pack cannot apply twice before deferred destruction
+PASS Dead player cannot consume packs or revive via Heal
+PASS Zombie and Customer cannot consume medkits
+PASS Hands remain occupied while medkit heals immediately
+PASS Shop disable restores preexisting time scale
+PASS Player disable closes paid shop and resumes
+PASS Live rebinding closes modal and restores time
+PASS Old paid-shop binding no longer opens
+PASS New paid-shop binding works after release
+PASS Paid modal blocks gameplay movement and actions
+PASS Designer adds medkit variants through catalog without code
+PASS Removing catalog entry updates UI and prevents purchase
+PASS Existing cooked food loads cannon before modal input checks
+PASS Actual aim input starts loaded cannon aim
+PASS Opening paid shop cancels aim and retains ammunition
+PASS Closing shop and releasing aim cannot fire unexpectedly
+PASS Cannon can aim again after modal close
+PASS Changing paid-shop key during aim cancels safely without spending ammunition
+PASS Release after live rebinding produces no projectile

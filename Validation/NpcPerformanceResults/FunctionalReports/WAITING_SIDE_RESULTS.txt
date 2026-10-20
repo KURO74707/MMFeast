@@ -1,0 +1,57 @@
+PASS: 56 checks
+PASS Assets/Prototype/CombatCollection.unity one mount with local truck reference after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no waiting area before purchase
+PASS Assets/Prototype/CookingCollection.unity one mount with local truck reference after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no waiting area before purchase
+PASS Begin unpaid side selection (0.00, 1.00)
+PASS Preview owns no installed area and spends nothing 0
+PASS Movement input selects correct truck side 0
+PASS Preview is translucent and cannot receive customers 0
+PASS E down does not confirm or charge 0
+PASS E release installs chosen side for free 0
+PASS Installed side area stays outside kitchen and uses no grid cells 0
+PASS Installed collider/color restored and count label remains upright 0
+PASS Duplicate confirmation cannot charge twice 0
+PASS Only one waiting area allowed across all sides 0
+PASS Begin unpaid side selection (0.00, -1.00)
+PASS Preview owns no installed area and spends nothing 1
+PASS Movement input selects correct truck side 1
+PASS Preview is translucent and cannot receive customers 1
+PASS E down does not confirm or charge 1
+PASS E release installs chosen side for free 1
+PASS Installed side area stays outside kitchen and uses no grid cells 1
+PASS Installed collider/color restored and count label remains upright 1
+PASS Duplicate confirmation cannot charge twice 1
+PASS Only one waiting area allowed across all sides 1
+PASS Begin unpaid side selection (-1.00, 0.00)
+PASS Preview owns no installed area and spends nothing 2
+PASS Movement input selects correct truck side 2
+PASS Preview is translucent and cannot receive customers 2
+PASS E down does not confirm or charge 2
+PASS E release installs chosen side for free 2
+PASS Installed side area stays outside kitchen and uses no grid cells 2
+PASS Installed collider/color restored and count label remains upright 2
+PASS Duplicate confirmation cannot charge twice 2
+PASS Only one waiting area allowed across all sides 2
+PASS Begin unpaid side selection (1.00, 0.00)
+PASS Preview owns no installed area and spends nothing 3
+PASS Movement input selects correct truck side 3
+PASS Preview is translucent and cannot receive customers 3
+PASS E down does not confirm or charge 3
+PASS E release installs chosen side for free 3
+PASS Installed side area stays outside kitchen and uses no grid cells 3
+PASS Installed collider/color restored and count label remains upright 3
+PASS Duplicate confirmation cannot charge twice 3
+PASS Only one waiting area allowed across all sides 3
+PASS Customer can be picked up beside side-mounted area
+PASS E interaction seats customer in side-mounted area
+PASS Customer cannot leave rotated side-mounted seat
+PASS Side-mounted purification frees seat and pays coins
+PASS Tab cancels preview and reopens shop without payment
+PASS Long E cancels without installing or spending
+PASS Leaving truck cancels unpaid preview
+PASS Disabling player cancels unpaid preview
+PASS Rebinding input cancels unpaid side placement
+PASS Legacy waiting-area price changes do not affect free installation
+PASS Zero coins at confirmation allow free waiting-area installation
+PASS No cancelled waiting-area previews leaked

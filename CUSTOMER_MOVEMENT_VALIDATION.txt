@@ -1,0 +1,16 @@
+Unity 6000.6.4f1 moving Customer Play Mode validation
+PASS: Mixed spawning still creates Zombie and Customer
+PASS: Customer reuses existing pursuit component
+PASS: Movement does not add Zombie health to Customer
+PASS: Customer uses dynamic zero-gravity 2D physics
+PASS: Spawned Customer walks toward assigned player
+PASS: Zombie pursuit continues working
+PASS: Moving Customer cannot enter food truck
+PASS: Customer physically stops against enemy barrier
+PASS: Melee still cannot kill or purify Customer
+PASS: Food AoE still purifies moving Customer
+PASS: Purification immediately stops Customer physics/movement
+PASS: Purified Customer remains still during feedback delay
+PASS: Customer purification does not drop Meat
+PASS: Purified Customer is removed after feedback delay
+ALL CHECKS PASSED

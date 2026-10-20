@@ -1,0 +1,2 @@
+Main-thread frames read: 2000
+Marker times are inclusive; nested markers must not be added together. Binary capture overhead is excluded from scored matrix sampling.

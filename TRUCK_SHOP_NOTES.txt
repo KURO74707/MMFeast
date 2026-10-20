@@ -1,0 +1,31 @@
+餐车升级 — 免费原型
+
+操作
+R 打开/关闭餐车升级界面；打开时暂停游戏并屏蔽普通操作。
+进入餐车并空手后，点击 Add & place 添加升级项目，不需要金币或任何其他资源。
+大炮、额外 Cooking Station 和切菜板沿用厨房网格摆放；等待区选择餐车上下左右方向。
+Extra Cooking Station 默认 2×1 格，各实例独立烹饪，安装后可在整理模式搬动和交换；详见 COOKING_STATION_UPGRADES_NOTES.txt。
+短按 E 确认安装。长按 E 取消，或 R 取消并返回升级界面。
+添加、确认、取消及搬动均不改变金币；净化食客仍奖励金币，右上角继续显示当前金币。
+空间不足、等待区已安装或达到 Designer 配置的每局添加上限时无法添加。
+未确认预览在离开餐车、死亡、组件停用或改键时清理。
+
+Designer 配置
+Global Data > Truck Upgrades / 餐车升级：升级目录和升级项目。
+可配置 ID、名称、描述、图标、预制体、可用状态、摆放类型及每局添加上限。
+每局添加上限 0 表示不限次数；仍受空间和设施安装条件限制。
+升级界面不显示价格和金币余额；Inspector 隐藏旧价格和目录初始余额。
+旧 price、startingBalance 数据、脚本类型和资源 GUID 保留，价格不参与任何运行时升级判断。
+Global Data > Coins / 金币：Initial Coins 为每局初始金币，Customer Purification Coins 为食客净化奖励。
+进入 Play Mode 后，同一金币分组提供 Current Coins / 当前金币调试入口；修改不写回初始值。
+首次迁移从旧目录 Starting Balance 复制初始金币，保留原有自定义值；后续迁移不覆盖新金币配置。
+共享配置在 Play Mode 中的编辑会保存；添加结果、添加次数和当前金币仅保留本局。
+通过 Assets > Create > MMFeast > Truck Upgrade / Truck Upgrade Catalog 创建升级配置。
+
+兼容与验证
+两个原型场景和生成工具同步更新。内部类名/方法名保留兼容，界面使用 Truck Upgrades / 餐车升级。
+等待区抓取、入座、带食客搬动、实体通行限制及净化奖励继续使用现有实现。
+TRUCK_UPGRADES_FREE_VALIDATION.txt 为当前免费版本验证记录；旧验证报告保留历史背景。
+TRUCK_UPGRADES_FREE_PREVIEW.png 为零金币时通过实际按钮添加设施的 Unity 渲染。
+
+切菜板：Chopping Board 默认 1×1 格，支持免费添加多个及整理模式搬动/交换，详见 CHOPPING_BOARD_NOTES.txt。

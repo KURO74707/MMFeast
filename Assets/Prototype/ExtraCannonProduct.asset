@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b9877c8af949f7945dd8b9a225be2a, type: 3}
+  m_Name: ExtraCannonProduct
+  m_EditorClassIdentifier: Assembly-CSharp::ShopProductDefinition
+  productId: extra_cannon
+  displayName: Extra Food Cannon
+  description: Add another independently loaded food cannon to the truck. Place it on an empty 2 x 2 area.
+  icon: {fileID: -1296872883032265781, guid: 7870e87c88e5bb14d9cab4d70e7bde86, type: 3}
+  price: 100
+  toolPrefab: {fileID: 3139597060427470276, guid: 26e0dd176d053a541bbd25ff21da71f2, type: 3}
+  listed: 1
+  purchaseLimit: 0

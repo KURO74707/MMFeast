@@ -1,0 +1,7 @@
+main=Main Thread
+gc=GC Allocated In Frame
+physics=Physics2D.Simulate
+ui=Canvas.BuildBatch
+create=Instantiate
+destroy=Destroy
+collect=GC.Collect

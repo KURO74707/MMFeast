@@ -1,0 +1,52 @@
+PASS: 24 checks
+Both scenes: idempotent HUD migration, third row below SAN, shared settings preserved.
+PASS Default delay 1 second and recovery 20 per second
+PASS Initial partial stamina can recover without a prior dash
+PASS Dash deduction updates stamina HUD synchronously
+PASS No recovery during dash
+PASS Wait after dash ends before recovering
+PASS Delay boundary does not add a full extra step
+PASS Recovers the configured amount per second
+PASS Recovery updates bar and numeric label
+PASS Recovery clamps at stamina maximum
+PASS Each successful dash resets recovery delay
+PASS Only elapsed time beyond delay contributes to recovery
+PASS Insufficient stamina still rejects dash
+PASS Failed dash does not restart delay
+PASS Live delay and rate edits apply to current recovery
+PASS Zero delay starts recovery immediately after dash
+PASS Zero rate disables recovery
+PASS HUD reflects live maximum edits
+PASS Zero maximum remains valid
+PASS Negative recovery settings clamp to zero
+PASS Real FixedUpdate dash steps suppress recovery
+PASS Real dash completion begins delay
+PASS FixedUpdate integrates recovery after end delay
+PASS Existing HP and SAN HUD still update
+PASS Stamina display does not consume player input
+Dash regression:
+PASS: 20 checks
+PASS Space queues dash through real InputAction
+PASS Physics step starts dash and deducts cost once
+PASS Default dash travels exactly 3 units including fractional last step
+PASS Dash stops and returns to normal movement
+PASS Original collision detection restored
+PASS Held Space does not repeatedly dash
+PASS Insufficient stamina rejects dash without spending
+PASS Exact stamina cost is accepted
+PASS Active dash cannot restart or spend twice
+PASS Disable/reset cancels dash and velocity
+PASS Edited shared cost applies to next dash
+PASS Edited duration/distance apply; in-progress dash keeps its snapshot
+PASS Diagonal direction normalized
+PASS Continuous physics stops dash at a thin solid wall
+PASS Zero cost allows dash at zero stamina
+PASS Zero distance disables dash without spending
+PASS Runtime rebinding cancels dash and clears queued input
+PASS Runtime rebound key starts dash
+PASS Regular movement still uses shared speed
+PASS Dash values are clamped to valid ranges
+Visual verification: actual Unity rendering at 1280 x 720; stamina row below SAN, current/max label and green progress fill.
+Both scenes migrated without duplicate HUD rows; existing script GUID references retained.
+Recovery delay is measured after dash completion/cancellation; successful new dashes reset the delay, rejected dashes do not.
+Recovery uses scaled fixed time, pauses with physics; delay/rate/max changes are read live; runtime stamina remains on PlayerController.

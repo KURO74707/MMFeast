@@ -1,0 +1,24 @@
+Unity 6000.6.4f1 Play Mode centered truck / enemy barrier validation
+PASS: Truck exists and is active at game start
+PASS: Truck is centered in camera viewport
+PASS: Enemy barrier is solid while player interior remains a trigger
+PASS: Player starts outside centered truck
+PASS: Automatically spawned enemies use enemy layer
+PASS: WASD player can cross the enemy barrier and enter truck
+PASS: Enemy barrier does not create player contacts
+PASS: Player can leave through opposite truck edge
+PASS: Enemies approaching from four sides and four diagonals cannot enter interior
+PASS: Enemies physically contact barrier while chasing player inside
+PASS: Continued pursuit stays outside truck: (-3.41, 0.00, 0.00)
+PASS: Continued pursuit stays outside truck: (3.41, 0.00, 0.00)
+PASS: Continued pursuit stays outside truck: (0.00, -2.41, 0.00)
+PASS: Continued pursuit stays outside truck: (0.00, 2.41, 0.00)
+PASS: Continued pursuit stays outside truck: (-1.19, -2.41, 0.00)
+PASS: Continued pursuit stays outside truck: (-1.19, 2.41, 0.00)
+PASS: Continued pursuit stays outside truck: (1.19, -2.41, 0.00)
+PASS: Continued pursuit stays outside truck: (1.19, 2.41, 0.00)
+PASS: Enemy prefab uses continuous collision detection
+PASS: High-speed enemy cannot tunnel into truck
+PASS: Inside player can still access cooking station
+PASS: Outside player near relocated counter is still denied access
+ALL CHECKS PASSED

@@ -1,0 +1,21 @@
+PASS: 20 checks
+PASS Space queues dash through real InputAction
+PASS Physics step starts dash and deducts cost once
+PASS Default dash travels exactly 3 units including fractional last step
+PASS Dash stops and returns to normal movement
+PASS Original collision detection restored
+PASS Held Space does not repeatedly dash
+PASS Insufficient stamina rejects dash without spending
+PASS Exact stamina cost is accepted
+PASS Active dash cannot restart or spend twice
+PASS Disable/reset cancels dash and velocity
+PASS Edited shared cost applies to next dash
+PASS Edited duration/distance apply; in-progress dash keeps its snapshot
+PASS Diagonal direction normalized
+PASS Continuous physics stops dash at a thin solid wall
+PASS Zero cost allows dash at zero stamina
+PASS Zero distance disables dash without spending
+PASS Runtime rebinding cancels dash and clears queued input
+PASS Runtime rebound key starts dash
+PASS Regular movement still uses shared speed
+PASS Dash values are clamped to valid ranges

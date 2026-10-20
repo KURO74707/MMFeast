@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b9877c8af949f7945dd8b9a225be2a, type: 3}
+  m_Name: WaitingAreaProduct
+  m_EditorClassIdentifier: Assembly-CSharp::ShopProductDefinition
+  placement: 1
+  waitingAreaPrefab: {fileID: 7309897919641710880, guid: 8448725382e87ce48b2ae3d109fe9c5f, type: 3}
+  productId: customer_waiting_area
+  displayName: Customer Waiting Area
+  description: Choose the top, bottom, left or right side of the truck, then confirm placement. Tap E to carry and seat customers. Capacity is set in Global Data.
+  icon: {fileID: -1296872883032265781, guid: 7870e87c88e5bb14d9cab4d70e7bde86, type: 3}
+  price: 150
+  toolPrefab: {fileID: 0}
+  listed: 1
+  purchaseLimit: 1

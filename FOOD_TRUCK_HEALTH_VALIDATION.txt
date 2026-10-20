@@ -1,0 +1,52 @@
+PASS: 51 checks
+CHECK 1: Truck config defaults
+CHECK 2: No new truck collision layers or colliders
+CHECK 3: Truck prefab reuses EnemyBarrier collider
+CHECK 4: Assets/Prototype/CombatCollection.unity one truck health
+CHECK 5: Assets/Prototype/CombatCollection.unity one truck HUD
+CHECK 6: Assets/Prototype/CombatCollection.unity local HUD reference
+CHECK 7: Assets/Prototype/CombatCollection.unity spawner truck reference
+CHECK 8: Assets/Prototype/CombatCollection.unity player HUD preserved
+CHECK 9: Assets/Prototype/CombatCollection.unity bottom-left anchoring
+CHECK 10: Assets/Prototype/CombatCollection.unity shared config reference
+CHECK 11: Assets/Prototype/CookingCollection.unity one truck health
+CHECK 12: Assets/Prototype/CookingCollection.unity one truck HUD
+CHECK 13: Assets/Prototype/CookingCollection.unity local HUD reference
+CHECK 14: Assets/Prototype/CookingCollection.unity spawner truck reference
+CHECK 15: Assets/Prototype/CookingCollection.unity player HUD preserved
+CHECK 16: Assets/Prototype/CookingCollection.unity bottom-left anchoring
+CHECK 17: Assets/Prototype/CookingCollection.unity shared config reference
+CHECK 18: Repeated setup is idempotent
+CHECK 19: Truck starts at max and HUD full
+CHECK 20: Closest point uses actual truck surface instead of root pivot
+CHECK 21: Invalid damage ignored
+CHECK 22: Far Player and near truck begins truck wind-up without immediate damage
+CHECK 23: Telegraph points toward closest truck surface
+CHECK 24: Truck telegraph radius uses truck eligibility range
+CHECK 25: Truck takes no damage before wind-up
+CHECK 26: Shared wind-up damages truck and updates bottom-left bar only
+CHECK 27: Truck hit hides shared telegraph
+CHECK 28: Truck attack respects post-hit cooldown
+CHECK 29: Player priority when both targets are in range
+CHECK 30: Player attack does not also damage truck
+CHECK 31: Recipient stays locked during truck warning; no invisible mid-wind-up retarget
+CHECK 32: Next attack reevaluates Player priority
+CHECK 33: Live truck range edit redraws shared telegraph
+CHECK 34: Shrunk eligibility range before impact makes attack miss
+CHECK 35: Expanded live range changes eligibility
+CHECK 36: Truck reads same live Zombie damage
+CHECK 37: Moved truck outside locked cone/range cannot be hit
+CHECK 38: AI disable cancels pending truck damage
+CHECK 39: Truck remains a valid target with no Player reference
+CHECK 40: Neither target in range preserves existing chase behavior
+CHECK 41: Raising live max updates ratio without healing existing truck
+CHECK 42: New truck uses edited maximum HP
+CHECK 43: Truck HUD reenable refreshes and resubscribes
+CHECK 44: Bottom-left anchoring at (1280.00, 720.00)
+CHECK 45: Bottom-left anchoring at (1920.00, 1080.00)
+CHECK 46: Bottom-left anchoring at (777.00, 510.00)
+CHECK 47: Lowered max clamps HP without resetting to another state
+CHECK 48: Destroyed truck clamps zero and logs exactly once
+CHECK 49: Zombies skip destroyed truck
+CHECK 50: Runtime spawner passes scene truck reference to Zombie
+CHECK 51: Player and truck HUD panels remain independent

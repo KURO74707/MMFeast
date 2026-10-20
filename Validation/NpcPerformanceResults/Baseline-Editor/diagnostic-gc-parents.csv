@@ -1,0 +1,35 @@
+parent,bytes,bytes_per_frame
+"Assembly-CSharp.dll!::PlayerKitchenLayout.Update() [Invoke]",176857240,187946.1
+"NPC Separation",10342808,10991.3
+"UnityEngine.CoreModule.dll!UnityEngine::StackTraceUtility.ExtractStackTrace() [Invoke]",1825652,1940.1
+"NPC Waiting Barrier",439644,467.2
+"NPC HUD",353440,375.6
+"GetComponentNullErrorWrapper",287500,305.5
+"NPC AI",278376,295.8
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnEnable() [Invoke]",228400,242.7
+"Assembly-CSharp.dll!::CustomerWaitingArea.LateUpdate() [Invoke]",212440,225.8
+"UnityEngine.CoreModule.dll!UnityEngine.Serialization::SerializationBackendManagedCommands.SerializationBufferToObject() [Invoke]",186104,197.8
+"UnityEngine.UI.dll!UnityEngine.UI::Slider.OnDisable() [Invoke]",180440,191.8
+"Instantiate.Produce",142000,150.9
+"Assembly-CSharp.dll!::FoodTruckStatusUI.LateUpdate() [Invoke]",118440,125.9
+"UnityEngine.UI.dll!UnityEngine.UI::Image..ctor() [Invoke]",78400,83.3
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnEnable() [Invoke]",53200,56.5
+"NPC benchmark diagnostic burst",48100,51.1
+"UnityEngine.UI.dll!UnityEngine.UI::Slider..ctor() [Invoke]",37600,40.0
+"Assembly-CSharp.dll!::WorldHealthBar.OnEnable() [Invoke]",21600,23.0
+"Assembly-CSharp.dll!::NpcPerformanceRunner.Start() [Coroutine: MoveNext] [Invoke]",13536,14.4
+"UnityEngine.CoreModule.dll!UnityEngine.Serialization::SerializationBackendManagedCommands.ObjectToSerializationBuffer() [Invoke]",12000,12.8
+"Assembly-CSharp.dll!::WorldHealthBar.OnDisable() [Invoke]",11520,12.2
+"CanvasUpdate.PreRender",9600,10.2
+"NPC Spawner",9200,9.8
+"UnityEngine.UI.dll!UnityEngine.UI::Image.OnCanvasHierarchyChanged() [Invoke]",8000,8.5
+"Assembly-CSharp.dll!::EnemySimpleAI.OnEnable() [Invoke]",6400,6.8
+"Assembly-CSharp.dll!::EnemySimpleAI..ctor() [Invoke]",6400,6.8
+"Assembly-CSharp.dll!::EnemySimpleAI.OnDisable() [Invoke]",6400,6.8
+"Assembly-CSharp.dll!::Customer.Awake() [Invoke]",6400,6.8
+"Assembly-CSharp.dll!::EnemyHealth.Awake() [Invoke]",4400,4.7
+"Main Thread",3264,3.5
+"Assembly-CSharp.dll!::EnemySimpleAI.Awake() [Invoke]",2000,2.1
+"Assembly-CSharp.dll!::PlayerStatusUI.LateUpdate() [Invoke]",1280,1.4
+"MonoCompiler.Tick",800,0.9
+"UnityEditor.CoreModule.dll!UnityEditor.Scripting.ScriptCompilation::EditorCompilationInterface.TickCompilationPipeline() [Invoke]",500,0.5

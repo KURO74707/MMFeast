@@ -1,0 +1,286 @@
+PASS: 61 checks
+PASS Assets/Prototype/CombatCollection.unity one shop and modal UI
+PASS Assets/Prototype/CombatCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CombatCollection.unity shared configurable catalog
+PASS Assets/Prototype/CombatCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CombatCollection.unity shop initially closed
+PASS Assets/Prototype/CookingCollection.unity one shop and modal UI
+PASS Assets/Prototype/CookingCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CookingCollection.unity shared configurable catalog
+PASS Assets/Prototype/CookingCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CookingCollection.unity shop initially closed
+PASS Default initial balance and product price
+PASS Real Tab action opens shop and pauses game
+PASS Held Tab does not repeatedly toggle shop
+PASS Outside truck purchase rejected without spending
+PASS Tab closes shop and restores game speed
+PASS Player enters truck through real physics
+PASS In-truck empty-handed player can buy
+PASS Shop blocks movement, dash, interaction and attacks
+PASS Inspector price changes update visible shop
+PASS Buy button receives actual canvas raycast
+PASS Actual UI pointer click starts grid placement and resumes game
+PASS Pending preview reserves no cells and spends no credits
+PASS Pending cannon cannot be used as installed cannon
+PASS Repeated purchase request during placement cannot duplicate preview
+PASS Purchase cannot swap into occupied cells and spends nothing
+PASS Invalid placement remains pending without spending
+PASS Valid placement installs and registers exactly one additional cannon
+PASS Successful placement pays once using price locked when purchase began
+PASS Runtime cannon retains shared config and receives local scene references
+PASS Repeated confirmation cannot charge twice
+PASS Insufficient funds disable button and reject direct request
+PASS Designer purchase limit enforced
+PASS Full grid rejects purchase without charge
+PASS Unlisted product disappears and cannot be bought
+PASS Designer can add another listed cannon product without code
+PASS Duplicate product IDs reject ambiguous purchases
+PASS Can begin a second purchase
+PASS Long Interact cancels preview with no charge or occupied cells
+PASS Purchase can restart after cancellation
+PASS Tab cancels placement and reopens shop without spending
+PASS Closing shop restores prior game speed rather than forcing normal speed
+PASS Disabling player while shop open cannot leave game paused
+PASS Purchase restart after enable cycle
+PASS Player disable cancels uncommitted purchase without refund bookkeeping
+PASS Begin purchase for leaving-truck validation
+PASS Leaving truck cancels pending purchase without spending
+PASS Begin purchase for input-rebuild validation
+PASS Rebinding input cancels uncommitted purchase and clears preview
+PASS Begin purchase for balance-edit validation
+PASS Balance reduced during placement cannot produce free installed cannon
+PASS Retry after restoring balance commits one purchase
+PASS Editing initial credits does not reset current balance
+PASS Existing PlayerCarry loads nearest purchased cannon independently
+PASS Second cannon loads without replacing first cannon ammunition
+PASS Aim selects nearest purchased cannon instead of first object in scene
+PASS Releasing aim fires only selected cannon and retains other load
+PASS Purchased cannon projectile impacts exact selected target
+PASS Can independently select second purchased cannon
+PASS Opening shop while aiming cancels without firing or consuming load
+PASS Runtime shop-key rebinding closes modal and restores game
+PASS Rebound shop key works after release
+Kitchen layout regression:
+PASS: 56 checks
+PASS Assets/Prototype/CombatCollection.unity one grid and one layout controller
+PASS Assets/Prototype/CombatCollection.unity valid Cooking Station and cannon grid registration
+PASS Assets/Prototype/CombatCollection.unity existing tool parent and 2x1 footprint
+PASS Assets/Prototype/CombatCollection.unity same shared settings
+PASS Assets/Prototype/CombatCollection.unity idempotent status panel migration
+PASS Assets/Prototype/CookingCollection.unity one grid and one layout controller
+PASS Assets/Prototype/CookingCollection.unity valid Cooking Station and cannon grid registration
+PASS Assets/Prototype/CookingCollection.unity existing tool parent and 2x1 footprint
+PASS Assets/Prototype/CookingCollection.unity same shared settings
+PASS Assets/Prototype/CookingCollection.unity idempotent status panel migration
+PASS Real physics detects player entry into truck
+PASS E press alone does not execute short action
+PASS Short E interaction occurs on release
+PASS Short interaction pulse lasts one update
+PASS Long E enters layout without triggering short interaction
+PASS Layout shows grid and game remains running
+PASS Holding entry key does not pick up a tool or toggle repeatedly
+PASS Releasing long press does not act as a tap
+PASS Dash is blocked without stamina spending in layout
+PASS Melee attack blocked in layout
+PASS Cannon input blocked without consuming ammunition or firing
+PASS Regular movement remains available in layout
+PASS Tap E lifts existing Cooking Station and temporarily disables collider
+PASS Original grid reservation stays occupied; carried station cannot be used
+PASS Ordinary ingredient pickup blocked while organizing
+PASS Tap places stove exactly two columns left
+PASS Moving preserves original component, children and collider state
+PASS Out-of-bounds placement rejected without dropping tool
+PASS Designer reserved cells reject placement
+PASS Long E exits and restores carried tool to its original reserved cell
+PASS Exit key hold cannot immediately re-enter or trigger ordinary interaction
+PASS Holding an ingredient prevents entering layout mode
+PASS Existing ingredient placement still works after stove movement
+PASS Cooking Station containing food cannot be lifted
+PASS Original cooking works at relocated station
+PASS Cooked food can still be retrieved after relocation
+PASS Two empty tools can swap atomically
+PASS Swap commits both original cell assignments
+PASS Different-size tools swap when both footprints fit
+PASS Invalid reverse footprint rejects swap with both cells unchanged
+PASS Fixed tool cannot participate in a swap
+PASS Placement overlapping multiple tools is rejected
+PASS Can lift tool again after swaps
+PASS Runtime rebinding exits layout and restores held tool
+PASS Long press uses rebound Interact key
+PASS Lift using same interaction after rebind
+PASS Disabling and re-enabling player safely restores tool
+PASS Layout remains usable after enable cycle
+PASS Leaving truck exits mode and restores carried tool
+PASS Automatic exit during a held short press does not leak ordinary interaction on release
+PASS Cannot enter layout outside truck
+PASS Can resume layout after returning to truck
+PASS Player death cancels layout without losing tool
+PASS Original loaded cannon still enters aiming outside layout
+PASS Entering layout while aiming cancels aim, keeps load and never fires
+PASS Hold threshold is live configurable and a slow-frame release never triggers a short tap
+Cannon relocation regression:
+PASS: 30 checks
+PASS Assets/Prototype/CombatCollection.unity cannon and stove share existing grid
+PASS Assets/Prototype/CombatCollection.unity valid cannon 2x2 footprint
+PASS Assets/Prototype/CombatCollection.unity migration retains single existing cannon
+PASS Assets/Prototype/CombatCollection.unity legacy fixed cannon reservation removed
+PASS Assets/Prototype/CombatCollection.unity repeated setup retains designer reservations
+PASS Assets/Prototype/CookingCollection.unity cannon and stove share existing grid
+PASS Assets/Prototype/CookingCollection.unity valid cannon 2x2 footprint
+PASS Assets/Prototype/CookingCollection.unity migration retains single existing cannon
+PASS Assets/Prototype/CookingCollection.unity legacy fixed cannon reservation removed
+PASS Assets/Prototype/CookingCollection.unity repeated setup retains designer reservations
+PASS Player inside truck can reach original cannon
+PASS Existing cooked ingredient loads cannon before relocation
+PASS Loaded cannon can aim before relocation
+PASS Direct cannon lift cancels aim and retains ammunition
+PASS Carried cannon cannot interact or aim
+PASS Carried cannon cannot fire even if a stale fire request arrives
+PASS Cancel restores original cannon cell and transform
+PASS Fixture puts real ingredient on Cooking Station
+PASS Loaded cannon cannot swap with a Cooking Station containing food
+PASS Kitchen mode selects and lifts nearby cannon using existing interaction
+PASS Cannon places exactly two columns left through normal layout targeting
+PASS Relocation preserves loaded state and actual muzzle child
+PASS Old cannon cells become available to another tool
+PASS Invalid cannon placement retains held tool and ammunition
+PASS Cannon 2x2 and stove 2x1 swap when both fit
+PASS Moved cannon can aim from its new location
+PASS Moved cannon range uses new base position
+PASS Moved cannon fires exactly from new muzzle and consumes retained ammunition once
+PASS Moved cannon projectile retains selected preview target
+PASS Actual ballistic impact from moved cannon matches selected target
+Dash regression:
+PASS: 20 checks
+PASS Space queues dash through real InputAction
+PASS Physics step starts dash and deducts cost once
+PASS Default dash travels exactly 3 units including fractional last step
+PASS Dash stops and returns to normal movement
+PASS Original collision detection restored
+PASS Held Space does not repeatedly dash
+PASS Insufficient stamina rejects dash without spending
+PASS Exact stamina cost is accepted
+PASS Active dash cannot restart or spend twice
+PASS Disable/reset cancels dash and velocity
+PASS Edited shared cost applies to next dash
+PASS Edited duration/distance apply; in-progress dash keeps its snapshot
+PASS Diagonal direction normalized
+PASS Continuous physics stops dash at a thin solid wall
+PASS Zero cost allows dash at zero stamina
+PASS Zero distance disables dash without spending
+PASS Runtime rebinding cancels dash and clears queued input
+PASS Runtime rebound key starts dash
+PASS Regular movement still uses shared speed
+PASS Dash values are clamped to valid ranges
+Dash invulnerability regression (includes all 24 stamina/HUD checks):
+PASS: 22 checks
+Both scenes retain shared configuration.
+PASS Normal player has no dash immunity
+PASS Successful dash immediately grants configured immunity and spends stamina once
+PASS All incoming damage, including lethal damage, is rejected in dash window
+PASS Rejected damage produces no hit flash or camera shake
+PASS Dash immunity retains solid collider
+PASS Rejected repeat dash cannot extend immunity
+PASS Editing duration does not rewrite an active dash snapshot
+PASS Full-duration immunity covers final fractional physics step
+PASS Dash completion clears immunity
+PASS Normal damage and hit feedback resume immediately after dash
+PASS Zero duration disables immunity on next dash
+PASS Zero-duration dash permits damage
+PASS Insufficient stamina grants no immunity
+PASS Short window protects dash start
+PASS Short immunity window expires while a longer dash continues
+PASS Damage after short window is accepted during remaining dash
+PASS Oversized window ends with dash rather than leaking into normal movement
+PASS Component disable/re-enable clears dash immunity
+PASS Input rebuild cancels immunity with dash
+PASS Dash immunity only guards HP damage; existing SAN penalties remain functional
+PASS Negative immunity duration clamps to zero
+PASS All 24 existing stamina recovery and HUD checks still pass
+Combat / cooking / cannon / purification regression:
+PASS: 80 checks
+CHECK 1: Migrated player maxima preserved
+CHECK 2: Existing combat tuning preserved
+CHECK 3: Zombie and Customer HP defaults
+CHECK 4: Zombie attack defaults
+CHECK 5: Customer SAN penalty default
+CHECK 6: Existing movement bindings preserved
+CHECK 7: Customer drop reference assigned
+CHECK 8: Assets/Prototype/CombatCollection.unity one Global Data
+CHECK 9: Assets/Prototype/CombatCollection.unity shared config
+CHECK 10: Assets/Prototype/CombatCollection.unity one HUD
+CHECK 11: Assets/Prototype/CombatCollection.unity one Canvas
+CHECK 12: Assets/Prototype/CombatCollection.unity top-left anchors
+CHECK 13: Assets/Prototype/CombatCollection.unity local Player reference
+CHECK 14: Assets/Prototype/CombatCollection.unity HP, SAN and Stamina status bars
+CHECK 15: Assets/Prototype/CookingCollection.unity one Global Data
+CHECK 16: Assets/Prototype/CookingCollection.unity shared config
+CHECK 17: Assets/Prototype/CookingCollection.unity one HUD
+CHECK 18: Assets/Prototype/CookingCollection.unity one Canvas
+CHECK 19: Assets/Prototype/CookingCollection.unity top-left anchors
+CHECK 20: Assets/Prototype/CookingCollection.unity local Player reference
+CHECK 21: Assets/Prototype/CookingCollection.unity HP, SAN and Stamina status bars
+CHECK 22: Migration is idempotent
+CHECK 23: Player starts at configured maxima
+CHECK 24: Damage updates HP and HUD synchronously
+CHECK 25: SAN loss updates HUD synchronously
+CHECK 26: Negative damage/loss ignored
+CHECK 27: Debug setters clamp maxima
+CHECK 28: Zero HP clamped and death logged once
+CHECK 29: SAN clamps at zero
+CHECK 30: Live maxima edits do not refill state
+CHECK 31: Lowered maxima clamp current values
+CHECK 32: HUD component reenable refreshes and resubscribes
+CHECK 33: Zombie pursues outside attack range without damage
+CHECK 34: Zombie attacks in range and stops
+CHECK 35: Cooldown prevents per-frame damage
+CHECK 36: Live damage/cooldown edits used for next attack
+CHECK 37: Live attack range edit takes effect
+CHECK 38: Existing injured Zombie not reset by max HP edit
+CHECK 39: New Zombie uses edited maximum HP
+CHECK 40: One melee hit per Customer despite multiple colliders; no SAN penalty while alive
+CHECK 41: Existing player attack cooldown preserved
+CHECK 42: Existing Customer HP not reset
+CHECK 43: New Customer reads edited max HP
+CHECK 44: Combat death applies configured SAN penalty once and updates HUD
+CHECK 45: Customer drops exactly one Meat
+CHECK 46: Dead Customer cannot be damaged or purified twice
+CHECK 47: Source types and raw colors distinguish Meat
+CHECK 48: Customer Meat uses existing one-item carry attachment
+CHECK 49: Cooking Customer Meat does not recolor Zombie Meat
+CHECK 50: Purification and death are mutually exclusive, no SAN loss
+CHECK 51: Purification drops no Meat
+CHECK 52: Purification feedback disables movement/collisions
+CHECK 53: Existing purification timer is not restarted and flash cannot override green
+CHECK 54: Purified Customer removed after captured delay
+CHECK 55: Melee Zombie kill leaves SAN unchanged
+CHECK 56: Melee Zombie drops normal Meat once
+CHECK 57: Zombie cannot drop twice
+CHECK 58: Targeted projectile lands and resolves after its locked flight duration
+CHECK 59: Projectile splash matches locked target after live gravity edit
+CHECK 60: Live explosion radius used at impact
+CHECK 61: Food AoE kills Zombie and purifies Customer without SAN penalty
+CHECK 62: Food AoE produces only Zombie Meat
+CHECK 63: Customer Meat picked up via existing PlayerCarry
+CHECK 64: Customer Meat placed through existing CookingStation
+CHECK 65: Customer Meat cooked through existing CookingStation
+CHECK 66: Cooked Customer Meat retrieved through existing CookingStation
+CHECK 67: Cooked Customer Meat loads the existing cannon
+CHECK 68: Loading consumes only carried Meat and retains ammunition
+CHECK 69: HUD stays 20 units inside top-left at (1280.00, 720.00)
+CHECK 70: HUD stays 20 units inside top-left at (1920.00, 1080.00)
+CHECK 71: HUD stays 20 units inside top-left at (777.00, 510.00)
+CHECK 72: Configured mouse input enters aim with Customer Meat ammunition
+CHECK 73: Rebinding while aiming cancels aim, retains ammo and does not fire
+CHECK 74: New aim binding becomes active after release
+CHECK 75: Disabling Player cancels aim without firing
+CHECK 76: Reenable with held input does not trigger phantom aim
+CHECK 77: Aim works again after enable and release
+CHECK 78: Release fires exactly one projectile after rebind
+CHECK 79: Cannon launch retains the preview target
+CHECK 80: Baseline shared tuning restored for scene export
+Actual pointer down/up through InputSystemUIInputModule clicked Buy & place; real canvas raycast verified. Actual Tab InputAction opened/closed modal with time-scale restoration.
+Two separately purchased cannons were loaded and aimed through PlayerCarry. Selected cannon fired once, retained other cannon load, and impact matched target.
+Scene/prefab script GUID references and existing metadata retained. All runtime and Editor sources match the Unity-compiled isolated project.
+All prior shared numeric tuning and previous Move/Attack/Interact/Aim/Dash serialized bindings verified unchanged. Legacy combat timing fixture was used only in isolated tests and restored before export.
+New catalog default balance 500, default cannon price 100. Credits and purchase counts are per-run, with no Essence reward or cross-run persistence added.

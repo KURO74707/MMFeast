@@ -1,0 +1,102 @@
+Unity 6000.6.4f1; Input System 1.20.0
+83 shared settings and Play Mode integration checks passed.
+All delivered runtime/editor source files match the compiled/tested copies.
+Both migrated scenes and gameplay prefabs preserve their original GUID metadata.
+The missing-settings test intentionally logs an error and verifies component shutdown.
+Tests used an isolated project without URP; original scene script references were preserved. Inspector layout and primary Game View were not visually verified.
+
+PASS migrated base stats
+PASS preserved scene attack range and cooldown
+PASS movement binding count preserved
+PASS movement binding preserved 0
+PASS movement binding preserved 1
+PASS movement binding preserved 2
+PASS movement binding preserved 3
+PASS movement binding preserved 4
+PASS movement binding preserved 5
+PASS movement binding preserved 6
+PASS movement binding preserved 7
+PASS movement binding preserved 8
+PASS movement binding preserved 9
+PASS movement binding preserved 10
+PASS movement binding preserved 11
+PASS Assets/Prototype/CombatCollection.unity shared link PlayerController
+PASS Assets/Prototype/CombatCollection.unity shared link PlayerCombat
+PASS Assets/Prototype/CombatCollection.unity shared link PlayerCarry
+PASS Assets/Prototype/CombatCollection.unity shared link EnemySpawner
+PASS Assets/Prototype/CombatCollection.unity shared link CookingStation
+PASS Assets/Prototype/CombatCollection.unity shared link FoodCannon
+PASS Assets/Prototype/CombatCollection.unity shared link GlobalData
+PASS Assets/Prototype/CombatCollection.unity one Global Data panel and linked gameplay components
+PASS Assets/Prototype/CookingCollection.unity shared link PlayerController
+PASS Assets/Prototype/CookingCollection.unity shared link PlayerCombat
+PASS Assets/Prototype/CookingCollection.unity shared link PlayerCarry
+PASS Assets/Prototype/CookingCollection.unity shared link EnemySpawner
+PASS Assets/Prototype/CookingCollection.unity shared link CookingStation
+PASS Assets/Prototype/CookingCollection.unity shared link FoodCannon
+PASS Assets/Prototype/CookingCollection.unity shared link GlobalData
+PASS Assets/Prototype/CookingCollection.unity one Global Data panel and linked gameplay components
+PASS prefab shared link CookingStation/CookingStation
+PASS prefab shared link Customer/Customer
+PASS prefab shared link Customer/EnemySimpleAI
+PASS prefab shared link Enemy/EnemyHealth
+PASS prefab shared link Enemy/EnemySimpleAI
+PASS prefab shared link FoodCannon/FoodCannon
+PASS prefab shared link FoodProjectile/FoodProjectile
+PASS shared asset edits saved to disk
+PASS player initializes independent runtime stats
+PASS player uses input clone, source action remains disabled
+PASS initial tuning does not reset existing player state
+PASS new player reads updated initial values
+PASS each player owns separate input instance
+PASS disabling one player does not disable another player inputs
+PASS movement uses global speed
+PASS live speed tuning preserves input state
+PASS stamina constrained by live maximum
+PASS default attack interaction and dash inputs
+PASS held interaction does not repeat
+PASS live attack interaction and dash rebinding
+PASS reenabling with buttons held does not cause phantom input
+PASS press works after release following reenable
+PASS global attack damage and range affect enemy HP
+PASS monster HP edits affect new spawns without healing existing enemies
+PASS essence reads shared settings live
+PASS damage and cooldown changes apply live
+PASS combat kills once at zero HP
+PASS combat still drops raw meat
+PASS global pickup range allows carrying dropped ingredient
+PASS player can enter truck and use cooking station
+PASS interaction places ingredient in station
+PASS cooking still converts raw meat
+PASS interaction retrieves cooked meat
+PASS cooking range updates live
+PASS cooked meat loads cannon
+PASS default aim input starts cannon aiming
+PASS aim preview responds to live resolution and range
+PASS rebinding during aim cancels without consuming ammo or firing
+PASS rebound aim key supports hold and cooking press
+PASS rebound aim release fires and clears aiming state
+PASS cannon launches real projectile
+PASS in-flight projectile uses live gravity and explosion radius
+PASS live explosion radius purifies customer and kills zombie
+PASS purified customer stops moving and colliding
+PASS already scheduled customer removal keeps original delay
+PASS monster and customer speeds tune independently
+PASS spawn interval recalculated from last spawn time
+PASS lowering spawn cap retains existing entities and prevents new spawn
+PASS global validation clamps dependent settings
+PASS numeric validation does not rebuild bindings
+PASS missing shared settings disables gameplay component
+PASS Play Mode tuning persists to asset on disk
+GLOBAL_DATA_CHECK_SUCCESS 83
+
+Delivered asset hashes:
+Assets\Prototype\Prefabs\CookingStation.prefab SHA256: 232DB5AC2E5778FE131E41F7434BCD4061C0AB011C7729EA4415E971FB5CDC9C
+Assets\Prototype\Prefabs\Customer.prefab SHA256: D855ED0FE9B47A410732FD5A17C5CCCDD1A83E30102773F8F1127172E6174049
+Assets\Prototype\Prefabs\Enemy.prefab SHA256: CA875748049BF501400EB00C84003A797BD9BBFCCB78792CEB47845D387D1867
+Assets\Prototype\Prefabs\FoodCannon.prefab SHA256: 6FFF2E6D4E17F20F639E53C90CC7735D2B4250D33FDE92C34B5ED770A059414B
+Assets\Prototype\Prefabs\FoodProjectile.prefab SHA256: 3E079BC0498BD555C486A19676C83C2FF1606C16BD05EFB4CFAD6975C28D03C4
+Assets\Prototype\Prefabs\FoodTruck.prefab SHA256: 91ACDE482790DF84340AE7DF4B15E6A3DF3CF7AD16B512E4A2A3B595E9A69E42
+Assets\Prototype\Prefabs\Meat.prefab SHA256: D429AEA6E2EEC36BCDA4605D8DEFA0243491A42DC9585BEBF3DE6E5C05903ED2
+Assets\Prototype\CombatCollection.unity SHA256: 8C1EB0697C919AAA8DD5E47DACC57253376080B31A0CB10FAC9F73C5145D5697
+Assets\Prototype\CookingCollection.unity SHA256: BAAB19104E90C581675DB893020A9285AED41E442887A058990E8A62B63B9F3F

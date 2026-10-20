@@ -1,0 +1,148 @@
+Unity 6000.6.4f1, isolated validation project.
+PASS: 134 checks across coins (29), existing truck shop (61), waiting area (44).
+Both scenes migrated and repeated setup verified. Existing configuration, input bindings and script references retained.
+Primary runtime/editor scripts match the compiled validation sources.
+
+COINS_RESULTS.txt
+PASS: 29 checks
+PASS Assets/Prototype/CombatCollection.unity coins anchored at top right with 20px margins
+PASS Assets/Prototype/CombatCollection.unity HUD uses local shop wallet without blocking input
+PASS Assets/Prototype/CombatCollection.unity persistent HUD outside shop modal
+PASS Assets/Prototype/CombatCollection.unity repeated setup creates one coins label
+PASS Assets/Prototype/CookingCollection.unity coins anchored at top right with 20px margins
+PASS Assets/Prototype/CookingCollection.unity HUD uses local shop wallet without blocking input
+PASS Assets/Prototype/CookingCollection.unity persistent HUD outside shop modal
+PASS Assets/Prototype/CookingCollection.unity repeated setup creates one coins label
+PASS Default 25 coins per purification; existing starting balance preserved
+PASS HUD shows actual initial wallet balance while shop closed
+PASS First purification immediately rewards wallet
+PASS Repeated purification cannot pay twice
+PASS Live reward edit applies to existing unpurified Customer
+PASS Closed shop HUD updates after reward
+PASS Combat death gives no coins and retains SAN penalty
+PASS Zero reward disables payouts
+PASS Negative reward clamps to zero
+PASS Real food AoE rewards each Customer once, including multiple colliders; Zombie gives no coins
+PASS HUD matches accumulated AoE rewards
+PASS Earned coins unlock waiting-area purchase
+PASS Coins HUD remains correct with paused shop
+PASS Earned coins actually purchase and install upgrade
+PASS Purchase deduction appears in top-right HUD
+PASS Customer can still be carried for waiting area
+PASS Customer can still be seated
+PASS Waiting Customer purification frees seat and pays exactly once
+PASS Coin addition cannot overflow into negative balance
+PASS Nonpositive coin grants cannot spend money
+PASS HUD re-enable/debug edits work without changing initial configuration
+
+TRUCK_SHOP_RESULTS.txt
+PASS: 61 checks
+PASS Assets/Prototype/CombatCollection.unity one shop and modal UI
+PASS Assets/Prototype/CombatCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CombatCollection.unity shared configurable cannon and waiting-area catalog
+PASS Assets/Prototype/CombatCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CombatCollection.unity shop initially closed
+PASS Assets/Prototype/CookingCollection.unity one shop and modal UI
+PASS Assets/Prototype/CookingCollection.unity existing Input System UI bindings wired
+PASS Assets/Prototype/CookingCollection.unity shared configurable cannon and waiting-area catalog
+PASS Assets/Prototype/CookingCollection.unity Tab and valid cannon product
+PASS Assets/Prototype/CookingCollection.unity shop initially closed
+PASS Default initial balance and product price
+PASS Real Tab action opens shop and pauses game
+PASS Held Tab does not repeatedly toggle shop
+PASS Outside truck purchase rejected without spending
+PASS Tab closes shop and restores game speed
+PASS Player enters truck through real physics
+PASS In-truck empty-handed player can buy
+PASS Shop blocks movement, dash, interaction and attacks
+PASS Inspector price changes update visible shop
+PASS Buy button receives actual canvas raycast
+PASS Actual UI pointer click starts grid placement and resumes game
+PASS Pending preview reserves no cells and spends no credits
+PASS Pending cannon cannot be used as installed cannon
+PASS Repeated purchase request during placement cannot duplicate preview
+PASS Purchase cannot swap into occupied cells and spends nothing
+PASS Invalid placement remains pending without spending
+PASS Valid placement installs and registers exactly one additional cannon
+PASS Successful placement pays once using price locked when purchase began
+PASS Runtime cannon retains shared config and receives local scene references
+PASS Repeated confirmation cannot charge twice
+PASS Insufficient funds disable button and reject direct request
+PASS Designer purchase limit enforced
+PASS Full grid rejects purchase without charge
+PASS Unlisted product disappears and cannot be bought
+PASS Designer can add another listed cannon product without code
+PASS Duplicate product IDs reject ambiguous purchases
+PASS Can begin a second purchase
+PASS Long Interact cancels preview with no charge or occupied cells
+PASS Purchase can restart after cancellation
+PASS Tab cancels placement and reopens shop without spending
+PASS Closing shop restores prior game speed rather than forcing normal speed
+PASS Disabling player while shop open cannot leave game paused
+PASS Purchase restart after enable cycle
+PASS Player disable cancels uncommitted purchase without refund bookkeeping
+PASS Begin purchase for leaving-truck validation
+PASS Leaving truck cancels pending purchase without spending
+PASS Begin purchase for input-rebuild validation
+PASS Rebinding input cancels uncommitted purchase and clears preview
+PASS Begin purchase for balance-edit validation
+PASS Balance reduced during placement cannot produce free installed cannon
+PASS Retry after restoring balance commits one purchase
+PASS Editing initial credits does not reset current balance
+PASS Existing PlayerCarry loads nearest purchased cannon independently
+PASS Second cannon loads without replacing first cannon ammunition
+PASS Aim selects nearest purchased cannon instead of first object in scene
+PASS Releasing aim fires only selected cannon and retains other load
+PASS Purchased cannon projectile impacts exact selected target
+PASS Can independently select second purchased cannon
+PASS Opening shop while aiming cancels without firing or consuming load
+PASS Runtime shop-key rebinding closes modal and restores game
+PASS Rebound shop key works after release
+
+WAITING_AREA_RESULTS.txt
+PASS: 44 checks
+PASS Assets/Prototype/CombatCollection.unity valid waiting-area product
+PASS Assets/Prototype/CombatCollection.unity one product and one rear mount after repeated setup
+PASS Assets/Prototype/CombatCollection.unity waiting area exists only after purchase
+PASS Assets/Prototype/CombatCollection.unity shop references local rear mount
+PASS Assets/Prototype/CookingCollection.unity valid waiting-area product
+PASS Assets/Prototype/CookingCollection.unity one product and one rear mount after repeated setup
+PASS Assets/Prototype/CookingCollection.unity waiting area exists only after purchase
+PASS Assets/Prototype/CookingCollection.unity shop references local rear mount
+PASS Default capacity 3 and waiting-area price 150
+PASS Insufficient funds cannot install waiting area
+PASS Rear upgrade can be purchased even when kitchen grid is full
+PASS Waiting-area product has fixed-install purchase button
+PASS Scrolled waiting-area buy button receives actual UI raycast
+PASS Click purchases and installs rear area exactly once
+PASS Waiting area installed behind truck
+PASS Rear installation consumes no kitchen grid cells or pending tool preview
+PASS Installed area uses shared designer capacity configuration
+PASS Repeated rear purchase is rejected without extra charge
+PASS Customer is not grabbed on initial E down
+PASS Short E release grabs live customer
+PASS Carried Customer stops autonomous movement
+PASS Customer carry is mutually exclusive with ingredients
+PASS Holding Customer prevents kitchen organization
+PASS Holding Customer prevents purchase placement
+PASS Second E seats Customer in nearby waiting area
+PASS Waiting Customer remains detectable to food projectiles
+PASS Waiting Customer is confined to a fixed seat even after external displacement
+PASS Waiting Customer cannot independently leave or be grabbed as a free Customer
+PASS Area accepts up to configured capacity
+PASS Full area retains Customer in player's hands
+PASS Lowering capacity does not remove existing Customers
+PASS Lowered capacity refuses additional Customer
+PASS Increasing capacity immediately allows another Customer
+PASS Purification immediately frees seat without SAN penalty
+PASS Freed seat can be reused before purified object removal delay
+PASS Combat death frees seat and preserves existing drop/SAN behavior
+PASS E away from area releases Customer and restores normal physics
+PASS Ground release does not leave a free Customer inside player-only truck
+PASS Disabling player safely releases carried Customer
+PASS Purifying a carried Customer immediately frees player's hands
+PASS Deactivating Customer cleans up carrier ownership
+PASS Actual food AoE purifies waiting Customers and releases every affected seat
+PASS Disabling waiting area releases its Customers instead of trapping them
+PASS Waiting area displays live occupancy and capacity
+

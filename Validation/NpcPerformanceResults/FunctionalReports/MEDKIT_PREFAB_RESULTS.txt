@@ -1,0 +1,14 @@
+PASS: 13 checks
+PASS Assets/Prototype/CombatCollection.unity default medkit valid directly after loading
+PASS Assets/Prototype/CookingCollection.unity default medkit valid directly after loading
+PASS Default item available on entering Play Mode without migration
+PASS Default medkit purchase succeeds and deducts exact price
+PASS Trigger and Rigidbody2D validate without an unnecessary Kinematic-only restriction
+PASS Valid dynamic zero-gravity medkit can be purchased
+PASS Asset structural validation does not depend on live simulated-body readiness
+PASS Spawned unsimulated pickup is rejected before charging with a precise reason
+PASS Non-trigger collider explains its exact failure
+PASS Disabled collider explains its exact failure
+PASS Disabled pickup explains its exact failure
+PASS Inactive prefab explains its exact failure
+PASS Missing reference directs Designer to the correct item

@@ -1,0 +1,40 @@
+Unity 6000.6.4f1 Play Mode truck access integration
+PASS: Automatic enemy spawning still works
+PASS: Player starts outside the food truck
+PASS: Trigger ignores objects without PlayerController
+PASS: WASD movement remains functional
+PASS: Left mouse attack damages enemy
+PASS: Enemy dies from melee attacks
+PASS: Enemy drops exactly one Raw Meat
+PASS: Ground pickup still works outside truck
+PASS: Negative test player is near station but outside truck
+PASS: E outside truck cannot place or lose held Meat
+PASS: Truck entry is detected and logged once
+PASS: Inside and nearby E places Meat
+PASS: Meat snaps from CarryPoint to CookingPoint
+PASS: Placed Meat physics remains disabled
+PASS: Placement does not auto-cook
+PASS: Exit updates state and logs once
+PASS: Nearby outside right click cannot cook station Meat
+PASS: Nearby outside E cannot retrieve station Meat
+PASS: Station API also rejects outside access
+PASS: Far-distance test player is inside truck
+PASS: Inside but too far cannot cook or retrieve
+PASS: Inside but too far cannot place
+PASS: Inside and nearby right click cooks and changes color
+PASS: Cooking preserves other Meat colors and shared materials
+PASS: Cooked Meat cannot cook twice
+PASS: Inside E retrieves Cooked Meat and frees slot
+PASS: Player leaves truck carrying unchanged Cooked Meat
+PASS: Outside player cannot place Cooked Meat either
+PASS: Additional player collider does not duplicate entry log
+PASS: One collider leaving does not exit while another remains inside
+PASS: Disabled player colliders cannot retain stale access
+PASS: Player trigger state recovers after collider reactivation
+PASS: Disabled truck trigger immediately refuses cooking access
+PASS: Reenabled truck trigger detects player again
+PASS: Inside replacement preserves Cooked Meat state
+PASS: Ground Raw Meat pickup remains available after placing first item
+PASS: Occupied station preserves both station and held Meat
+PASS: One-item carry rule still holds outside truck
+ALL CHECKS PASSED

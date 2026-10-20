@@ -1,0 +1,36 @@
+PASS: 35 checks
+PASS Assets/Prototype/CombatCollection.unity valid 2x1 Cooking Station upgrade
+PASS Assets/Prototype/CombatCollection.unity one Cooking Station entry after repeated setup
+PASS Assets/Prototype/CombatCollection.unity no extra station exists before adding
+PASS Assets/Prototype/CookingCollection.unity valid 2x1 Cooking Station upgrade
+PASS Assets/Prototype/CookingCollection.unity one Cooking Station entry after repeated setup
+PASS Assets/Prototype/CookingCollection.unity no extra station exists before adding
+PASS Cooking Station has a free Add & place button at zero coins
+PASS Cooking Station upgrade shows no price
+PASS Scrolled Cooking Station button receives actual UI raycast
+PASS Actual UI click begins unregistered station grid preview for free
+PASS Runtime station gets local truck and shared settings
+PASS Unplaced station cannot be used or cooked on
+PASS Adding cannot replace or swap occupied existing Cooking Station
+PASS Out-of-bounds station preview stays uninstalled
+PASS E confirms first 2x1 station exactly once with no resource cost
+PASS Duplicate station confirmation cannot register twice
+PASS Can add another independent Cooking Station
+PASS Multiple extra stations coexist with original
+PASS Each station owns an independent CookingPoint
+PASS Organization E lifts the newly added Cooking Station
+PASS Added station moves to another free grid cell
+PASS Added and original Cooking Stations atomically exchange grid cells
+PASS Installed station is usable inside its local truck
+PASS Separate stations retain separate food states
+PASS Cooking on one added station does not cook another station's food
+PASS Occupied station remains immovable until food is removed
+PASS Existing E carry interaction retrieves cooked food from added station
+PASS Retrieving another station keeps its raw food unchanged
+PASS Canceling movement restores added station and leaves grid valid
+PASS Designer add limit applies to Cooking Stations
+PASS Full kitchen grid rejects another station without a preview
+PASS Unavailable station upgrade cannot be added
+PASS Station upgrade can restart after rejected conditions
+PASS Canceling new station removes only preview without coins or occupied cells
+PASS Disabling player cleans up uninstalled Cooking Station
