@@ -1,0 +1,60 @@
+PASS: 59 checks
+PASS Default cat and both character/weapon catalogs installed
+PASS Default spatula preserves current combat; unspecified cat cost mechanic inactive
+PASS Setup is idempotent and preserves designer selections
+PASS Assets/Prototype/CombatCollection.unity has bound loadout
+PASS Assets/Prototype/CombatCollection.unity migration preserves serialized player state
+PASS Assets/Prototype/CombatCollection.unity shows character/weapon HUD
+PASS Assets/Prototype/CookingCollection.unity has bound loadout
+PASS Assets/Prototype/CookingCollection.unity migration preserves serialized player state
+PASS Assets/Prototype/CookingCollection.unity shows character/weapon HUD
+PASS Migrated character preserves HP/SAN/stamina
+PASS Migrated movement and dash values preserved
+PASS Spatula preserves prior 120 degree attack and tuning
+PASS Changing character does not refill runtime values
+PASS Character maximum clamps current HP
+PASS Raising maximum does not heal player
+PASS Effective stats combine weapon and character multipliers
+PASS Fan damages target once despite multiple colliders
+PASS Fan excludes back and outside-angle targets
+PASS Switching weapon does not reset previous cooldown
+PASS Mallet deals damage and starts knockback
+PASS Knockback travels configured distance in unobstructed space
+PASS AI resumes after knockback without a residual velocity
+PASS Knockback obeys existing continuous collision at solid walls
+PASS Customer can be carried through existing path
+PASS Carried customers cannot be knocked out of ownership
+PASS Free customer accepts knockback
+PASS Purified customers cannot be knocked back
+PASS Global character selector updates player without a component override
+PASS Bird waits then restores its own SAN (SAN=41.10115, idle=0.160118, move=False, blocked=False, aim=False, HP=70, enabled=True, velocity=(0.00, 0.00), dash=False, attack=False, aimHeld=False)
+PASS Nearby ally restores once per update despite duplicate colliders
+PASS Song respects radius and scene isolation
+PASS Song caps SAN at character maximum
+PASS Movement input interrupts singing even without body movement
+PASS Live idle delay edit affects singing
+PASS Damage interrupts singing when configured
+PASS Pause neither accumulates idle delay nor restores SAN
+PASS Song resumes after pause using scaled time
+PASS Accepted weapon actions interrupt singing
+PASS Zero SAN rate disables recovery immediately
+PASS Song does not restore a dead player's SAN or revive it
+PASS Global weapon selector changes equipment independently
+PASS Changing to cat removes bird talent
+PASS Disabling loadout removes its runtime talent
+PASS Re-enabling recreates exactly one talent
+PASS HUD follows character and weapon changes
+PASS Runtime test states never mutate shared original configuration
+PASS Shared definitions preserve independent player choices and state
+PASS Character configuration drives dash and stamina spending
+PASS Dash still grants configured damage immunity
+PASS Editing dash distance preserves active dash snapshot
+PASS Dash still rejects insufficient stamina
+PASS Next dash reads updated character distance
+PASS Character recovery delay still applies after dash
+PASS Character stamina regeneration uses only elapsed time after delay
+PASS Equipment changes cancel cannon aim without firing
+PASS Pause blocks melee attacks
+PASS Dead players cannot attack
+PASS Character values enforce valid bounds
+PASS Weapon values enforce valid bounds

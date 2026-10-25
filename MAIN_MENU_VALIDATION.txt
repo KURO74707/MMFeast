@@ -1,0 +1,68 @@
+开始菜单与外观验证（2026-10-25）
+Unity 6000.6.4f1；隔离工程，D3D11 批处理、完整 Play Mode 域重载；原型正式配置未被测试值覆盖。
+
+MAIN_MENU_RESULTS.txt: PASS: 49 checks
+CHARACTER_WEAPON_RESULTS.txt: PASS: 59 checks
+KITCHEN_LAYOUT_RESULTS.txt: PASS: 56 checks
+CANNON_LAYOUT_RESULTS.txt: PASS: 30 checks
+WAITING_AREA_RESULTS.txt: PASS: 46 checks
+ITEM_SHOP_RESULTS.txt: PASS: 69 checks
+COINS_RESULTS.txt: PASS: 30 checks
+
+Total: 339 checks passed.
+菜单专项包括：构建入口、幂等生成、四个页面、中文字体、鼠标射线、选中反馈、转场与重复点击保护、目录与无效资源处理、音量即时生效/静音/保存/恢复、准确署名、跨场景角色初始数值、会话与颜色保持、实时改色与受击闪色恢复，以及直接运行其他原型时无旧选择污染。
+商店旧验证将世界名字 Canvas 与重复 HUD 混为一谈；已改为统计屏幕空间 HUD，仍要求唯一商店、HUD 和 EventSystem。
+五张预览来自实际 Unity 相机渲染到 1280×720 纹理，已检查中文、布局、选中边框、按钮对比度和滑块外观。游戏预览包含临时测试 HP/SAN/耐力和颜色，未写入正式配置。
+未生成独立可执行文件；已在 Editor 中通过 Build Settings 场景索引异步加载游戏验证完整入口。
+未导出隔离工程的本地包路径、编辑器偏好或临时测试资源；仅导出菜单、两个原型场景、共享设置、四个颜色资源及构建场景列表。
+
+PASS: 49 checks
+PASS MainMenu is the first enabled build scene
+PASS Cat and bird have distinct configurable colors
+PASS Spatula and mallet have distinct configurable colors
+PASS Repeated setup preserves designer configuration
+PASS Assets/Prototype/CombatCollection.unity has session entry and appearance binding
+PASS Assets/Prototype/CookingCollection.unity has session entry and appearance binding
+PASS Menu has exactly one EventSystem
+PASS Home is the initial page
+PASS Only home is initially visible
+PASS Home title is exactly MMFeast
+PASS Three home buttons use requested labels
+PASS Runtime font supports Chinese menu labels
+PASS Missing saved preference uses Global Data volume default
+PASS Home start button receives pointer raycasts through overlay
+PASS Repeated clicks are locked during page transition
+PASS Start opens character and weapon selection
+PASS Cards come from Global Data catalogs
+PASS Card buttons select bird and mallet independently
+PASS Preview uses selected definition colors
+PASS Character preview is a rectangle; weapon preview is a square
+PASS Live color edits update previews and cards
+PASS Player selection does not overwrite Designer defaults
+PASS Null and duplicate catalog entries do not create extra cards
+PASS Invalid selected weapon disables start
+PASS Missing game scene reports an error without starting a load
+PASS Settings transition works with timeScale zero
+PASS Zero volume mutes and updates percent text
+PASS Maximum slider value restores full volume
+PASS Volume change applies immediately
+PASS Leaving settings saves local volume preference
+PASS A new session restores saved volume
+PASS Credits button opens its own panel
+PASS Credits exactly match supplied names and roles
+PASS Back navigation preserves choices
+PASS Starting a run locks repeated start clicks
+PASS Selected run loads configured cooking gameplay scene
+PASS Gameplay receives the chosen definitions
+PASS Chosen character initializes HP/SAN/stamina before player Awake
+PASS One session and selected volume survive scene loading
+PASS Game rectangle and direction square keep selection colors
+PASS In-game shapes show character and weapon names
+PASS Visual rectangle does not resize player collision
+PASS Live base color change preserves active hit flash
+PASS Hit flash restores the new character color
+PASS Weapon color continues to update live in gameplay
+PASS Pending selection is consumed exactly once
+PASS Loading another prototype directly does not reuse stale run selection
+PASS Volume also persists into the other prototype scene
+PASS Full menu flow leaves shared default selection unchanged

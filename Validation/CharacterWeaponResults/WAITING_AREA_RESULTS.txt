@@ -1,0 +1,47 @@
+PASS: 46 checks
+PASS Assets/Prototype/CombatCollection.unity valid waiting-area product
+PASS Assets/Prototype/CombatCollection.unity one product and one rear mount after repeated setup
+PASS Assets/Prototype/CombatCollection.unity waiting area exists only after purchase
+PASS Assets/Prototype/CombatCollection.unity shop references local rear mount
+PASS Assets/Prototype/CookingCollection.unity valid waiting-area product
+PASS Assets/Prototype/CookingCollection.unity one product and one rear mount after repeated setup
+PASS Assets/Prototype/CookingCollection.unity waiting area exists only after purchase
+PASS Assets/Prototype/CookingCollection.unity shop references local rear mount
+PASS Default capacity 3 and waiting-area price 150
+PASS Zero coins can start waiting-area upgrade
+PASS Rear upgrade can be purchased even when kitchen grid is full
+PASS Waiting-area product has placement purchase button
+PASS Scrolled waiting-area buy button receives actual UI raycast
+PASS Selecting waiting area starts unpaid preview
+PASS Confirm selected bottom side installs waiting area
+PASS Confirmed purchase installs waiting area exactly once
+PASS Waiting area installed behind truck
+PASS Rear installation consumes no kitchen grid cells or pending tool preview
+PASS Installed area uses shared designer capacity configuration
+PASS Repeated rear purchase is rejected without extra charge
+PASS Customer is not grabbed on initial E down
+PASS Short E release grabs live customer
+PASS Carried Customer stops autonomous movement
+PASS Customer carry is mutually exclusive with ingredients
+PASS Holding Customer prevents kitchen organization
+PASS Holding Customer prevents purchase placement
+PASS Second E seats Customer in nearby waiting area
+PASS Waiting Customer remains detectable to food projectiles
+PASS Waiting Customer is confined to a fixed seat even after external displacement
+PASS Waiting Customer cannot independently leave or be grabbed as a free Customer
+PASS Area accepts up to configured capacity
+PASS Full area retains Customer in player's hands
+PASS Lowering capacity does not remove existing Customers
+PASS Lowered capacity refuses additional Customer
+PASS Increasing capacity immediately allows another Customer
+PASS Purification immediately frees seat without SAN penalty
+PASS Freed seat can be reused before purified object removal delay
+PASS Combat death frees seat and preserves existing drop/SAN behavior
+PASS E away from area releases Customer and restores normal physics
+PASS Ground release does not leave a free Customer inside player-only truck
+PASS Disabling player safely releases carried Customer
+PASS Purifying a carried Customer immediately frees player's hands
+PASS Deactivating Customer cleans up carrier ownership
+PASS Actual food AoE purifies waiting Customers and releases every affected seat
+PASS Disabling waiting area releases its Customers instead of trapping them
+PASS Waiting area displays live occupancy and capacity

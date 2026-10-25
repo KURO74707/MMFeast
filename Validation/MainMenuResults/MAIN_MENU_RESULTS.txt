@@ -1,0 +1,50 @@
+PASS: 49 checks
+PASS MainMenu is the first enabled build scene
+PASS Cat and bird have distinct configurable colors
+PASS Spatula and mallet have distinct configurable colors
+PASS Repeated setup preserves designer configuration
+PASS Assets/Prototype/CombatCollection.unity has session entry and appearance binding
+PASS Assets/Prototype/CookingCollection.unity has session entry and appearance binding
+PASS Menu has exactly one EventSystem
+PASS Home is the initial page
+PASS Only home is initially visible
+PASS Home title is exactly MMFeast
+PASS Three home buttons use requested labels
+PASS Runtime font supports Chinese menu labels
+PASS Missing saved preference uses Global Data volume default
+PASS Home start button receives pointer raycasts through overlay
+PASS Repeated clicks are locked during page transition
+PASS Start opens character and weapon selection
+PASS Cards come from Global Data catalogs
+PASS Card buttons select bird and mallet independently
+PASS Preview uses selected definition colors
+PASS Character preview is a rectangle; weapon preview is a square
+PASS Live color edits update previews and cards
+PASS Player selection does not overwrite Designer defaults
+PASS Null and duplicate catalog entries do not create extra cards
+PASS Invalid selected weapon disables start
+PASS Missing game scene reports an error without starting a load
+PASS Settings transition works with timeScale zero
+PASS Zero volume mutes and updates percent text
+PASS Maximum slider value restores full volume
+PASS Volume change applies immediately
+PASS Leaving settings saves local volume preference
+PASS A new session restores saved volume
+PASS Credits button opens its own panel
+PASS Credits exactly match supplied names and roles
+PASS Back navigation preserves choices
+PASS Starting a run locks repeated start clicks
+PASS Selected run loads configured cooking gameplay scene
+PASS Gameplay receives the chosen definitions
+PASS Chosen character initializes HP/SAN/stamina before player Awake
+PASS One session and selected volume survive scene loading
+PASS Game rectangle and direction square keep selection colors
+PASS In-game shapes show character and weapon names
+PASS Visual rectangle does not resize player collision
+PASS Live base color change preserves active hit flash
+PASS Hit flash restores the new character color
+PASS Weapon color continues to update live in gameplay
+PASS Pending selection is consumed exactly once
+PASS Loading another prototype directly does not reuse stale run selection
+PASS Volume also persists into the other prototype scene
+PASS Full menu flow leaves shared default selection unchanged

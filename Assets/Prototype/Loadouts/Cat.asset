@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe12d8bc91d9c34791a8af1bc82074b, type: 3}
+  m_Name: Cat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDefinition
+  id: cat
+  displayName: Cat
+  icon: {fileID: 0}
+  displayColor: {r: 0.15, g: 0.7, b: 1, a: 1}
+  startingWeapon: {fileID: 11400000, guid: 238064cf47492744d98834fec4912c7c, type: 2}
+  talent: {fileID: 0}
+  maxHP: 100
+  maxSAN: 100
+  moveSpeed: 5
+  maxStamina: 100
+  initialStamina: 100
+  dashDistance: 3
+  dashDuration: 0.15
+  dashInvulnerabilityDuration: 0.15
+  dashStaminaCost: 20
+  staminaRecoveryDelay: 1
+  staminaRecoveryPerSecond: 20
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1

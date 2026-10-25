@@ -1,0 +1,77 @@
+角色与武器验证（2026-10-24）
+Unity 6000.6.4f1；隔离工程使用本地缓存包、完整 Play Mode 域重载和 D3D11 批处理。
+正式场景、配置及游戏源码与验证副本一致；测试输入及临时角色/武器数值不导出。
+
+CHARACTER_WEAPON_RESULTS.txt: PASS: 59 checks
+KITCHEN_LAYOUT_RESULTS.txt: PASS: 56 checks
+CANNON_LAYOUT_RESULTS.txt: PASS: 30 checks
+WAITING_AREA_RESULTS.txt: PASS: 46 checks
+ITEM_SHOP_RESULTS.txt: PASS: 69 checks
+COINS_RESULTS.txt: PASS: 30 checks
+
+Total: 290 checks passed.
+新增检查覆盖迁移幂等、两个场景引用和序列化状态、角色/武器选择及独立状态、数值倍率、扇形角度和命中去重、切装冷却保护、肉锤距离/结束/墙体碰撞、持有与净化食客约束、鸟的范围/场景隔离/去重/暂停/打断/封顶/死亡保护、实时调参、组件启停、HUD、Dash 耐力/无敌/快照和数值限制。
+既有回归覆盖整理/交换、餐车炮瞄准装填发射、等待区收容与阻挡、道具商店血包、净化金币。
+批处理编辑器曾遇到 Unity Search 索引初始化异常；最终验证以完整域重载和延后启动运行，所有最终套件退出成功。未进行人工美术验收或本轮 FPS 压力重测。
+
+以下是新增角色/武器套件的详细结果：
+PASS: 59 checks
+PASS Default cat and both character/weapon catalogs installed
+PASS Default spatula preserves current combat; unspecified cat cost mechanic inactive
+PASS Setup is idempotent and preserves designer selections
+PASS Assets/Prototype/CombatCollection.unity has bound loadout
+PASS Assets/Prototype/CombatCollection.unity migration preserves serialized player state
+PASS Assets/Prototype/CombatCollection.unity shows character/weapon HUD
+PASS Assets/Prototype/CookingCollection.unity has bound loadout
+PASS Assets/Prototype/CookingCollection.unity migration preserves serialized player state
+PASS Assets/Prototype/CookingCollection.unity shows character/weapon HUD
+PASS Migrated character preserves HP/SAN/stamina
+PASS Migrated movement and dash values preserved
+PASS Spatula preserves prior 120 degree attack and tuning
+PASS Changing character does not refill runtime values
+PASS Character maximum clamps current HP
+PASS Raising maximum does not heal player
+PASS Effective stats combine weapon and character multipliers
+PASS Fan damages target once despite multiple colliders
+PASS Fan excludes back and outside-angle targets
+PASS Switching weapon does not reset previous cooldown
+PASS Mallet deals damage and starts knockback
+PASS Knockback travels configured distance in unobstructed space
+PASS AI resumes after knockback without a residual velocity
+PASS Knockback obeys existing continuous collision at solid walls
+PASS Customer can be carried through existing path
+PASS Carried customers cannot be knocked out of ownership
+PASS Free customer accepts knockback
+PASS Purified customers cannot be knocked back
+PASS Global character selector updates player without a component override
+PASS Bird waits then restores its own SAN (SAN=41.10115, idle=0.160118, move=False, blocked=False, aim=False, HP=70, enabled=True, velocity=(0.00, 0.00), dash=False, attack=False, aimHeld=False)
+PASS Nearby ally restores once per update despite duplicate colliders
+PASS Song respects radius and scene isolation
+PASS Song caps SAN at character maximum
+PASS Movement input interrupts singing even without body movement
+PASS Live idle delay edit affects singing
+PASS Damage interrupts singing when configured
+PASS Pause neither accumulates idle delay nor restores SAN
+PASS Song resumes after pause using scaled time
+PASS Accepted weapon actions interrupt singing
+PASS Zero SAN rate disables recovery immediately
+PASS Song does not restore a dead player's SAN or revive it
+PASS Global weapon selector changes equipment independently
+PASS Changing to cat removes bird talent
+PASS Disabling loadout removes its runtime talent
+PASS Re-enabling recreates exactly one talent
+PASS HUD follows character and weapon changes
+PASS Runtime test states never mutate shared original configuration
+PASS Shared definitions preserve independent player choices and state
+PASS Character configuration drives dash and stamina spending
+PASS Dash still grants configured damage immunity
+PASS Editing dash distance preserves active dash snapshot
+PASS Dash still rejects insufficient stamina
+PASS Next dash reads updated character distance
+PASS Character recovery delay still applies after dash
+PASS Character stamina regeneration uses only elapsed time after delay
+PASS Equipment changes cancel cannon aim without firing
+PASS Pause blocks melee attacks
+PASS Dead players cannot attack
+PASS Character values enforce valid bounds
+PASS Weapon values enforce valid bounds

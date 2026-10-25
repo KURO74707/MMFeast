@@ -21,6 +21,18 @@ public class EnemySimpleAI : MonoBehaviour
     private AttackTarget lastLoggedTarget;
     private readonly HashSet<EnemySimpleAI> separationNeighbors = new HashSet<EnemySimpleAI>();
     private readonly List<Collider2D> separationHits = new List<Collider2D>();
+    private Vector2 knockbackVelocity;
+    private float knockbackRemaining;
+    public bool IsKnockedBack => knockbackRemaining > 0f;
+    public bool TryKnockback(Vector2 direction, float distance, float duration)
+    {
+        if (!isActiveAndEnabled || body == null || body.bodyType != RigidbodyType2D.Dynamic || distance <= 0f || duration <= 0f ||
+            (health != null && health.IsDead) || (customer != null && (customer.IsDead || customer.IsPurified || customer.IsCarried || customer.IsWaiting))) return false;
+        CancelAttack(); lastAttackTime = Time.time;
+        knockbackVelocity = direction.normalized * (distance / Mathf.Max(.02f, duration));
+        knockbackRemaining = Mathf.Max(.02f, duration);
+        return true;
+    }
     public bool IsWindingUp { get; private set; }
     public bool IsAttackingTruck => IsWindingUp && attackTruck != null;
     public Vector2 AttackDirection { get; private set; } = Vector2.right;
@@ -53,7 +65,16 @@ public class EnemySimpleAI : MonoBehaviour
         if (cachedTarget != target)
         { cachedTarget = target; targetPlayer = target != null ? target.GetComponentInParent<PlayerController>() : null; }
         bool inactive = (health != null && health.IsDead) || (customer != null && (customer.IsPurified || customer.IsDead || customer.IsCarried || customer.IsWaiting));
-        if (inactive) { CancelAttack(); body.linearVelocity = Vector2.zero; return; }
+        if (inactive) { CancelAttack(); knockbackRemaining = 0f; body.linearVelocity = Vector2.zero; return; }
+        if (knockbackRemaining > 0f)
+        {
+            CancelAttack();
+            float step = Mathf.Min(Time.fixedDeltaTime, knockbackRemaining);
+            body.linearVelocity = knockbackVelocity * (step / Time.fixedDeltaTime);
+            knockbackRemaining = Mathf.Max(0f, knockbackRemaining - step);
+            if (knockbackRemaining < .000001f) knockbackRemaining = 0f;
+            return;
+        }
         Vector2 offset = target != null ? (Vector2)target.position - body.position : Vector2.zero;
         PlayerController player = targetPlayer;
         bool canAttack = customer == null && health != null && attackTelegraph != null;
@@ -158,7 +179,7 @@ public class EnemySimpleAI : MonoBehaviour
     private void CancelAttack()
     { IsWindingUp = false; attackPlayer = null; attackTruck = null; if (attackTelegraph != null) attackTelegraph.Hide(); }
     private void OnDisable()
-    { if (health != null) health.HealthChanged -= OnHealthChanged; CancelAttack(); if (body != null) body.linearVelocity = Vector2.zero; }
+    { if (health != null) health.HealthChanged -= OnHealthChanged; CancelAttack(); knockbackRemaining = 0f; if (body != null) body.linearVelocity = Vector2.zero; }
     private void OnDrawGizmosSelected()
     {
         if (settings == null || GetComponent<Customer>() != null || GetComponent<EnemyHealth>() == null) return;

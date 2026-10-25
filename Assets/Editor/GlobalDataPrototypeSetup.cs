@@ -13,7 +13,7 @@ public static class GlobalDataPrototypeSetup
     public static GlobalGameSettings GetOrCreateSettings()
     {
         var settings = AssetDatabase.LoadAssetAtPath<GlobalGameSettings>(SettingsPath);
-        if (settings != null) return settings;
+        if (settings != null) { CharacterWeaponPrototypeSetup.EnsureDefinitions(settings); return settings; }
         Directory.CreateDirectory("Assets/Prototype");
         AssetDatabase.Refresh();
         settings = ScriptableObject.CreateInstance<GlobalGameSettings>();
@@ -21,6 +21,7 @@ public static class GlobalDataPrototypeSetup
         if (inputs == null) throw new InvalidOperationException("Existing movement input asset was not found.");
         settings.CopyMoveBindingsFrom(inputs);
         AssetDatabase.CreateAsset(settings, SettingsPath);
+        CharacterWeaponPrototypeSetup.EnsureDefinitions(settings);
         return settings;
     }
 
@@ -28,7 +29,8 @@ public static class GlobalDataPrototypeSetup
     public static bool BindTree(GameObject root)
     {
         var settings = GetOrCreateSettings();
-        bool changed = CustomerWaitingAreaPrototypeSetup.BindMounts(root);
+        bool changed = CharacterWeaponPrototypeSetup.BindPlayer(root);
+        changed |= CustomerWaitingAreaPrototypeSetup.BindMounts(root);
         changed |= CustomerWaitingAreaPrototypeSetup.BindAreas(root);
         changed |= KitchenLayoutPrototypeSetup.BindComponents(root);
         changed |= CombatFeedbackPrototypeSetup.BindEntityVisuals(root);
@@ -104,6 +106,7 @@ public static class GlobalDataPrototypeSetup
         TruckShopPrototypeSetup.ApplyToScene(scene);
         ItemShopPrototypeSetup.ApplyToScene(scene);
         foreach (var root in scene.GetRootGameObjects()) BindTree(root);
+        MainMenuPrototypeSetup.ApplyGameplayScene(scene);
         EditorSceneManager.MarkSceneDirty(scene);
     }
 

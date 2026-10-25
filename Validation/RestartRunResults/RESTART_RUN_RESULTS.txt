@@ -1,0 +1,44 @@
+PASS: 43 checks
+PASS Assets/Prototype/CombatCollection.unity has one pause controller
+PASS Assets/Prototype/CombatCollection.unity has shared data and local session entry
+PASS Assets/Prototype/CombatCollection.unity reuses HUD Canvas and EventSystem
+PASS Assets/Prototype/CombatCollection.unity setup preserves data and avoids duplicate menus
+PASS Assets/Prototype/CombatCollection.unity has a bound Restart button
+PASS Assets/Prototype/CombatCollection.unity repeated migration preserves Restart layout
+PASS Assets/Prototype/CookingCollection.unity has one pause controller
+PASS Assets/Prototype/CookingCollection.unity has shared data and local session entry
+PASS Assets/Prototype/CookingCollection.unity reuses HUD Canvas and EventSystem
+PASS Assets/Prototype/CookingCollection.unity setup preserves data and avoids duplicate menus
+PASS Assets/Prototype/CookingCollection.unity has a bound Restart button
+PASS Assets/Prototype/CookingCollection.unity repeated migration preserves Restart layout
+PASS Direct scene start has no cached menu selection
+PASS Fixture uses Combat while configured menu destination is Cooking
+PASS Restart cannot run while pause is closed
+PASS Unsaved or invalid scene rejects restart without leaving pause
+PASS Restart button begins asynchronous reload
+PASS All pause controls lock during restart
+PASS Repeated clicks cannot change an in-flight restart
+PASS Restart reloads this run's scene rather than configured menu destination
+PASS Restart replaces gameplay and pause objects
+PASS Direct scene restart preserves default character and weapon
+PASS Restart restores initial HP, SAN and stamina
+PASS Restart resets run coins to configured initial balance
+PASS Restart clears dropped items, transient objects and loaded ammunition
+PASS Restart restores food truck health
+PASS Restart restores scene spawn position
+PASS Restart keeps one existing session
+PASS Restart resumes normal time with menu closed and gameplay unblocked
+PASS Restart preserves volume
+PASS Fixture leaves cached session choice different from actual equipment
+PASS Restart captures current bird and mallet instead of stale session choices
+PASS Selected character applies before player initialization, including restart after death
+PASS Restart preserves character and weapon colors
+PASS Restart does not overwrite Designer defaults or catalog
+PASS Invalid equipment reports failure and retains safe pause
+PASS Failed restart unlocks all actions
+PASS Continue works after rejected restart
+PASS Fixture starts menu-selected bird and mallet in Cooking
+PASS Cooking run restart preserves menu-selected bird and mallet
+PASS Repeated scene restarts preserve time, pause and volume invariants
+PASS Return to Home still works after restarting
+PASS Home retains selection and volume after restart and return

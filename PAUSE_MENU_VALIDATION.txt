@@ -1,0 +1,39 @@
+MMFeast Pause Menu Validation
+Date: 2026-10-25
+Unity: 6000.6.4f1
+Environment: isolated project copy; Windows Unity Editor batch Play Mode; cached local packages.
+
+PASS: 256 checks
+- PauseMenuValidation: 49
+- MainMenuValidation: 49
+- CharacterWeaponValidation: 59
+- CannonLayoutValidation: 30
+- ItemShopValidation: 69
+
+Pause coverage:
+Both gameplay scenes have one pause controller bound to the shared Global Data and local session entry.
+Reuses the HUD Canvas and EventSystem; repeated setup preserves Designer values and existing UI.
+Esc opens and closes; holding the key does not repeatedly toggle; Continue restores the previous time scale.
+While paused, scaled time freezes and gameplay input is blocked; held actions and release edges are discarded on resume.
+Both shops close before pause takes ownership; resume restores the underlying time scale, including a non-default scale.
+Kitchen organization exits; cannon aim cancels while ammunition is retained, without an accidental shot.
+Master volume updates AudioListener, percentage text and the shared PlayerPrefs preference.
+Disabling the controller clears pause; live rebinding preserves pause and uses the new key.
+Invalid return target leaves a visible error and a usable Continue button.
+Return asynchronously unloads gameplay and reaches Home with one persistent session and retained volume.
+A new game can start after returning, with its pause menu closed.
+
+Regression coverage:
+Main menu navigation, selection, colors, Chinese text, volume and credits.
+Character/weapon behavior, live settings, talents, attacks, dash/stamina and knockback.
+Cannon relocation, layout swaps, loaded state, targeting, launch and landing.
+Item shop purchases, validation/failure behavior, random delivery, medkit healing and existing free upgrades.
+
+Artifacts:
+Validation/PauseMenuResults/*_RESULTS.txt: exact suite output.
+Validation/PauseMenuResults/PAUSE_MENU_PREVIEW.png: actual Unity render, visually inspected.
+
+Export verification:
+All project C# sources and the exported scenes, settings and new script metadata match the compiled/tested copy.
+Original scene/script GUIDs preserved. Test settings, PlayerPrefs changes and local package paths were not exported.
+No standalone player build was run for this feature.

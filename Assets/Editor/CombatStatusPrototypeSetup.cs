@@ -99,6 +99,7 @@ public static class CombatStatusPrototypeSetup
 
     private static void EnsureStaminaBar(PlayerStatusUI hud)
     {
+        CharacterWeaponPrototypeSetup.ConfigureHUD(hud);
         var panel = (RectTransform)hud.transform;
         panel.sizeDelta = new Vector2(panel.sizeDelta.x, Mathf.Max(panel.sizeDelta.y, 140f));
         var existing = panel.Find("StaminaGroup");

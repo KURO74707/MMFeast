@@ -13,6 +13,13 @@ public class PlayerStatusUI : MonoBehaviour
     [SerializeField] private TruckShop shop;
     [SerializeField] private Text coinsText;
     [SerializeField] private Text fpsText;
+    [SerializeField] private Text loadoutText;
+    [SerializeField] private Image characterSwatch;
+    [SerializeField] private Image weaponSwatch;
+    private string shownCharacterName, shownWeaponName;
+    private bool shownSinging;
+    public void ConfigureLoadout(Text label, Image characterColor, Image weaponColor)
+    { loadoutText = label; characterSwatch = characterColor; weaponSwatch = weaponColor; shownCharacterName = null; }
     private float fpsElapsed;
     private int fpsFrames;
     private float shownHP = float.NaN, shownMaxHP, shownSAN = float.NaN, shownMaxSAN;
@@ -88,5 +95,21 @@ public class PlayerStatusUI : MonoBehaviour
         { shownStamina = player.CurrentStamina; shownMaxStamina = player.MaxStamina; staminaText.text = $"STAMINA {shownStamina:0.#} / {shownMaxStamina:0.#}"; }
         if (coinsText != null && shop != null && shownCoins != shop.CurrentBalance)
         { shownCoins = shop.CurrentBalance; coinsText.text = "COINS  " + shownCoins; }
+        if (loadoutText != null && player.Loadout != null)
+        {
+            var loadout = player.Loadout;
+            // Read definitions rather than renderer tints, so hit flashes do not recolor the HUD.
+            Color characterColor = loadout.Character != null ? loadout.Character.displayColor : Color.clear;
+            Color weaponColor = loadout.Weapon != null ? loadout.Weapon.displayColor : Color.clear;
+            if (characterSwatch != null && characterSwatch.color != characterColor) characterSwatch.color = characterColor;
+            if (weaponSwatch != null && weaponSwatch.color != weaponColor) weaponSwatch.color = weaponColor;
+            string characterName = loadout.Character != null ? loadout.Character.displayName : "Missing character";
+            string weaponName = loadout.Weapon != null ? loadout.Weapon.displayName : "Missing weapon";
+            if (shownCharacterName != characterName || shownWeaponName != weaponName || shownSinging != loadout.IsSinging)
+            {
+                shownCharacterName = characterName; shownWeaponName = weaponName; shownSinging = loadout.IsSinging;
+                loadoutText.text = "Character: " + characterName + (shownSinging ? " | Singing" : "") + "\nWeapon: " + weaponName;
+            }
+        }
     }
 }

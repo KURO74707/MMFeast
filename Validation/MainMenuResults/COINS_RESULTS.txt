@@ -1,0 +1,31 @@
+PASS: 30 checks
+PASS Assets/Prototype/CombatCollection.unity coins anchored at top right with 20px margins
+PASS Assets/Prototype/CombatCollection.unity HUD uses local shop wallet without blocking input
+PASS Assets/Prototype/CombatCollection.unity persistent HUD outside shop modal
+PASS Assets/Prototype/CombatCollection.unity repeated setup creates one coins label
+PASS Assets/Prototype/CookingCollection.unity coins anchored at top right with 20px margins
+PASS Assets/Prototype/CookingCollection.unity HUD uses local shop wallet without blocking input
+PASS Assets/Prototype/CookingCollection.unity persistent HUD outside shop modal
+PASS Assets/Prototype/CookingCollection.unity repeated setup creates one coins label
+PASS Default 25 coins per purification; existing starting balance preserved
+PASS HUD shows actual initial wallet balance while shop closed
+PASS First purification immediately rewards wallet
+PASS Repeated purification cannot pay twice
+PASS Live reward edit applies to existing unpurified Customer
+PASS Closed shop HUD updates after reward
+PASS Combat death gives no coins and retains SAN penalty
+PASS Zero reward disables payouts
+PASS Negative reward clamps to zero
+PASS Real food AoE rewards each Customer once, including multiple colliders; Zombie gives no coins
+PASS HUD matches accumulated AoE rewards
+PASS Waiting-area upgrade is available without resource gating
+PASS Coins HUD remains correct with paused shop
+PASS Earned coins reserve waiting-area purchase without spending
+PASS Upgrade installation preserves earned coins
+PASS Free upgrade leaves HUD coins intact
+PASS Customer can still be carried for waiting area
+PASS Customer can still be seated
+PASS Waiting Customer purification frees seat and pays exactly once
+PASS Coin addition cannot overflow into negative balance
+PASS Nonpositive coin grants cannot spend money
+PASS HUD re-enable/debug edits work without changing initial configuration

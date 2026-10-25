@@ -11,6 +11,11 @@ public class PlayerHitFeedback : MonoBehaviour
     private Color normalColor;
     private float flashEndsAt;
     private bool flashing;
+    public void SetBaseColor(Color color)
+    {
+        normalColor = color;
+        if (!flashing && playerRenderer != null) playerRenderer.color = color;
+    }
     public void Configure(SpriteRenderer renderer, SimpleCameraShake shake)
     { playerRenderer = renderer; cameraShake = shake; }
     private void Awake()

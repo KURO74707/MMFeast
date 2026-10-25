@@ -1,0 +1,57 @@
+PASS: 56 checks
+PASS Assets/Prototype/CombatCollection.unity one grid and one layout controller
+PASS Assets/Prototype/CombatCollection.unity valid Cooking Station and cannon grid registration
+PASS Assets/Prototype/CombatCollection.unity existing tool parent and 2x1 footprint
+PASS Assets/Prototype/CombatCollection.unity same shared settings
+PASS Assets/Prototype/CombatCollection.unity idempotent status panel migration
+PASS Assets/Prototype/CookingCollection.unity one grid and one layout controller
+PASS Assets/Prototype/CookingCollection.unity valid Cooking Station and cannon grid registration
+PASS Assets/Prototype/CookingCollection.unity existing tool parent and 2x1 footprint
+PASS Assets/Prototype/CookingCollection.unity same shared settings
+PASS Assets/Prototype/CookingCollection.unity idempotent status panel migration
+PASS Real physics detects player entry into truck
+PASS E press alone does not execute short action
+PASS Short E interaction occurs on release
+PASS Short interaction pulse lasts one update
+PASS Long E enters layout without triggering short interaction
+PASS Layout shows grid and game remains running
+PASS Holding entry key does not pick up a tool or toggle repeatedly
+PASS Releasing long press does not act as a tap
+PASS Dash is blocked without stamina spending in layout
+PASS Melee attack blocked in layout
+PASS Cannon input blocked without consuming ammunition or firing
+PASS Regular movement remains available in layout
+PASS Tap E lifts existing Cooking Station and temporarily disables collider
+PASS Original grid reservation stays occupied; carried station cannot be used
+PASS Ordinary ingredient pickup blocked while organizing
+PASS Tap places stove exactly two columns left
+PASS Moving preserves original component, children and collider state
+PASS Out-of-bounds placement rejected without dropping tool
+PASS Designer reserved cells reject placement
+PASS Long E exits and restores carried tool to its original reserved cell
+PASS Exit key hold cannot immediately re-enter or trigger ordinary interaction
+PASS Holding an ingredient prevents entering layout mode
+PASS Existing ingredient placement still works after stove movement
+PASS Cooking Station containing food cannot be lifted
+PASS Original cooking works at relocated station
+PASS Cooked food can still be retrieved after relocation
+PASS Two empty tools can swap atomically
+PASS Swap commits both original cell assignments
+PASS Different-size tools swap when both footprints fit
+PASS Invalid reverse footprint rejects swap with both cells unchanged
+PASS Fixed tool cannot participate in a swap
+PASS Placement overlapping multiple tools is rejected
+PASS Can lift tool again after swaps
+PASS Runtime rebinding exits layout and restores held tool
+PASS Long press uses rebound Interact key
+PASS Lift using same interaction after rebind
+PASS Disabling and re-enabling player safely restores tool
+PASS Layout remains usable after enable cycle
+PASS Leaving truck exits mode and restores carried tool
+PASS Automatic exit during a held short press does not leak ordinary interaction on release
+PASS Cannot enter layout outside truck
+PASS Can resume layout after returning to truck
+PASS Player death cancels layout without losing tool
+PASS Original loaded cannon still enters aiming outside layout
+PASS Entering layout while aiming cancels aim, keeps load and never fires
+PASS Hold threshold is live configurable and a slow-frame release never triggers a short tap

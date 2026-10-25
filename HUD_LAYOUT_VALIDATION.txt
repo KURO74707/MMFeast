@@ -1,0 +1,10 @@
+HUD layout/color update - 2026-10-25 - Unity 6000.6.4f1
+PASS: 49 existing main-menu/loadout checks, updated for HUD colors and in-game square shape.
+Player has no world-space name text. Character/weapon names remain at bottom right above FPS.
+Each name has a square color swatch that reads the current loadout's shared definition color.
+Live character/weapon color edits update HUD swatches, independent of player hit flashes.
+In-game player visual is .7 x .7; collider size and direction indicator remain unchanged.
+Both prototype scenes and generation tools updated; scene GUIDs and Designer settings preserved.
+Actual Unity render visually inspected: Validation/HudLayoutResults/MENU_GAMEPLAY_PREVIEW.png.
+Preview values/colors are temporary test data, not exported Designer values.
+All 75 production C# files match compiled/tested sources; isolated project removed after export.

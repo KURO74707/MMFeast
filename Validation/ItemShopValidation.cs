@@ -32,7 +32,9 @@ public static class ItemShopValidation
                 GlobalDataPrototypeSetup.ApplyToScene(scene); GlobalDataPrototypeSetup.ApplyToScene(scene); EditorSceneManager.SaveScene(scene);
                 var data = Object.FindAnyObjectByType<GlobalData>().Settings;
                 Check(data.Shop.bindings[0].path == "<Keyboard>/r" && data.ItemShop.bindings[0].path == "<Keyboard>/tab", path + " R upgrades / Tab item shop");
-                Check(Object.FindObjectsByType<ItemShop>().Length == 1 && Object.FindObjectsByType<EventSystem>().Length == 1 && Object.FindObjectsByType<Canvas>().Length == 1, path + " reuse one player shop, Canvas and EventSystem");
+                int hudCanvases = 0;
+                foreach (var canvas in Object.FindObjectsByType<Canvas>()) if (canvas.renderMode == RenderMode.ScreenSpaceOverlay) hudCanvases++;
+                Check(Object.FindObjectsByType<ItemShop>().Length == 1 && Object.FindObjectsByType<EventSystem>().Length == 1 && hudCanvases == 1, path + " reuse one player shop, screen-space HUD Canvas and EventSystem (world labels excluded)");
                 var owner = Object.FindAnyObjectByType<ItemShop>();
                 Check(Field<GlobalGameSettings>(owner,"settings") == data && Field<Transform>(owner,"truckCenter").gameObject.scene == scene, path + " shared config and local truck reference");
                 Check(data.ItemShopCatalog.Items.Count == 1 && data.ItemShopCatalog.Items[0].IsValid(out _) && data.ItemShopCatalog.Items[0].Price == 25 && data.ItemShopCatalog.Items[0].HealAmount == 25, path + " valid default 25 coin / 25 HP medkit");

@@ -12,6 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bbd42f42e3d5143b7180cbbb91ebcf, type: 3}
   m_Name: GlobalGameSettings
   m_EditorClassIdentifier: Assembly-CSharp::GlobalGameSettings
+  gameplayScenePath: Assets/Prototype/CookingCollection.unity
+  mainMenuScenePath: Assets/Prototype/MainMenu.unity
+  defaultMasterVolume: 1
+  menuFadeDuration: 0.18
+  loadoutColorsMigrated: 1
+  characters:
+  - {fileID: 11400000, guid: e3ead749adf64254d835cac45ca25179, type: 2}
+  - {fileID: 11400000, guid: 30f1d52dce03027468337f3615e9aa97, type: 2}
+  - {fileID: 11400000, guid: 30f1d52dce03027468337f3615e9aa97, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 238064cf47492744d98834fec4912c7c, type: 2}
+  - {fileID: 11400000, guid: af9f582b75081bf428c33bcfb6c36dfc, type: 2}
+  defaultCharacter: {fileID: 11400000, guid: e3ead749adf64254d835cac45ca25179, type: 2}
+  weaponOverride: {fileID: 0}
+  loadoutsMigrated: 1
+  gameplayDebugLogs: 0
   playerMaxHP: 100
   playerMaxSAN: 100
   playerMoveSpeed: 5
@@ -291,6 +307,24 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: ItemShop
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  pause:
+    m_Name: Pause
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 18316106-979b-4db4-821d-69d55bc8de8f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ebe6842e-dc89-4d78-8fca-0bdac0e0e838
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0

@@ -32,7 +32,7 @@ public class ItemShop : MonoBehaviour
     }
     public bool OpenShop()
     {
-        if (!isActiveAndEnabled || player == null || !player.isActiveAndEnabled || player.HP <= 0f || Catalog == null) return false;
+        if (!isActiveAndEnabled || player == null || !player.isActiveAndEnabled || player.IsPauseOpen || player.HP <= 0f || Catalog == null) return false;
         if (IsOpen) return true;
         wallet.CloseShop();
         player.BeginShopInteraction();

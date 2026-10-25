@@ -1,0 +1,31 @@
+PASS: 30 checks
+PASS Assets/Prototype/CombatCollection.unity cannon and stove share existing grid
+PASS Assets/Prototype/CombatCollection.unity valid cannon 2x2 footprint
+PASS Assets/Prototype/CombatCollection.unity migration retains single existing cannon
+PASS Assets/Prototype/CombatCollection.unity legacy fixed cannon reservation removed
+PASS Assets/Prototype/CombatCollection.unity repeated setup retains designer reservations
+PASS Assets/Prototype/CookingCollection.unity cannon and stove share existing grid
+PASS Assets/Prototype/CookingCollection.unity valid cannon 2x2 footprint
+PASS Assets/Prototype/CookingCollection.unity migration retains single existing cannon
+PASS Assets/Prototype/CookingCollection.unity legacy fixed cannon reservation removed
+PASS Assets/Prototype/CookingCollection.unity repeated setup retains designer reservations
+PASS Player inside truck can reach original cannon
+PASS Existing cooked ingredient loads cannon before relocation
+PASS Loaded cannon can aim before relocation
+PASS Direct cannon lift cancels aim and retains ammunition
+PASS Carried cannon cannot interact or aim
+PASS Carried cannon cannot fire even if a stale fire request arrives
+PASS Cancel restores original cannon cell and transform
+PASS Fixture puts real ingredient on Cooking Station
+PASS Loaded cannon cannot swap with a Cooking Station containing food
+PASS Kitchen mode selects and lifts nearby cannon using existing interaction
+PASS Cannon places exactly two columns left through normal layout targeting
+PASS Relocation preserves loaded state and actual muzzle child
+PASS Old cannon cells become available to another tool
+PASS Invalid cannon placement retains held tool and ammunition
+PASS Cannon 2x2 and stove 2x1 swap when both fit
+PASS Moved cannon can aim from its new location
+PASS Moved cannon range uses new base position
+PASS Moved cannon fires exactly from new muzzle and consumes retained ammunition once
+PASS Moved cannon projectile retains selected preview target
+PASS Actual ballistic impact from moved cannon matches selected target

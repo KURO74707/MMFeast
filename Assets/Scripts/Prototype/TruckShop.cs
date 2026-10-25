@@ -63,7 +63,7 @@ public class TruckShop : MonoBehaviour
     }
     public bool OpenShop()
     {
-        if (!isActiveAndEnabled || !player.isActiveAndEnabled || player.HP <= 0f || Catalog == null) return false;
+        if (!isActiveAndEnabled || !player.isActiveAndEnabled || player.IsPauseOpen || player.HP <= 0f || Catalog == null) return false;
         if (IsOpen) return true;
         GetComponent<ItemShop>()?.CloseShop();
         layout.ExitMode();

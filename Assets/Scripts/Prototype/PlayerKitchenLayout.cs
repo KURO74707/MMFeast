@@ -40,7 +40,7 @@ public class PlayerKitchenLayout : MonoBehaviour
     {
         if (!GlobalGameSettings.Require(this, settings)) return;
         if (IsOrganizing && (!player.isActiveAndEnabled || player.HP <= 0f || !Inside || carry.HasHeldObject)) ExitMode();
-        if (player.isActiveAndEnabled && !player.IsShopOpen && player.InteractLongPressed)
+        if (player.isActiveAndEnabled && !player.IsAnyMenuOpen && player.InteractLongPressed)
         {
             if (IsOrganizing) ExitMode(); else TryEnterMode();
         }
@@ -63,7 +63,7 @@ public class PlayerKitchenLayout : MonoBehaviour
     public bool TryEnterMode()
     {
         if (IsOrganizing) return true;
-        if (!isActiveAndEnabled || !player.isActiveAndEnabled || player.IsShopOpen || player.HP <= 0f || !Inside)
+        if (!isActiveAndEnabled || !player.isActiveAndEnabled || player.IsAnyMenuOpen || player.HP <= 0f || !Inside)
         { Notify("Enter the truck to organize the kitchen."); return false; }
         if (carry.HasHeldObject) { Notify("Empty your hands before organizing."); return false; }
         if (!grid.ValidateLayout(out var reason)) { Notify(reason); return false; }

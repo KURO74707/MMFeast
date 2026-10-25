@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Prototype/MainMenu.unity
+    guid: 7030304b61fba334694d0b23302a5a03
+  - enabled: 1
     path: Assets/Prototype/CombatCollection.unity
     guid: a01b89d413850ac439d6bca88283cb35
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Prototype/CookingCollection.unity
+    guid: bf2ee1018c839044ea8a624cc4634c2f
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

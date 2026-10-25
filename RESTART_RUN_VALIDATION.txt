@@ -1,0 +1,38 @@
+MMFeast Restart Run Validation
+Date: 2026-10-25
+Unity: 6000.6.4f1
+Environment: isolated Windows Unity Editor project, batch Play Mode, local cached packages.
+
+PASS: 141 checks
+- RestartRunValidation: 43
+- PauseMenuValidation: 49
+- MainMenuValidation: 49
+
+Restart coverage:
+Both prototype scenes have one Restart button with a serialized reference and the requested Chinese label.
+Migration reuses existing UI and preserves subsequent Designer layout changes.
+Restart is only available while pause is open. Loading locks all controls and rejects repeated commands.
+The current gameplay scene reloads even when Global Data's menu destination points to a different scene.
+Direct scene starts work without a prior cached menu selection.
+Actual current character and weapon override stale session choices and apply before player Awake.
+Verified Cat/Spatula and Bird/Meat Mallet, direct and menu-selected runs, and restart after death.
+HP, SAN, stamina, coins, truck HP, spawn position, dropped items, transient objects and cannon loading reset.
+Volume, character/weapon appearance and one persistent session remain intact.
+Restart finishes at normal time scale with pause closed and gameplay input unblocked.
+Invalid scene/equipment fails safely, shows a reason and leaves Continue/Restart/Return available.
+Return to Home after repeated restarts retains selection and volume.
+
+Regressions:
+Esc toggle, time ownership, shared volume, held-input suppression, shop exclusivity, layout exit,
+cannon aim cancellation, live rebinding, component disable, scene return and new game startup.
+Home/selection/settings/credits flow, colors, fonts, volume preferences and loadout initialization.
+
+Artifacts:
+Validation/RestartRunResults/*_RESULTS.txt: exact suite output.
+Validation/RestartRunResults/RESTART_MENU_PREVIEW.png: actual Unity render, visually inspected.
+
+Export:
+Both tested scene files exported with original metadata/GUIDs preserved.
+All production C# files match the compiled/tested copy. Shared Designer settings remain unchanged.
+No test-only assets, local package paths or PlayerPrefs test values exported.
+No standalone player build was run for this change.

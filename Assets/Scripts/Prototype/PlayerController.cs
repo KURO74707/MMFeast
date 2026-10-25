@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     private GlobalGameSettings inputSettings;
     private int inputRevision;
     private Rigidbody2D body;
+    private PlayerLoadout loadout;
+    public PlayerLoadout Loadout => loadout != null ? loadout : (loadout = GetComponent<PlayerLoadout>());
+    private CharacterDefinition Character => Loadout != null ? Loadout.Character : null;
+    public bool HasMovementInput => movement.sqrMagnitude > .001f;
     private Vector2 movement;
     private bool wasInteracting;
     private float interactStartedAt;
@@ -40,16 +44,18 @@ public class PlayerController : MonoBehaviour
     public bool DebugLogsEnabled => settings != null && settings.GameplayDebugLogs;
     public float HP => hp;
     public float SAN => san;
-    public float MaxHP => settings != null ? settings.PlayerMaxHP : 0f;
-    public float MaxSAN => settings != null ? settings.PlayerMaxSAN : 0f;
+    public float MaxHP => Character != null ? Character.maxHP : 0f;
+    public float MaxSAN => Character != null ? Character.maxSAN : 0f;
     public float CurrentStamina => currentStamina;
-    public float MaxStamina => settings != null ? settings.MaxStamina : 0f;
+    public float MaxStamina => Character != null ? Character.maxStamina : 0f;
     public bool AttackPressed { get; private set; }
     public bool InteractPressed { get; private set; }
     public bool InteractLongPressed { get; private set; }
     public bool IsKitchenOrganizing => kitchenLayout != null && kitchenLayout.IsOrganizing;
     public bool IsShopOpen => (truckShop != null && truckShop.IsOpen) || (paidShop != null && paidShop.IsOpen);
-    public bool GameplayInputsBlocked => IsKitchenOrganizing || IsShopOpen;
+    public bool IsPauseOpen { get; private set; }
+    public bool IsAnyMenuOpen => IsShopOpen || IsPauseOpen;
+    public bool GameplayInputsBlocked => IsKitchenOrganizing || IsAnyMenuOpen;
     public bool ShopPressed { get; private set; }
     public bool ItemShopPressed { get; private set; }
     public bool CookPressed { get; private set; }
@@ -59,7 +65,18 @@ public class PlayerController : MonoBehaviour
     public bool IsCannonAiming { get; set; }
     public Vector2 MouseScreenPosition => Mouse.current != null ? Mouse.current.position.ReadValue() : Vector2.zero;
 
-    public void Configure(GlobalGameSettings config) => settings = config;
+    public void Configure(GlobalGameSettings config)
+    { settings = config; if (Loadout != null) Loadout.Configure(config); }
+    public void ClampCurrentStats() { SetCurrentHP(hp); SetCurrentSAN(san); SetCurrentStamina(currentStamina); }
+    public void CancelLoadoutActions()
+    {
+        StopDash(); dashRequested = false;
+        AttackPressed = InteractPressed = CookPressed = DashPressed = false;
+        RightMouseHeld = RightMouseReleased = false;
+        IsCannonAiming = false;
+        InputBindingsChanged?.Invoke();
+        waitingForRelease = true;
+    }
     public void SetFacingIndicator(Transform indicator) => facingIndicator = indicator;
     public void SetCurrentHP(float value)
     {
@@ -100,9 +117,14 @@ public class PlayerController : MonoBehaviour
         SetCurrentSAN(san - amount);
         if (settings != null && settings.GameplayDebugLogs) Debug.Log($"Player SAN decreased by {previous - san}. Current SAN: {san} / {MaxSAN}", this);
     }
+    public float RestoreSAN(float amount)
+    {
+        if (!isActiveAndEnabled || hp <= 0f || amount <= 0f) return 0f;
+        float previous = san; SetCurrentSAN(san + amount); return san - previous;
+    }
     public void SetCurrentStamina(float value)
     {
-        float next = Mathf.Clamp(value, 0f, settings != null ? settings.MaxStamina : 0f);
+        float next = Mathf.Clamp(value, 0f, MaxStamina);
         if (currentStamina == next) return;
         currentStamina = next;
         StatsChanged?.Invoke();
@@ -115,9 +137,11 @@ public class PlayerController : MonoBehaviour
         truckShop = GetComponent<TruckShop>();
         paidShop = GetComponent<ItemShop>();
         if (!GlobalGameSettings.Require(this, settings)) return;
-        hp = settings.PlayerMaxHP;
-        san = settings.PlayerMaxSAN;
-        currentStamina = settings.InitialStamina;
+        if (Loadout == null || !Loadout.IsValid)
+        { Debug.LogError("Player needs PlayerLoadout and a valid character / weapon in Global Data. Run character and weapon setup.", this); enabled = false; return; }
+        hp = MaxHP;
+        san = MaxSAN;
+        currentStamina = Character.initialStamina;
         RebuildInputs();
     }
 
@@ -186,6 +210,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!GlobalGameSettings.Require(this, settings)) return;
+        if (Character == null) { body.linearVelocity = Vector2.zero; return; }
         AttackPressed = InteractPressed = CookPressed = DashPressed = InteractLongPressed = ShopPressed = ItemShopPressed = false;
         RightMouseHeld = RightMouseReleased = false;
         SetCurrentHP(hp);
@@ -196,7 +221,8 @@ public class PlayerController : MonoBehaviour
             if (RebuildInputs()) EnableInputs();
             return;
         }
-        movement = IsShopOpen ? Vector2.zero : Vector2.ClampMagnitude(move.ReadValue<Vector2>(), 1f);
+        movement = IsAnyMenuOpen ? Vector2.zero : Vector2.ClampMagnitude(move.ReadValue<Vector2>(), 1f);
+        if (IsPauseOpen) return;
         if (movement.sqrMagnitude > 0.001f) Facing = movement.normalized;
         if (facingIndicator != null) facingIndicator.localPosition = (Vector3)(Facing * 0.55f);
         // After enabling or rebinding, require held buttons to be released before accepting presses.
@@ -204,6 +230,7 @@ public class PlayerController : MonoBehaviour
         {
             if (attack.IsPressed() || interact.IsPressed() || aim.IsPressed() || dash.IsPressed() || shop.IsPressed() || itemShop.IsPressed()) return;
             waitingForRelease = false;
+            return; // Discard release edges from the UI frame as well as held presses.
         }
         ShopPressed = shop.WasPressedThisFrame();
         ItemShopPressed = itemShop.WasPressedThisFrame();
@@ -258,10 +285,20 @@ public class PlayerController : MonoBehaviour
         if (body != null) body.linearVelocity = Vector2.zero;
     }
 
+    public void SetPaused(bool paused)
+    {
+        // Close shops before the pause menu captures their underlying time scale.
+        ResetInputState();
+        InputBindingsChanged?.Invoke();
+        IsPauseOpen = paused;
+        waitingForRelease = true;
+    }
+
     private void FixedUpdate()
     {
         if (!GlobalGameSettings.Require(this, settings)) return;
-        if (IsShopOpen) { body.linearVelocity = Vector2.zero; return; }
+        if (Character == null || hp <= 0f) { StopDash(); body.linearVelocity = Vector2.zero; return; }
+        if (IsAnyMenuOpen) { body.linearVelocity = Vector2.zero; return; }
         if (dashRequested)
         {
             dashRequested = false;
@@ -280,24 +317,24 @@ public class PlayerController : MonoBehaviour
             StopDash();
         }
         RecoverStamina(Time.fixedDeltaTime);
-        body.linearVelocity = movement * settings.PlayerMoveSpeed;
+        body.linearVelocity = movement * Character.moveSpeed;
     }
 
     private bool TryStartDash()
     {
-        if (GameplayInputsBlocked || IsDashing || settings.DashDistance <= 0f || currentStamina < settings.DashStaminaCost)
+        if (Character == null || hp <= 0f || GameplayInputsBlocked || IsDashing || Character.dashDistance <= 0f || currentStamina < Character.dashStaminaCost)
             return false;
         dashDirection = movement.sqrMagnitude > 0.001f ? movement.normalized : Facing;
-        dashTimeRemaining = settings.DashDuration;
-        dashSpeed = settings.DashDistance / dashTimeRemaining;
-        dashInvulnerableUntil = Time.time + settings.DashInvulnerabilityDuration;
+        dashTimeRemaining = Mathf.Max(.02f, Character.dashDuration);
+        dashSpeed = Character.dashDistance / dashTimeRemaining;
+        dashInvulnerableUntil = Time.time + Character.dashInvulnerabilityDuration;
         // Full-duration protection includes the final fractional physics step.
-        invulnerableForFullDash = settings.DashInvulnerabilityDuration >= dashTimeRemaining;
+        invulnerableForFullDash = Character.dashInvulnerabilityDuration >= dashTimeRemaining;
         previousCollisionDetection = body.collisionDetectionMode;
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         IsDashing = true;
         staminaRecoveryElapsed = 0f;
-        SetCurrentStamina(currentStamina - settings.DashStaminaCost);
+        SetCurrentStamina(currentStamina - Character.dashStaminaCost);
         return true;
     }
 
@@ -313,15 +350,18 @@ public class PlayerController : MonoBehaviour
 
     private void RecoverStamina(float deltaTime)
     {
-        if (IsDashing) return;
+        if (IsDashing || Character == null) return;
         staminaRecoveryElapsed += deltaTime;
         // Only the portion of this step after the delay may regenerate stamina.
-        float recoveryTime = Mathf.Min(deltaTime, Mathf.Max(0f, staminaRecoveryElapsed - settings.StaminaRecoveryDelay));
-        SetCurrentStamina(currentStamina + settings.StaminaRecoveryPerSecond * recoveryTime);
+        float recoveryTime = Mathf.Min(deltaTime, Mathf.Max(0f, staminaRecoveryElapsed - Character.staminaRecoveryDelay));
+        SetCurrentStamina(currentStamina + Character.staminaRecoveryPerSecond * recoveryTime);
     }
 
     private void OnValidate()
-    { SetCurrentHP(hp); SetCurrentSAN(san); SetCurrentStamina(currentStamina); }
+    {
+        // During scene deserialization the loadout reference may not be bound yet.
+        if (Character != null) ClampCurrentStats();
+    }
 
     private void DisposeInputs()
     {

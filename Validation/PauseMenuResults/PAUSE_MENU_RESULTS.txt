@@ -1,0 +1,50 @@
+PASS: 49 checks
+PASS Assets/Prototype/CombatCollection.unity has one pause controller
+PASS Assets/Prototype/CombatCollection.unity has shared data and local session entry
+PASS Assets/Prototype/CombatCollection.unity reuses HUD Canvas and EventSystem
+PASS Assets/Prototype/CombatCollection.unity setup preserves data and avoids duplicate menus
+PASS Assets/Prototype/CookingCollection.unity has one pause controller
+PASS Assets/Prototype/CookingCollection.unity has shared data and local session entry
+PASS Assets/Prototype/CookingCollection.unity reuses HUD Canvas and EventSystem
+PASS Assets/Prototype/CookingCollection.unity setup preserves data and avoids duplicate menus
+PASS Gameplay begins unpaused with hidden overlay
+PASS Esc default uses an independent input copy
+PASS Pause buttons have requested labels
+PASS Actual Esc opens pause before gameplay input
+PASS Holding Esc does not repeatedly toggle
+PASS Overlay buttons receive pointer input above HUD
+PASS Paused slider adjusts shared volume and percentage
+PASS Volume writes the shared preference
+PASS Scaled gameplay time is frozen while UI runs
+PASS Pause suppresses movement, dash, interaction and shops
+PASS Both shops reject opening under pause
+PASS Kitchen mode cannot start under pause
+PASS Continue button restores time and gameplay
+PASS Held actions across resume do not trigger
+PASS Esc reopens after release
+PASS Esc also closes pause
+PASS Resume restores a non-default time scale
+PASS Fixture opens paid shop
+PASS Pause closes paid shop before taking time ownership
+PASS Resume after paid shop restores original scale
+PASS Fixture opens free upgrades
+PASS Pause closes free upgrades
+PASS Resume after upgrades restores original scale
+PASS Fixture enters kitchen mode
+PASS Pause exits kitchen mode
+PASS Fixture aims a loaded cannon
+PASS Pause cancels aim and retains ammunition
+PASS Releasing aim across pause does not fire
+PASS Disabling controller restores time and player input
+PASS Live rebinding preserves pause ownership
+PASS Rebound key resumes gameplay
+PASS Old binding no longer toggles pause
+PASS Missing menu scene displays error and keeps game paused
+PASS Failed return leaves Continue available
+PASS Return asynchronously loads once and locks menu
+PASS Return reaches Home with time restored
+PASS Return reuses exactly one session
+PASS Return unloads gameplay and pause objects
+PASS Main menu retains paused volume
+PASS New game starts normally after returning
+PASS New run retains volume and starts unpaused
